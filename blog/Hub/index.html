@@ -1,0 +1,61 @@
+<!doctype html> <html> <head> <meta charset=utf-8 /> <link href="../../stylesheets/all.css" rel=stylesheet /> <script src="//squaresend.com/squaresend.js"></script> <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <meta http-equiv=X-UA-Compatible content='IE=edge;chrome=1'/> <title>Hub</title> <link rel=alternate type="application/atom+xml" title="Atom Feed" href="/feed.xml"/> </head> <style>
+    body {
+      background-color: rgb(143, 94, 243);
+    }
+
+
+    .article p {
+      color: rgb(241, 241, 241);
+    }
+    .header {
+      color: rgb(241, 241, 241);
+    }
+    .meta small{
+      color: rgb(241, 241, 241);
+    }
+
+
+    .header a {
+      color: rgb(254, 201, 235);
+      text-decoration: none;}
+
+    .header a:active, .header a:focus, .header a:hover {
+      text-decoration: underline; }
+
+    .article a {
+      color: rgb(254, 201, 235);
+      text-decoration: none;
+      transition: color 0.2s linear; }
+
+    .article a:active, .article a:focus, .article a:hover {
+      text-decoration: underline;}
+
+      body {
+        border-top: 6px solid rgb(254, 201, 235);
+      }
+
+
+    footer li a {
+      color: rgb(254, 201, 235);
+      text-decoration: none;
+      transition: color 0.2s linear;}
+
+      footer li a:active, footer li a:focus, footer li a:hover {
+        text-decoration: underline;
+        color: rgb(254, 201, 235);}
+
+      .navbar a{
+        color: rgba(254, 201, 235, 0.75);
+      }
+
+      .navbar a:active, .navbar a:focus, .navbar a:hover {
+        color: rgba(254, 201, 235, 1); }
+
+        ::selection {
+          color: rgba(254, 201, 235, 0.70);
+        }
+        ::-moz-selection {
+          color: rgba(254, 201, 235, 0.70);
+        }
+
+</style> <body> <nav class=navbar> <ul> <li><a href="/">ABOUT</a></li> <li><a href="/blog/">SOFTWARE DEVELOPMENT WOES</a></li> <li><a href="/misc/">MISC CORNER</a></li> </ul> </nav> <div class=content role=main> <div class=header> <h1><a href="https://hub.github.com/">Hub･</a></h1> <div class=meta> <small>Jun 15, 2015</small> <small>フッブ</small> </div> </div> <div class=article> <p>I spend quite a bit of time in terminal, almost everything I do for the day goes through the terminal and it&rsquo;s rare that I don&rsquo;t have a window open in the background somewhere. Granted I haven&rsquo;t mustered up the courage to utilize VIM or EMAC.</p> <p>One thing I wasn&rsquo;t a fan of was the inability to create and push repos in Github from the terminal. Or at least to my knowledge. I recently learned that I could use cURL commands to create repos on Github.</p> <p><code>curl -u &quot;$username:$token&quot; https://api.github.com/user/repos -d &#39;{&quot;name&quot;:&quot;&#39;$repo_name&#39;&quot;}&#39;</code></p> <p>I though, &ldquo;could I create a script in bash that allows me to push my files without ever firing up chrome?&rdquo;, so I decided to ask around on stack overflow for direction and embark on this.</p> <p>I opened a query and the very first response returned something interesting. Someone else had already thought the samething and saved many people the trouble (obviously I wasn&rsquo;t the first to think of this) of having to built it themselves; thus introducing <a href="https://hub.github.com/">Hub</a>.</p> <p>A great little script that has already saved me time (or at least the repetition of having to create a new repo via the browser). Best thing to do is make an alias for hub (and name it git, as hub inherits all of git&rsquo;s commands).</p> <p>Hopefully others get some use out of hub. I still think I&rsquo;m going to create my own script for creating an empty repo just to see if I can get the logic right, will probably be a weekend project.</p> </div> <footer> <ul> <li><a href="http://www.twitter.com/dipet_low">Twitter</a></li> <li><a href="mailto:hey_dion@dipet.me?sqs_title=Hello!">Email</a></li> <li><a href="http://www.github.com/Diope">Github</a></li> <li><a href="/feed.xml">RSS Feed (Atom)</a></li> </ul> </footer> </body> </html>

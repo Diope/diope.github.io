@@ -1,0 +1,73 @@
+<!doctype html> <html> <head> <meta charset=utf-8 /> <link href="../../stylesheets/all.css" rel=stylesheet /> <script src="//squaresend.com/squaresend.js"></script> <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <meta http-equiv=X-UA-Compatible content='IE=edge;chrome=1'/> <title>Enumerators!</title> <link rel=alternate type="application/atom+xml" title="Atom Feed" href="/feed.xml"/> </head> <style>
+    body {
+      background-color: rgb(104, 104, 104);
+    }
+
+
+    .article p {
+      color: rgb(255, 255, 255);
+    }
+    .header {
+      color: rgb(255, 255, 255);
+    }
+    .meta small{
+      color: rgb(255, 255, 255);
+    }
+
+
+    .header a {
+      color: rgb(238, 136, 129);
+      text-decoration: none;}
+
+    .header a:active, .header a:focus, .header a:hover {
+      text-decoration: underline; }
+
+    .article a {
+      color: rgb(238, 136, 129);
+      text-decoration: none;
+      transition: color 0.2s linear; }
+
+    .article a:active, .article a:focus, .article a:hover {
+      text-decoration: underline;}
+
+      body {
+        border-top: 6px solid rgb(238, 136, 129);
+      }
+
+
+    footer li a {
+      color: rgb(238, 136, 129);
+      text-decoration: none;
+      transition: color 0.2s linear;}
+
+      footer li a:active, footer li a:focus, footer li a:hover {
+        text-decoration: underline;
+        color: rgb(238, 136, 129);}
+
+      .navbar a{
+        color: rgba(238, 136, 129, 0.75);
+      }
+
+      .navbar a:active, .navbar a:focus, .navbar a:hover {
+        color: rgba(238, 136, 129, 1); }
+
+        ::selection {
+          color: rgba(238, 136, 129, 0.70);
+        }
+        ::-moz-selection {
+          color: rgba(238, 136, 129, 0.70);
+        }
+
+</style> <body> <nav class=navbar> <ul> <li><a href="/">ABOUT</a></li> <li><a href="/blog/">SOFTWARE DEVELOPMENT WOES</a></li> <li><a href="/misc/">MISC CORNER</a></li> </ul> </nav> <div class=content role=main> <div class=header> <h1>Enumerators!</h1> <div class=meta> <small>Aug 01, 2015</small> <small>A "Oooh" moment brought to you by Tide</small> </div> </div> <div class=article> <p>So I&rsquo;ve decided that I wanted to learn Swift ontop of learning Ruby and Javascript, and I recently had an &ldquo;Oooooh&rdquo; moment. Well to clarify, I kind of knew what enums were but I wasn&rsquo;t quite sure on the specifics of it. I knew of enums because of utilizing the Rails enum feature in my personal project <a href="https://github.com/Diope/drubbble">Drubbble</a> (yes it&rsquo;s a <a href="https://dribbble.com/">Dribbble</a> clone&hellip;then Dribbble went and did a redesign!) I&rsquo;m constantly adding features to it as I learn more about Rails. The last thing I added (and need to properly utilize) is enums, I used Rails enums to provide roles for users within my rails application. The concept was pretty simple, instead of using a boolean to check whether or not a user was a administrator, I instead went with enums. One of the biggest reasons is because enums are MUCH more flexible and can be adjusted to add or take away roles without creating more booleans. I imagine having an application that has 8 user roles, creating a boolean for each of them is utter madness (SPARTA!). Enough talk, time to explain via code.</p> <pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">after_initialize</span> <span class="ss">:set_default_role</span><span class="p">,</span> <span class="ss">:if</span> <span class="o">=&gt;</span> <span class="ss">:new_record?</span>
+  <span class="n">after_create</span> <span class="ss">:create_profile</span>
+
+  <span class="kp">attr_accessor</span> <span class="ss">:login</span><span class="p">,</span> <span class="ss">:tagline</span><span class="p">,</span> <span class="ss">:location</span><span class="p">,</span> <span class="ss">:website</span><span class="p">,</span> <span class="ss">:available</span>
+  <span class="n">devise</span> <span class="ss">:database_authenticatable</span><span class="p">,</span> <span class="ss">:registerable</span><span class="p">,</span>
+         <span class="ss">:recoverable</span><span class="p">,</span> <span class="ss">:rememberable</span><span class="p">,</span> <span class="ss">:trackable</span><span class="p">,</span> <span class="ss">:validatable</span>
+  <span class="c1">#-----------</span>
+  <span class="n">validates</span> <span class="ss">:username</span><span class="p">,</span> <span class="ss">presence: </span><span class="kp">true</span><span class="p">,</span> <span class="ss">uniqueness: </span><span class="kp">true</span>
+
+  <span class="c1">#-----------</span>
+  <span class="n">enum</span> <span class="ss">role: </span><span class="p">[</span> <span class="ss">:rookie</span><span class="p">,</span> <span class="ss">:pro</span><span class="p">,</span> <span class="ss">:admin</span> <span class="p">]</span>
+</code></pre> <p>I&rsquo;d like to make a note that I decided to use devise in lieu of rolling my own authentication system under the idea that it would help me focus on the app more so than anything else&hellip;this turned out not to be the case. I think I spent much more time enabling the ability to log in with username instead of devise&rsquo;s default email/password combination. On the flip side, because I decided to go with Devise I learned about <code>allow_nested_attributes_for</code> (which I will make a post on to talk about a bit more). Back on the subject of enums, as you can see from my Drubbble app snippet, I have 3 roles; rookie, pro, admin. A more parred down version of Dribbble&rsquo;s roles for users. By defining the roles in the User model, I now have access to a few handy methods, namely <code>.admin</code> and <code>.admin?</code> (the same applies to pro, and rookie). With these, you can do set define a user&rsquo;s role within the application. Each role is assigned an integer (rookie = 0, pro = 1, and admin = 2) which is much better to manage than using a boolean. Currently, I&rsquo;m in the middle of actually utilizing the different roles past making my test account an administrator to test my model associations via Rails Admin panel. Ultimately my aim is to allow pro users to have access to anything within the application, while rookie users are restricted until they&rsquo;re invited by a pro user. Hopefully in the next week or so I&rsquo;ll have that functionality in (and will write about it).</p> </div> <footer> <ul> <li><a href="http://www.twitter.com/dipet_low">Twitter</a></li> <li><a href="mailto:hey_dion@dipet.me?sqs_title=Hello!">Email</a></li> <li><a href="http://www.github.com/Diope">Github</a></li> <li><a href="/feed.xml">RSS Feed (Atom)</a></li> </ul> </footer> </body> </html>

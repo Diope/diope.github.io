@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Dip･et</title>
+  <subtitle>The ramblings of a developing web developer</subtitle>
+  <id>http://dipet.me</id>
+  <link href="http://dipet.me"/>
+  <link href="http://dipet.me/feed.xml" rel="self"/>
+  <updated>2015-08-01T01:00:00-04:00</updated>
+  <author>
+    <name>Dion Pettaway</name>
+  </author>
+  <entry>
+    <title>Enumerators!</title>
+    <link rel="alternate" href="http://dipet.me/blog/enums/"/>
+    <id>http://dipet.me/blog/enums/</id>
+    <published>2015-08-01T01:00:00-04:00</published>
+    <updated>2015-08-17T11:28:50-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;So I&amp;rsquo;ve decided that I wanted to learn Swift ontop of learning Ruby and Javascript, and I recently had an &amp;ldquo;Oooooh&amp;rdquo; moment. Well to clarify, I kind of knew what enums were but I wasn&amp;rsquo;t quite sure on the specifics of it. I knew of enums because of utilizing the Rails enum feature in my personal project &lt;a href="https://github.com/Diope/drubbble"&gt;Drubbble&lt;/a&gt; (yes it&amp;rsquo;s a &lt;a href="https://dribbble.com/"&gt;Dribbble&lt;/a&gt; clone&amp;hellip;then Dribbble went and did a redesign!) I&amp;rsquo;m constantly adding features to it as I learn more about Rails. The last thing I added (and need to properly utilize) is enums, I used Rails enums to provide roles for users within my rails application. The concept was pretty simple, instead of using a boolean to check whether or not a user was a administrator, I instead went with enums. One of the biggest reasons is because enums are MUCH more flexible and can be adjusted to add or take away roles without creating more booleans. I imagine having an application that has 8 user roles, creating a boolean for each of them is utter madness (SPARTA!).  Enough talk, time to explain via code.&lt;/p&gt;
+&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;User&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;ActiveRecord&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Base&lt;/span&gt;
+  &lt;span class="n"&gt;after_initialize&lt;/span&gt; &lt;span class="ss"&gt;:set_default_role&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:if&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="ss"&gt;:new_record?&lt;/span&gt;
+  &lt;span class="n"&gt;after_create&lt;/span&gt; &lt;span class="ss"&gt;:create_profile&lt;/span&gt;
+
+  &lt;span class="kp"&gt;attr_accessor&lt;/span&gt; &lt;span class="ss"&gt;:login&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:tagline&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:location&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:website&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:available&lt;/span&gt;
+  &lt;span class="n"&gt;devise&lt;/span&gt; &lt;span class="ss"&gt;:database_authenticatable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:registerable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+         &lt;span class="ss"&gt;:recoverable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:rememberable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:trackable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:validatable&lt;/span&gt;
+  &lt;span class="c1"&gt;#-----------&lt;/span&gt;
+  &lt;span class="n"&gt;validates&lt;/span&gt; &lt;span class="ss"&gt;:username&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;presence: &lt;/span&gt;&lt;span class="kp"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;uniqueness: &lt;/span&gt;&lt;span class="kp"&gt;true&lt;/span&gt;
+
+  &lt;span class="c1"&gt;#-----------&lt;/span&gt;
+  &lt;span class="n"&gt;enum&lt;/span&gt; &lt;span class="ss"&gt;role: &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="ss"&gt;:rookie&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:pro&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:admin&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I&amp;rsquo;d like to make a note that I decided to use devise in lieu of rolling my own authentication system under the idea that it would help me focus on the app more so than anything else&amp;hellip;this turned out not to be the case. I think I spent much more time enabling the ability to log in with username instead of devise&amp;rsquo;s default email/password combination. On the flip side, because I decided to go with Devise I learned about &lt;code&gt;allow_nested_attributes_for&lt;/code&gt; (which I will make a post on to talk about a bit more). Back on the subject of enums, as you can see from my Drubbble app snippet, I have 3 roles; rookie, pro, admin. A more parred down version of Dribbble&amp;rsquo;s roles for users. By defining the roles in the User model, I now have access to a few handy methods, namely &lt;code&gt;.admin&lt;/code&gt; and &lt;code&gt;.admin?&lt;/code&gt; (the same applies to pro, and rookie). With these, you can do set define a user&amp;rsquo;s role within the application. Each role is assigned an integer (rookie = 0, pro = 1, and admin = 2) which is much better to manage than using a boolean. Currently, I&amp;rsquo;m in the middle of actually utilizing the different roles past making my test account an administrator to test my model associations via Rails Admin panel. Ultimately my aim is to allow pro users to have access to anything within the application, while rookie users are restricted until they&amp;rsquo;re invited by a pro user. Hopefully in the next week or so I&amp;rsquo;ll have that functionality in (and will write about it).&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Middleman vs. Me</title>
+    <link rel="alternate" href="http://dipet.me/blog/Middleman-vs-Me/"/>
+    <id>http://dipet.me/blog/Middleman-vs-Me/</id>
+    <published>2015-07-16T01:00:00-04:00</published>
+    <updated>2015-08-17T11:25:43-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;So my old blog was a jekyll project and to be honestly when I first set it up, I had no clue what I was doing in any sense of the word. I didn&amp;rsquo;t know anything about handlebars or the syntax. All I really knew at the time was a little bit of erb that I picked up from Rails. Regardless I pushed on and finally got my blog running via Github. I wasn&amp;rsquo;t really happy with it, stock-ish theme and no real customization.&lt;/p&gt;
+
+&lt;p&gt;A few months have passed and I have decided to switch to middleman and do some styling with this blog. I wanted it to be focused on the writing and no so much the site. So I stripped everything away and decided that colors are the most important thing for my blog. So while it&amp;rsquo;s very simplistic, I think it works for what I want to do and keeping it lightweight for hosting on Github.&lt;/p&gt;
+
+&lt;p&gt;Most of the blog didn&amp;rsquo;t take long, I spent a vast majority of my time figuring out the best way to pass data to change each blog&amp;rsquo;s colors and have it reflected the category links via frontmatter. I&amp;rsquo;ll go over it in detail in a later blog entry.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>I'm Black &amp; An Imposter</title>
+    <link rel="alternate" href="http://dipet.me/blog/ImposterAndBlack/"/>
+    <id>http://dipet.me/blog/ImposterAndBlack/</id>
+    <published>2015-07-13T01:00:00-04:00</published>
+    <updated>2015-08-17T11:25:34-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;Though about how to write this particular entry for a while and how I would describe the fears I have. I couldn&amp;rsquo;t think of a title that truly represented what I&amp;rsquo;m feeling and how I&amp;rsquo;m attempting to overcome. My hope is that people read the article and not simply stop at the title.&lt;/p&gt;
+
+&lt;p&gt;Everyone knows what imposter syndrome is and how prevelant it is in the web development community (and honestly ANY professional setting). For those who are scratching their head, a quick summary on imposter syndrome would be despite the fact a person has evidence of accomplishments and competence, they feel that have convinced themselves that they are frauds and do not deserve the success bestowed upon them. It has much in common with modesty but the key difference is that a modest person is still able to internalize their accomplishments.&lt;/p&gt;
+
+&lt;p&gt;I find myself in a weird position as I&amp;rsquo;m acutely aware that I&amp;rsquo;m a &amp;ldquo;victim&amp;rdquo; of this despite some evidence of competence in Rails/Ruby and Javascript. But I feel it&amp;rsquo;s not &amp;ldquo;enough&amp;rdquo;; I tend to compare myself to people with 4 year degrees in CS and determine that I have no business applying for any position in Web Development. I have no right to take a position from someone who has put in more time to learn the fundamentals of programming. I feel that if I&amp;rsquo;m going to apply for a position then I need to be as proficient in the fundamentals as those guys. I need to know and understand what I see as the bare necessities to call myself a &amp;ldquo;programmer&amp;rdquo;. I am not a programmer, I am guy that can manipulate bits of code to do what I want in a crude approximation many times not fully understanding how I got my problem figured out. I can&amp;rsquo;t even create a simple command line application, while these guys can create full fledged complex applications. Why should I apply for a position when I have a rudimentary understanding of big O notation? Because I can&amp;rsquo;t take out a student loan for school, I can do the next best thing, continuously study until I&amp;rsquo;m at that level, and when I am at that level I need to go beyond it.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I am not a programmer, I am guy that can manipulate bits of code to do what I want in a crude approximation.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I know you&amp;rsquo;re reading this and thinking what does being black have to do with that? Well that magnifies my issue even more, ask a black person if they feel as if they have to work &amp;ldquo;twice as hard to achieve just as much as anyone else&amp;rdquo; and many of them will echo how much they relate to that statement. It&amp;rsquo;s this mindset in addition to imposter syndrome that keeps me from applying for any position. So what does &amp;ldquo;twice as hard to achieve just as much&amp;rdquo; really mean? It&amp;rsquo;s always something I hear people ask me when they are curious about what it&amp;rsquo;s like to be black in America (a subject I hate talking about as I feel I&amp;rsquo;m walking on eggshells.) Having had to explain this quite a bit over the course of my life (many times to &amp;ldquo;justify&amp;rdquo; not fitting into people&amp;rsquo;s stereotypical view of black people they&amp;rsquo;ve garnered from media) I&amp;rsquo;ve got it down to a concise explanation. Imagine you have two resumés, both people have the exact same skillset and talents. The only difference between them is that one is black and the other is white. Now both of these gentlemen are equally qualified for the position. But what will most hiring managers (who in Silicon Valley are statistically most likely to be white male) pick? They&amp;rsquo;re going to pick the white gentleman. But here&amp;rsquo;s the thing, they don&amp;rsquo;t pick him because they&amp;rsquo;re racist. Far from it, they&amp;rsquo;ll tend to pick him because he&amp;rsquo;s familiar to them. People underestimate how much their subconscience plays a role in these sort of things. Regardless of your ethnicity, in such a position you&amp;rsquo;re going to go with someone you feel more resembles yourself and those you&amp;rsquo;ve grown up around. This is pretty much something we&amp;rsquo;ve all done in some aspect of our life. It might not have been a major thing but we&amp;rsquo;ve done it.&lt;/p&gt;
+
+&lt;p&gt;Looking at the makeup of Silicon Valley and the web development community at large the pressure to be twice as good is tremendous. Combine this with imposter syndrome and you can see why I (or anyone like me) would be scared to apply for positions. Not only am I not as skilled as someone with a 4 year degree in CS or engineering, but because I&amp;rsquo;m the outlier I have to display an even higher level of understanding just to compete. Your github profile has 5 projects of incredible depth that show your understanding of rails and ruby as a programming language? Then my profile needs to have at least 7 projects, with a few projects that are in production and actually being used. This will make my resume look as good to a prospective employee as my nearest competitor.&lt;/p&gt;
+
+&lt;p&gt;With all that stated I&amp;rsquo;m not content doing this studying and working towards the goal of being a developer and never applying for position because of this feeling of inadequacy compared to my peers. I&amp;rsquo;m still going to apply for positions (the question being when at this point) that I feel i&amp;rsquo;m qualified for. Though admittedly what I feel I&amp;rsquo;m qualified for is skewed due to my fears. This is something I&amp;rsquo;m constantly struggling with and trying to overcome, it&amp;rsquo;s not easy but then again very few things in life are now are they?&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Shy Girls</title>
+    <link rel="alternate" href="http://dipet.me/misc/yup/"/>
+    <id>http://dipet.me/misc/yup/</id>
+    <published>2015-07-06T01:00:00-04:00</published>
+    <updated>2015-08-11T18:18:50-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="Shy Girls himself" src="http://res.cloudinary.com/nylon/image/upload/t_featured_images-hero,f_auto,fl_lossy,q_80/featured_images/attachments/000/008/769/shy-girls.jpg" /&gt;&lt;/p&gt;
+
+&lt;p&gt;One of my favorite genres of music has always been NeoSoul and R&amp;amp;B, as part of the whole &amp;ldquo;millennial&amp;rdquo; generation, I&amp;rsquo;ve witnessed the overall decline in output from these two genres (please do not confuse this with me saying these two genres are dead, there are still new artists creating quality music within these two genres, their exposure levels however have dropped), and worse I&amp;rsquo;ve seen an increase in the media labeling pop music as R&amp;amp;B. Example being MTV calling Katy Perry&amp;rsquo;s single &amp;ldquo;Dark Horse&amp;rdquo; an R&amp;amp;B song. It is in no way R&amp;amp;B and the labeling it as such is slightly annoying. With all this stated, there has been this new subgenre that has emerged in recent times that has been amazing to watch unfold. There are many different names for the genre ranging from &amp;ldquo;cloud R&amp;amp;B&amp;rdquo; to &amp;ldquo;alternative R&amp;amp;B&amp;rdquo;, and &amp;ldquo;PBR&amp;amp;B&amp;rdquo;. The most often description used to the genre is as follows.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Much of the production is echo-laden and lofty, often using a lot of synthesizers and filtered drums—sonically giving a nod to Prince&amp;rsquo;s vintage &amp;lsquo;80s sound. Additionally, for the most part, it doesn&amp;rsquo;t feel as if these artists are selling sex as their main entrée. Granted, they still sing about the topic, and in explicit detail, but it&amp;rsquo;s in equal proportion to drugs, spirituality and personal philosophies. You don’t get that same diversity in subject matter from the majority of modern R&amp;amp;B singers. - &lt;a href="http://thegrio.com/2012/10/04/changing-of-the-guard-how-frank-ocean-miguel-and-more-helped-rb-find-its-soul-again/"&gt;Changing of the Guard&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;There are many artists who help define the new genre/movement ranging from FKA Twigs, Jhene Aiko to Miguel, and The Weeknd. A new artist I discovered some time ago is &lt;a href="http://www.shygirls4wz.com/"&gt;Shy Girls&lt;/a&gt;, while he might sound similar to The Weeknd, I do find the differences in how they approach a song to be a big enough differentiator for Shy Girls to succeed and not simply be seen as &amp;ldquo;lesser&amp;rdquo; The Weeknd. While The Weeknd tends to focus on the emotionally loneliness that overcomes him when he&amp;rsquo;s not with a woman. Shy Girls seems to focus more on the mindset of females and how they approach him and for what reasons. Example being in his song &amp;ldquo;Xhampange&amp;rdquo;, he acknowledges that the particular girl in the song is only talking to him for casual sex and the lifestyle that has befallen him due to his increasing exposure/popularity and despite this he is completely fine with the arrangement and does not the judge the girl for it. In fact he is happy because it helps ease his own loneliness.&lt;/p&gt;
+
+&lt;p&gt;I find the entire mixtape to be a nice journey through the current life of Shy Girls, I would say the only low point is his guest feature selection. There is an art to rapping and unfortunately the rappers he allows on his mixtape are not amazing. Fortunately they don&amp;rsquo;t detract nearly enough not to enjoy the mixtape. I personally hope his exposure and success continues as I find myself listening to his music quite frequently.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Pixiv</title>
+    <link rel="alternate" href="http://dipet.me/misc/pixiv/"/>
+    <id>http://dipet.me/misc/pixiv/</id>
+    <published>2015-07-05T01:00:00-04:00</published>
+    <updated>2015-08-11T18:17:49-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="Pixiv" src="../../images/pixiv_welcome.jpg" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Since I was a child I&amp;rsquo;ve always been a big doodler, while I&amp;rsquo;m absolutely horribly (I never really applied myself) artist never the less I find myself doodling all the time when I&amp;rsquo;m bored or my attention waivers. While in Japan (I&amp;rsquo;m a military brat) I was always in awe of my classmates doodles and differing styles and honestly that was my absolute favorite part about being an exchange student. Upon moving back to the US, I kind of lost interest in art altogether, though I would still doodle when bored and otherwise.&lt;/p&gt;
+
+&lt;p&gt;A few years ago via the gaming forum &lt;a href="http://neogaf.com"&gt;NeoGAF&lt;/a&gt; I stumbled upon &lt;a href="http://www.pixiv.net/"&gt;Pixiv&lt;/a&gt; a website dedicated to artists who either do it for a living or just love to doodle. The community is great and there are so many things to take from it. I often browse it looking for color schemes for personal web projects or just to admire different. There are some UX issues I have with it, especially for English users (in order to switch the language to English&amp;hellip;you have to go through the site in Japanese and make your way to settings and change it to English. I&amp;rsquo;ll provide walkthrough below).&lt;/p&gt;
+
+&lt;p&gt;First thing one needs to do is sign up for a Pixiv account at &lt;a href="http://www.pixiv.net/"&gt;Pixiv&lt;/a&gt;, the process is straight forward and doesn&amp;rsquo;t need much explanation. I recommend creating a secondary facebook account that you utilize for login authorization purposes on 3rd party websites (or twitter). If you&amp;rsquo;re going the email route, then just do the standard email dance. Once your account is set up, you will be presented with this page.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="settings" src="../../images/pixiv_settings.jpg" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Well I lied, this is the settings page you&amp;rsquo;re trying to get to, simply go to the top right link and click the first one (highlighted) it will read 「ユーザ設定」click on it and you will be presented with the aforementioned page. Half way down the page you should find/see 「使用する言語」click on the accompanying drop down and you&amp;rsquo;ll see &amp;ldquo;English&amp;rdquo; in&amp;hellip;English lol. Click on that and English will be used site-wide. The rest of the site kind of becomes self explanatory after you get past that point. As you follow, your feed will act like twitter, showing you images from those you follow as well as images those you follow like/favorite. I pretty much follow artists at complete random, but there are a few to get you started.&lt;/p&gt;
+
+&lt;h5 id="kr0npr1nz"&gt;&lt;a href="http://www.pixiv.net/member_illust.php?id=789222"&gt;KR0NPR1NZ&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;&lt;img alt="ノトス" src="http://i.imgur.com/NTHAqFR.jpg" /&gt;&lt;/p&gt;
+
+&lt;h5 id="mujiha"&gt;&lt;a href="http://www.pixiv.net/member_illust.php?id=388730"&gt;mujiha&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;&lt;img alt="New Year" src="http://i.imgur.com/dh0B3KE.png" /&gt;&lt;/p&gt;
+
+&lt;h5 id="のば"&gt;&lt;a href="http://www.pixiv.net/member.php?id=222905"&gt;のば&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;![Fantasy Bridge, Mythical City]&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Hub</title>
+    <link rel="alternate" href="http://dipet.me/blog/Hub/"/>
+    <id>http://dipet.me/blog/Hub/</id>
+    <published>2015-06-15T01:00:00-04:00</published>
+    <updated>2015-08-02T00:52:24-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;I spend quite a bit of time in terminal, almost everything I do for the day goes through the terminal and it&amp;rsquo;s rare that I don&amp;rsquo;t have a window open in the background somewhere. Granted I haven&amp;rsquo;t mustered up the courage to utilize VIM or EMAC.&lt;/p&gt;
+
+&lt;p&gt;One thing I wasn&amp;rsquo;t a fan of was the inability to create and push repos in Github from the terminal. Or at least to my knowledge. I recently learned that I could use cURL commands to create repos on Github.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;curl -u &amp;quot;$username:$token&amp;quot; https://api.github.com/user/repos -d &amp;#39;{&amp;quot;name&amp;quot;:&amp;quot;&amp;#39;$repo_name&amp;#39;&amp;quot;}&amp;#39;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;I though, &amp;ldquo;could I create a script in bash that allows me to push my files without ever firing up chrome?&amp;rdquo;, so I decided to ask around on stack overflow for direction and embark on this.&lt;/p&gt;
+
+&lt;p&gt;I opened a query and the very first response returned something interesting. Someone else had already thought the samething and saved many people the trouble (obviously I wasn&amp;rsquo;t the first to think of this) of having to built it themselves; thus introducing &lt;a href="https://hub.github.com/"&gt;Hub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A great little script that has already saved me time (or at least the repetition of having to create a new repo via the browser). Best thing to do is make an alias for hub (and name it git, as hub inherits all of git&amp;rsquo;s commands).&lt;/p&gt;
+
+&lt;p&gt;Hopefully others get some use out of hub. I still think I&amp;rsquo;m going to create my own script for creating an empty repo just to see if I can get the logic right, will probably be a weekend project.&lt;/p&gt;
+</content>
+  </entry>
+</feed>
