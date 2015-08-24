@@ -5,10 +5,26 @@
   <id>http://dipet.me</id>
   <link href="http://dipet.me"/>
   <link href="http://dipet.me/feed.xml" rel="self"/>
-  <updated>2015-08-01T01:00:00-04:00</updated>
+  <updated>2015-08-16T01:00:00-04:00</updated>
   <author>
     <name>Dion Pettaway</name>
   </author>
+  <entry>
+    <title>Mind the Gap</title>
+    <link rel="alternate" href="http://dipet.me/blog/mind_the_gap/"/>
+    <id>http://dipet.me/blog/mind_the_gap/</id>
+    <published>2015-08-16T01:00:00-04:00</published>
+    <updated>2015-08-24T13:30:59-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;I&amp;rsquo;ve gone through several ruby books jotting down notes, doing examples, and creating small command line tools to help solidify the knowledge I&amp;rsquo;ve gained through the books, and yet and still I find myself at a loss when it comes to the ability to &amp;ldquo;program&amp;rdquo; essentially. I sit and ponder is it the syntax that eludes me? Is it my lack of understanding? I can&amp;rsquo;t place my find on any one thing that I feel I am lacking but it&amp;rsquo;s frustrating none the less. I&amp;rsquo;ve been given a coding assignment to create Tic-Tac-Toe in Ruby, which is funny because that&amp;rsquo;s where I am on the Odin Project. Yet I find myself staring at a blank .rb file unable to even think how to start this. There is a gap in knowledge that I do not know how to fill. &lt;/p&gt;
+
+&lt;p&gt;I know a few people on various discussion boards who joke about a &amp;ldquo;nebulous&amp;rdquo; area of learning that exisits between learning the syntax and understanding the core concepts (arrays, hashes/dictionaries, if-else-while-unless-until, structs/classes/modules, function/method) and being able to successfully piece them all toegether to create something. I haven&amp;rsquo;t been able to figure out the best approach to getting past this area. I&amp;rsquo;ve signed up for codekata websites (codewars, hackerrank) and have committed to learning and figuring out logic through repetition but even then I hit a wall in which I can go no higher regardless of how much time I put into the attempt (example being, I struggled for 9 hours trying to solve one of the coding challenges only to get nowhere and ultimately give up). It&amp;rsquo;s these issues I run into that make me second guess if I&amp;rsquo;m cut out to be a programmer, and while I love trying to solve these challenges my constant inability to do so really lowers my enjoyment. Constantly having to look up the solution isn&amp;rsquo;t my idea of success. I have many notes on the solutions I have looked up and yet and still it does nothing for me when it comes to the next difficult solution.&lt;/p&gt;
+
+&lt;p&gt;Taking a step back and analyising it, I think I am at the end of what I can do as far as self teaching goes and I&amp;rsquo;m starting to feel that I won&amp;rsquo;t be able to make meaningful progress unless I get a mentor/teacher to help me fill in these gaps. While I&amp;rsquo;m slowly coming to terms with this a new reality hits me, vast majority of online mentors command ridiculous prices (which they derserve to, they are after all teaching something). Unfortunately I don&amp;rsquo;t have such finances available to me (if I did I&amp;rsquo;d just go to a code bootcamp or something) and I don&amp;rsquo;t live in an area in which programmers can be found in mass quantities, so I am stuck for lack of a better word. &lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Enumerators!</title>
     <link rel="alternate" href="http://dipet.me/blog/enums/"/>
@@ -98,40 +114,6 @@
 &lt;p&gt;There are many artists who help define the new genre/movement ranging from FKA Twigs, Jhene Aiko to Miguel, and The Weeknd. A new artist I discovered some time ago is &lt;a href="http://www.shygirls4wz.com/"&gt;Shy Girls&lt;/a&gt;, while he might sound similar to The Weeknd, I do find the differences in how they approach a song to be a big enough differentiator for Shy Girls to succeed and not simply be seen as &amp;ldquo;lesser&amp;rdquo; The Weeknd. While The Weeknd tends to focus on the emotionally loneliness that overcomes him when he&amp;rsquo;s not with a woman. Shy Girls seems to focus more on the mindset of females and how they approach him and for what reasons. Example being in his song &amp;ldquo;Xhampange&amp;rdquo;, he acknowledges that the particular girl in the song is only talking to him for casual sex and the lifestyle that has befallen him due to his increasing exposure/popularity and despite this he is completely fine with the arrangement and does not the judge the girl for it. In fact he is happy because it helps ease his own loneliness.&lt;/p&gt;
 
 &lt;p&gt;I find the entire mixtape to be a nice journey through the current life of Shy Girls, I would say the only low point is his guest feature selection. There is an art to rapping and unfortunately the rappers he allows on his mixtape are not amazing. Fortunately they don&amp;rsquo;t detract nearly enough not to enjoy the mixtape. I personally hope his exposure and success continues as I find myself listening to his music quite frequently.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Pixiv</title>
-    <link rel="alternate" href="http://dipet.me/misc/pixiv/"/>
-    <id>http://dipet.me/misc/pixiv/</id>
-    <published>2015-07-05T01:00:00-04:00</published>
-    <updated>2015-08-11T18:17:49-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img alt="Pixiv" src="../../images/pixiv_welcome.jpg" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Since I was a child I&amp;rsquo;ve always been a big doodler, while I&amp;rsquo;m absolutely horribly (I never really applied myself) artist never the less I find myself doodling all the time when I&amp;rsquo;m bored or my attention waivers. While in Japan (I&amp;rsquo;m a military brat) I was always in awe of my classmates doodles and differing styles and honestly that was my absolute favorite part about being an exchange student. Upon moving back to the US, I kind of lost interest in art altogether, though I would still doodle when bored and otherwise.&lt;/p&gt;
-
-&lt;p&gt;A few years ago via the gaming forum &lt;a href="http://neogaf.com"&gt;NeoGAF&lt;/a&gt; I stumbled upon &lt;a href="http://www.pixiv.net/"&gt;Pixiv&lt;/a&gt; a website dedicated to artists who either do it for a living or just love to doodle. The community is great and there are so many things to take from it. I often browse it looking for color schemes for personal web projects or just to admire different. There are some UX issues I have with it, especially for English users (in order to switch the language to English&amp;hellip;you have to go through the site in Japanese and make your way to settings and change it to English. I&amp;rsquo;ll provide walkthrough below).&lt;/p&gt;
-
-&lt;p&gt;First thing one needs to do is sign up for a Pixiv account at &lt;a href="http://www.pixiv.net/"&gt;Pixiv&lt;/a&gt;, the process is straight forward and doesn&amp;rsquo;t need much explanation. I recommend creating a secondary facebook account that you utilize for login authorization purposes on 3rd party websites (or twitter). If you&amp;rsquo;re going the email route, then just do the standard email dance. Once your account is set up, you will be presented with this page.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="settings" src="../../images/pixiv_settings.jpg" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Well I lied, this is the settings page you&amp;rsquo;re trying to get to, simply go to the top right link and click the first one (highlighted) it will read 「ユーザ設定」click on it and you will be presented with the aforementioned page. Half way down the page you should find/see 「使用する言語」click on the accompanying drop down and you&amp;rsquo;ll see &amp;ldquo;English&amp;rdquo; in&amp;hellip;English lol. Click on that and English will be used site-wide. The rest of the site kind of becomes self explanatory after you get past that point. As you follow, your feed will act like twitter, showing you images from those you follow as well as images those you follow like/favorite. I pretty much follow artists at complete random, but there are a few to get you started.&lt;/p&gt;
-
-&lt;h5 id="kr0npr1nz"&gt;&lt;a href="http://www.pixiv.net/member_illust.php?id=789222"&gt;KR0NPR1NZ&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;&lt;img alt="ノトス" src="http://i.imgur.com/NTHAqFR.jpg" /&gt;&lt;/p&gt;
-
-&lt;h5 id="mujiha"&gt;&lt;a href="http://www.pixiv.net/member_illust.php?id=388730"&gt;mujiha&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;&lt;img alt="New Year" src="http://i.imgur.com/dh0B3KE.png" /&gt;&lt;/p&gt;
-
-&lt;h5 id="のば"&gt;&lt;a href="http://www.pixiv.net/member.php?id=222905"&gt;のば&lt;/a&gt;&lt;/h5&gt;
-
-&lt;p&gt;![Fantasy Bridge, Mythical City]&lt;/p&gt;
 </content>
   </entry>
   <entry>
