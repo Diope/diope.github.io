@@ -1,0 +1,79 @@
+<!doctype html> <html> <head> <meta charset=utf-8 /> <link href="../../stylesheets/all.css" rel=stylesheet /> <script src="//squaresend.com/squaresend.js"></script> <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <meta http-equiv=X-UA-Compatible content='IE=edge;chrome=1'/> <title>Moving Data Between Views</title> <link rel=alternate type="application/atom+xml" title="Atom Feed" href="/feed.xml"/> </head> <style>
+    body {
+      background-color: rgb(40, 40, 40);
+    }
+
+
+    .article p {
+      color: rgb(255, 153, 0);
+    }
+    .header {
+      color: rgb(255, 153, 0);
+    }
+    .meta small{
+      color: rgb(255, 153, 0);
+    }
+    .content ul li {
+        color: rgb(255, 153, 0);
+    }
+
+
+    .header a {
+      color: rgb(238, 136, 129);
+      text-decoration: none;}
+
+    .header a:active, .header a:focus, .header a:hover {
+      text-decoration: underline; }
+
+    .article a {
+      color: rgb(238, 136, 129);
+      text-decoration: none;
+      transition: color 0.2s linear; }
+
+    .article a:active, .article a:focus, .article a:hover {
+      text-decoration: underline;}
+
+      body {
+        border-top: 6px solid rgb(238, 136, 129);
+      }
+
+
+    footer li a {
+      color: rgb(238, 136, 129);
+      text-decoration: none;
+      transition: color 0.2s linear;}
+
+      footer li a:active, footer li a:focus, footer li a:hover {
+        text-decoration: underline;
+        color: rgb(238, 136, 129);}
+
+      .navbar a{
+        color: rgba(238, 136, 129, 0.75);
+      }
+
+      .navbar a:active, .navbar a:focus, .navbar a:hover {
+        color: rgba(238, 136, 129, 1); }
+
+        ::selection {
+          color: rgba(238, 136, 129, 0.70);
+        }
+        ::-moz-selection {
+          color: rgba(238, 136, 129, 0.70);
+        }
+
+</style> <body> <nav class=navbar> <ul> <li><a href="/">ABOUT</a></li>･ <li><a href="/blog/">NERD TALK</a></li>･ <li><a href="/design/">DESIGN</a></li>･ <li><a href="/misc/">MISC</a></li> </ul> </nav> <div class=content role=main> <div class=header> <h1>Moving Data Between Views</h1> <div class=meta> <small>Sep 29, 2015</small> <small>Pass it on!</small> <small> Tags: <a href="/tags/ios/">iOS</a> <a href="/tags/swift/">Swift</a> <a href="/tags/programming/">Programming</a> </small> </div> </div> <div class=article> <p>The delegate pattern is commonly used to situations such as: Screen A opens screen B and at some point screen B needs to communicate back to screen A. The solution is to make screen A the delgate of screen B, so that B can send it’s messages to A whenever it needs to. This is the preferred way of screen/view communication. The principle of screens being independent of each others but yet still able to communicate is called loose coupling and is considered good software design practice. Delegates go hand-in-hand with protocols which is a prominent feature of the Swift language. For an example of setting up protocols and delegates see below</p> <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">AddItemViewControllerDelegate</span><span class="p">:</span> <span class="kd">class</span> <span class="p">{</span>
+  <span class="kd">func</span> <span class="nf">addItemViewControllerDidCancel</span><span class="p">(</span><span class="nv">controller</span><span class="p">:</span> <span class="kt">AddItemViewController</span><span class="p">)</span>
+  <span class="kd">func</span> <span class="nf">addItemViewController</span><span class="p">(</span><span class="nv">controller</span><span class="p">:</span> <span class="kt">AddItemViewController</span><span class="p">,</span> <span class="n">didFinishAddingItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">ChecklistItem</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre> <p>This defines the AddItemViewController Delegate protocol. In Swift a protocol is simply a name for a group of methods. A protocol doesn’t implement any of the methods it declares. It just says: any object that conforms to this protocol must implement methods, X,Y, and Z. </p> <p>The two methods listed in the example are: <code>addItemViewControllerDidCancel()</code> <code>addItemViewController(didFinishAddingItem)</code> The first oneis for when the user presses Cancel, the second one is for when they press Done. In that case, the didFinishAddingItem paramter passes along the new ChecklistItem object. To make the ChecklistViewController conform to this created protocol, it must provide implementations of these two methods. From then one can refer to the ChecklistViewContorller using just the protocol name.</p> <p>Inside the AddItemViewController you can write <code>var delegate: AddItemViewController Delegate</code></p> <p>The variable delegate is nothing more than a reference to some object that implements the methods of this protocol. You can send messages to the object from the delegate variable, without knowing what kind of object it really is.</p> <p>Swift has a shorthand for skipping the work when delegate is not set: <code>delegate?.addItemViewControllerDidCancel(self)</code> Here the ? tells Swift not to send the message if delegate is nil. You can read this as, “Is there a delegate?” Then send the message. This is known as optional chaining and is used a lot within Swift.</p> <p>Five Steps to Delegates</p> <ul> <li>Define a delegate protocol for object B.</li> <li>Give object B an optional delegate variable. This variable should be weak.</li> <li>Make object B send messages to its delegate whens oemthing interesting happens, such as the user pressing the cancel or done buttons, or when it needs a piece of infromation</li> <li>Make object A conform to the delegate protocol. It should put the name of the protocol in its class line and implement the methods from the protocol.</li> <li>Tell object B that object A is now it’s delegate. The proper place to do this is in the prepareForSegue(sender) method.</li> </ul> <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">prepareForSegue</span><span class="p">(</span><span class="nv">segue</span><span class="p">:</span> <span class="kt">UIStoryboardSegue</span><span class="p">,</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">?)</span> <span class="p">{</span>
+  <span class="c1">// 1</span>
+  <span class="k">if</span> <span class="n">segue</span><span class="o">.</span><span class="n">identifier</span> <span class="o">==</span> <span class="s">"AddItem"</span> <span class="p">{</span>
+    <span class="c1">// 2</span>
+    <span class="k">let</span> <span class="nv">navigationController</span> <span class="o">=</span> <span class="n">segue</span><span class="o">.</span><span class="n">destinationViewController</span> <span class="k">as!</span> <span class="kt">UINavigationController</span>
+    <span class="c1">// 3</span>
+    <span class="k">let</span> <span class="nv">controller</span> <span class="o">=</span> <span class="n">navigationController</span><span class="o">.</span><span class="n">topViewController</span> <span class="k">as!</span> <span class="kt">AddItemViewController</span>
+    <span class="c1">// 4</span>
+    <span class="n">controller</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre> <p>This is what the prepareForSegue does step-by-step</p> <ul> <li>Because there may be more than one segue per view controller, it’s best practice to give each one a unique identifier and to check for that identifier first to make sure you’re handling the correct segue.</li> <li>The new view controller can be found in segue.destinationViewController. The storyboard shows that the segue does not go directly to AddItemViewController but to the navigation controller that embeds it.</li> <li>To find the addItemViewController, look at the navigation controller’s topViewController property. This property refers to the screen that is currently active inside the navigation controller.</li> <li>Once you have a reference to the AddItemViewController object, you can set its delegate property to self and the connection is complete. Self in the example refers to the ChecklistViewController.</li> </ul> </div> <footer> <ul> <li><a href="http://www.twitter.com/dipet_low">Twitter</a></li> <li><a href="mailto:hey_dion@dipet.me?sqs_title=Hello!">Email</a></li> <li><a href="http://www.github.com/Diope">Github</a></li> <li><a href="/feed.xml">RSS Feed (Atom)</a></li> </ul> </footer> </body> </html>

@@ -5,16 +5,140 @@
   <id>http://dipet.me</id>
   <link href="http://dipet.me"/>
   <link href="http://dipet.me/feed.xml" rel="self"/>
-  <updated>2015-08-16T01:00:00-04:00</updated>
+  <updated>2015-10-09T01:00:00-04:00</updated>
   <author>
     <name>Dion Pettaway</name>
   </author>
+  <entry>
+    <title>Mobile Sign-up</title>
+    <link rel="alternate" href="http://dipet.me/design/dailyUI001/"/>
+    <id>http://dipet.me/design/dailyUI001/</id>
+    <published>2015-10-09T01:00:00-04:00</published>
+    <updated>2015-10-30T22:00:50-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;Decided to take part in the daily UI design challege, though I had to make it a weekly thing as I don&amp;rsquo;t feel like I&amp;rsquo;d do my best work if I had to do one a day. Okay maybe I&amp;rsquo;m lying and I just will forget to do one daily.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="signup" src="images/weekly001.jpg" /&gt;
+&lt;a href="/images/weekly001.jpg"&gt;Click for Full&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The first challenge only said the Sign Up page and not the entire onboarding process&amp;hellip;which is my favorite part to be honest. Thinking of the best way to ease users into your product with the least amount of friction possible is much fun. Getting feedback from test users and using that data to better the product is one of my favorite feelings next to figuring out a programming issue. Obviously &amp;ldquo;Audeo&amp;rdquo; isn&amp;rsquo;t a real app (if it is, apologizes to the creators. Purely coincidental I promise!).&lt;/p&gt;
+
+&lt;p&gt;I made a conscious effort to push the user to signing in with Facebook or Twitter over creating an account. It&amp;rsquo;s easier for the user and that&amp;rsquo;s one less barrier they have to deal with when using the app. Many developers don&amp;rsquo;t release that users hate having to give out their email to YASN (Yet Another Social Network); removing this barrier makes them that much more likely to want to try out your product. Facebook is by far the most used way to sign in/signup for new products; it only makes sense to push the user to it in a way they don&amp;rsquo;t feel like you&amp;rsquo;re truly forcing them. By simply emphasizing Facebook and Twitter via giving their button more attention by way of color. You push the user to it without them knowing it. It is a much better approach than removing the ability to sign up for an account with your product&amp;rsquo;s internal sign up service.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Moving Data Between Views</title>
+    <link rel="alternate" href="http://dipet.me/blog/MovingData/"/>
+    <id>http://dipet.me/blog/MovingData/</id>
+    <published>2015-09-29T01:00:00-04:00</published>
+    <updated>2015-10-28T17:01:53-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;The delegate pattern is commonly used to situations such as: Screen A opens screen B and at some point screen B needs to communicate back to screen A. The solution is to make screen A the delgate of screen B, so that B can send it’s messages to A whenever it needs to. This is the preferred way of screen/view communication. The principle of screens being independent of each others but yet still able to communicate is called loose coupling and is considered good software design practice. Delegates go hand-in-hand with protocols which is a prominent feature of the Swift language. For an example of setting up protocols and delegates see below&lt;/p&gt;
+&lt;pre class="highlight swift"&gt;&lt;code&gt;&lt;span class="kd"&gt;protocol&lt;/span&gt; &lt;span class="kt"&gt;AddItemViewControllerDelegate&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="nf"&gt;addItemViewControllerDidCancel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;controller&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;AddItemViewController&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="nf"&gt;addItemViewController&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;controller&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;AddItemViewController&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;didFinishAddingItem&lt;/span&gt; &lt;span class="nv"&gt;item&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ChecklistItem&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This defines the AddItemViewController Delegate protocol. In Swift a protocol is simply a name for a group of methods. A protocol doesn’t implement any of the methods it declares. It just says: any object that conforms to this protocol must implement methods, X,Y, and Z. &lt;/p&gt;
+
+&lt;p&gt;The two methods listed in the example are:
+&lt;code&gt;addItemViewControllerDidCancel()&lt;/code&gt;
+&lt;code&gt;addItemViewController(didFinishAddingItem)&lt;/code&gt;
+The first oneis for when the user presses Cancel, the second one is for when they press Done. In that case, the didFinishAddingItem paramter passes along the new ChecklistItem object. To make the ChecklistViewController conform to this created protocol, it must provide implementations of these two methods. From then one can refer to the ChecklistViewContorller using just the protocol name.&lt;/p&gt;
+
+&lt;p&gt;Inside the AddItemViewController you can write &lt;code&gt;var delegate: AddItemViewController Delegate&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The variable delegate is nothing more than a reference to some object that implements the methods of this protocol. You can send messages to the object from the delegate variable, without knowing what kind of object it really is.&lt;/p&gt;
+
+&lt;p&gt;Swift has a shorthand for skipping the work when delegate is not set:
+&lt;code&gt;delegate?.addItemViewControllerDidCancel(self)&lt;/code&gt;
+Here the ? tells Swift not to send the message if delegate is nil. You can read this as, “Is there a delegate?” Then send the message. This is known as optional chaining and is used a lot within Swift.&lt;/p&gt;
+
+&lt;p&gt;Five Steps to Delegates&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Define a delegate protocol for object B.&lt;/li&gt;
+&lt;li&gt;Give object B an optional delegate variable. This variable should be weak.&lt;/li&gt;
+&lt;li&gt;Make object B send messages to its delegate whens oemthing interesting happens, such as the user pressing the cancel or done buttons, or when it needs a piece of infromation&lt;/li&gt;
+&lt;li&gt;Make object A conform to the delegate protocol. It should put the name of the protocol in its class line and implement the methods from the protocol.&lt;/li&gt;
+&lt;li&gt;Tell object B that object A is now it’s delegate. The proper place to do this is in the prepareForSegue(sender) method.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="highlight swift"&gt;&lt;code&gt;&lt;span class="k"&gt;override&lt;/span&gt; &lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="nf"&gt;prepareForSegue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;segue&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;UIStoryboardSegue&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;sender&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;AnyObject&lt;/span&gt;&lt;span class="p"&gt;?)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="c1"&gt;// 1&lt;/span&gt;
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;segue&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;identifier&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;"AddItem"&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// 2&lt;/span&gt;
+    &lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="nv"&gt;navigationController&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;segue&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;destinationViewController&lt;/span&gt; &lt;span class="k"&gt;as!&lt;/span&gt; &lt;span class="kt"&gt;UINavigationController&lt;/span&gt;
+    &lt;span class="c1"&gt;// 3&lt;/span&gt;
+    &lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="nv"&gt;controller&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;navigationController&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topViewController&lt;/span&gt; &lt;span class="k"&gt;as!&lt;/span&gt; &lt;span class="kt"&gt;AddItemViewController&lt;/span&gt;
+    &lt;span class="c1"&gt;// 4&lt;/span&gt;
+    &lt;span class="n"&gt;controller&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;delegate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;self&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is what the prepareForSegue does step-by-step&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Because there may be more than one segue per view controller, it’s best practice to give each one a unique identifier and to check for that identifier first to make sure you’re handling the correct segue.&lt;/li&gt;
+&lt;li&gt;The new view controller can be found in segue.destinationViewController. The storyboard shows that the segue does not go directly to AddItemViewController but to the navigation controller that embeds it.&lt;/li&gt;
+&lt;li&gt;To find the addItemViewController, look at the navigation controller’s topViewController property. This property refers to the screen that is currently active inside the navigation controller.&lt;/li&gt;
+&lt;li&gt;Once you have a reference to the AddItemViewController object, you can set its delegate property to self and the connection is complete. Self in the example refers to the ChecklistViewController.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Swift</title>
+    <link rel="alternate" href="http://dipet.me/blog/swift/"/>
+    <id>http://dipet.me/blog/swift/</id>
+    <published>2015-09-08T01:00:00-04:00</published>
+    <updated>2015-10-28T17:02:52-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;I started getting into iOS development and by extension event driven programming in general. I find that I&amp;rsquo;m learning and solidifying my understanding of programming by absorbing multiple languages, I&amp;rsquo;ve also been dabbling in PyQT and I find that both Python and Swift are really good languages for solidifying one&amp;rsquo;s understanding of object oriented programming. Though to be completely honest I&amp;rsquo;m not sure if it&amp;rsquo;s the languages and their usage or the constant exposure to programming and things are just making more sense in general (por que no los dos?). I do like to believe that if I just stuck with Ruby and Rails by extension that I wouldn&amp;rsquo;t understand as much as I do now. &lt;/p&gt;
+
+&lt;p&gt;I felt there was a ever slight disconnect between rails and object oriented programming paradigms. Not to say Rails doesn&amp;rsquo;t use, because it uses it quite a bit. I more feel that there was a secondary layer between the end result and OOP when dealing with Rails, I think that layer is the web. Trying to explain it isn&amp;rsquo;t really easy but I guess the best way to explain how I feel would be an example of buttons.&lt;/p&gt;
+
+&lt;p&gt;In iOS, OSX, PyQT, WinForms, etc when you&amp;rsquo;re making a button do something or anything you create the function/method and what it does. The method might be simple or complex depending on what you need the button to do. When it coems to Rails and web development, you don&amp;rsquo;t have to worry about that to nearly the degree and when you do there is still a small disconnect. Now I can be completely wrong and buttons can be just as complex in web development and I&amp;rsquo;ve just have never dealt with anything of the sort yet, but I feel that adhereing to CRUD obscures some of the finer things because it has to.&lt;/p&gt;
+
+&lt;p&gt;If anything I feel like I owe pretty much the last year of my progress to Ruby, Rails, the various communities and &lt;a href="http://elliotec.com"&gt;Mike Elliot&lt;/a&gt; that all got me started on this.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Flex('Mancer)</title>
+    <link rel="alternate" href="http://dipet.me/misc/theflex/"/>
+    <id>http://dipet.me/misc/theflex/</id>
+    <published>2015-08-28T01:00:00-04:00</published>
+    <updated>2015-10-26T20:04:58-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="Flex cover" src="http://ecx.images-amazon.com/images/I/41bIqjVL2kL.jpg" /&gt;&lt;/p&gt;
+
+&lt;p&gt;As an avid reader I&amp;rsquo;m forever acquiring new books based on my various interests. While my tastes are pretty much by the numbers as a reader (sci-fi, modern fantasy, dystopian futures, etc). I still find that there are incredible books that fly under the radar constantly. While I read constantly I don&amp;rsquo;t like to pretend I&amp;rsquo;m some sort of authority on what makes a book &amp;ldquo;good&amp;rdquo;, simply put&amp;hellip;I like what I like it&amp;rsquo;s really that simple. I read a quick preview and look at the cover and if those two things can keep my attention I&amp;rsquo;ll purchase the book. Currently on my Kindle Paperwhite (which I love), I currently have 343 books to my name. With another 100 or so physical books.&lt;/p&gt;
+
+&lt;p&gt;The latest book I finished was &amp;ldquo;Flex&amp;rdquo; and it&amp;rsquo;s sequel &amp;ldquo;The Flux&amp;rdquo; by Ferrett Steinmetz. Flex lets you know from the first page that magic is real but it&amp;rsquo;s not something amazing or even tolerated by the world at large, and by world at large I mean the actual universe. Both the magic system and the restrictions are wonderfully explained to the point I was like &amp;ldquo;If magic were real it&amp;rsquo;d probably work something like this.&amp;rdquo; &lt;/p&gt;
+
+&lt;p&gt;The story of Flex focuses on an everyday working man named Paul Tsabo, he&amp;rsquo;s just a small paper pusher at an insurance company and for the most part he is content in his life. Well as content as one can be missing a leg and his wife divorcing on him after she cheated on him, but the flipside is he has a great 6 year old daughter named Aliyah who is his life. But Paul has a secret that he keeps from his family (and is directly the reason for the deterioration in his relationship with his wife). Paul is a Mancer, to be specific a bureaucromancer. He loves his job he truly does, after all it&amp;rsquo;s how he acquired his power. The power to hold corporations and the government accountable to the citizens they serve and protect. Paul very much believes in a just world which makes his job perfect for him. Insurance companies aren&amp;rsquo;t the most righteous of the bunch and Paul uses his abilities to push claims through, to make sure they get their compensation from their claims without the insurance company wiggling it&amp;rsquo;s way out of paying.&lt;/p&gt;
+
+&lt;p&gt;In Flex few gain power, and those who do gain them by being obssessed with their hobby, their obsession tears and alters the reality around them, one can become a &amp;lsquo;mancer of anything. Videogamemancers, FightClubmancers, Origamimancers, Catmancers, there is no limit to what one can become. As the old saying goes; &amp;ldquo;With great power comes great responsibility&amp;rdquo; and this is doubly true in Flex. These superhumans can&amp;rsquo;t use their powers freely. While they can bend reality to their whim, reality doesn&amp;rsquo;t like this and wants to right the wrongs as soon as possible. This is introduced as &amp;ldquo;Flux&amp;rdquo; or the backlash from using one&amp;rsquo;s power. Flux is a backlash that comes as a coincidence of sorts. The more one uses their power the larger the Flux. In essence Flux is reality looking for something the Flex user cares/loves and having bad things happen to it. It might be your child stubbing her toe all the way to her catching fire in your arms. As a result most Flex users tend to distance themselves from those they love.&lt;/p&gt;
+
+&lt;p&gt;Paul hasn&amp;rsquo;t learned this lesson yet as his power usage is small until his house catches on fire. Paul uses his powers in ways he&amp;rsquo;s never known he could and as a result the Flux comes and it comes for that which he loves the most&amp;hellip;Aliyah. Paul then learns that the fire in his apartment was no accident and soon he&amp;rsquo;s the target of a Paleomancer who is determined to get rid of Paul for reasons unknown to him. &lt;/p&gt;
+
+&lt;p&gt;Flex is a great ride and the writing seems effortless, the words flow and keep you wanting to read to see what happens next. I ended up reading both Flex and the sequel &amp;ldquo;The Flux&amp;rdquo; in the course of two days. I highly recommend it for those who like books that involve magic a relatable everyday man who is just trying to do what&amp;rsquo;s best for those around him who isn&amp;rsquo;t a &amp;ldquo;chosen one&amp;rdquo;.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Mind the Gap</title>
     <link rel="alternate" href="http://dipet.me/blog/mind_the_gap/"/>
     <id>http://dipet.me/blog/mind_the_gap/</id>
     <published>2015-08-16T01:00:00-04:00</published>
-    <updated>2015-08-24T13:30:59-04:00</updated>
+    <updated>2015-10-25T17:21:01-04:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
@@ -22,7 +146,7 @@
 
 &lt;p&gt;I know a few people on various discussion boards who joke about a &amp;ldquo;nebulous&amp;rdquo; area of learning that exisits between learning the syntax and understanding the core concepts (arrays, hashes/dictionaries, if-else-while-unless-until, structs/classes/modules, function/method) and being able to successfully piece them all toegether to create something. I haven&amp;rsquo;t been able to figure out the best approach to getting past this area. I&amp;rsquo;ve signed up for codekata websites (codewars, hackerrank) and have committed to learning and figuring out logic through repetition but even then I hit a wall in which I can go no higher regardless of how much time I put into the attempt (example being, I struggled for 9 hours trying to solve one of the coding challenges only to get nowhere and ultimately give up). It&amp;rsquo;s these issues I run into that make me second guess if I&amp;rsquo;m cut out to be a programmer, and while I love trying to solve these challenges my constant inability to do so really lowers my enjoyment. Constantly having to look up the solution isn&amp;rsquo;t my idea of success. I have many notes on the solutions I have looked up and yet and still it does nothing for me when it comes to the next difficult solution.&lt;/p&gt;
 
-&lt;p&gt;Taking a step back and analyising it, I think I am at the end of what I can do as far as self teaching goes and I&amp;rsquo;m starting to feel that I won&amp;rsquo;t be able to make meaningful progress unless I get a mentor/teacher to help me fill in these gaps. While I&amp;rsquo;m slowly coming to terms with this a new reality hits me, vast majority of online mentors command ridiculous prices (which they derserve to, they are after all teaching something). Unfortunately I don&amp;rsquo;t have such finances available to me (if I did I&amp;rsquo;d just go to a code bootcamp or something) and I don&amp;rsquo;t live in an area in which programmers can be found in mass quantities, so I am stuck for lack of a better word. &lt;/p&gt;
+&lt;p&gt;Taking a step back and analyising it, I think I am at the end of what I can do as far as self teaching goes and I&amp;rsquo;m starting to feel that I won&amp;rsquo;t be able to make meaningful progress unless I get a mentor/teacher to help me fill in these gaps. While I&amp;rsquo;m slowly coming to terms with this a new reality hits me, vast majority of online mentors command ridiculous prices (which they derserve to, they are after all teaching something). On the flipside despite this seemingly self-loathing viewpoint, I find the challenge of pushing past that border to be the best part of it all. The excitement of bashing your head against a wall to figure something out then to finally figure it out much later (in my case that can be days) is one of the best feelings you can receive and it makes me love porgramming all over again.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -30,11 +154,15 @@
     <link rel="alternate" href="http://dipet.me/blog/enums/"/>
     <id>http://dipet.me/blog/enums/</id>
     <published>2015-08-01T01:00:00-04:00</published>
-    <updated>2015-08-17T11:28:50-04:00</updated>
+    <updated>2015-10-28T17:02:29-04:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
-    <content type="html">&lt;p&gt;So I&amp;rsquo;ve decided that I wanted to learn Swift ontop of learning Ruby and Javascript, and I recently had an &amp;ldquo;Oooooh&amp;rdquo; moment. Well to clarify, I kind of knew what enums were but I wasn&amp;rsquo;t quite sure on the specifics of it. I knew of enums because of utilizing the Rails enum feature in my personal project &lt;a href="https://github.com/Diope/drubbble"&gt;Drubbble&lt;/a&gt; (yes it&amp;rsquo;s a &lt;a href="https://dribbble.com/"&gt;Dribbble&lt;/a&gt; clone&amp;hellip;then Dribbble went and did a redesign!) I&amp;rsquo;m constantly adding features to it as I learn more about Rails. The last thing I added (and need to properly utilize) is enums, I used Rails enums to provide roles for users within my rails application. The concept was pretty simple, instead of using a boolean to check whether or not a user was a administrator, I instead went with enums. One of the biggest reasons is because enums are MUCH more flexible and can be adjusted to add or take away roles without creating more booleans. I imagine having an application that has 8 user roles, creating a boolean for each of them is utter madness (SPARTA!).  Enough talk, time to explain via code.&lt;/p&gt;
+    <content type="html">&lt;p&gt;I recently had an &amp;ldquo;Oooooh&amp;rdquo; moment. Well to clarify, I kind of knew what enums were but I wasn&amp;rsquo;t quite sure on the specifics of it. I knew of enums because of utilizing the Rails enum feature in my personal project &lt;a href="https://github.com/Diope/drubbble"&gt;Drubbble&lt;/a&gt; (yes it&amp;rsquo;s a &lt;a href="https://dribbble.com/"&gt;Dribbble&lt;/a&gt; clone&amp;hellip;then Dribbble went and did a redesign!) I&amp;rsquo;m constantly adding features to it as I learn more about Rails. The last thing I added (and need to properly utilize) is enums, I used Rails enums to provide roles for users within my rails application. The concept was pretty simple, instead of using a boolean to check whether or not a user was a administrator, I instead went with enums. One of the biggest reasons is because enums are MUCH more flexible and can be adjusted to add or take away roles without creating more booleans. I imagine having an application that has 8 user roles, creating a boolean for each of them is utter madness (SPARTA!). &lt;/p&gt;
+
+&lt;p&gt;Conversating with some programmers over lunch they started talking about a project they were working on and how they used enumerators to solve a problem. Not wanting to sound like the absolute newbie that I am, I was like &amp;ldquo;oh yea sure, I used enums on a personal project I&amp;rsquo;m working on myself.&amp;rdquo; To be fair, I WAS working on a project&amp;hellip;I just wasn&amp;rsquo;t using enums nor did I truly understand what they were. I had a faint idea, &amp;ldquo;it had something to do with indices&amp;rdquo;&amp;hellip;that was about it. Little did know how close I actually was. They sat and talked about it and I nodded my head absorbing what they were saying and learning. I felt that I was on the verge of understanding enumerators but just couldn&amp;rsquo;t pass the threshold. It wasn&amp;rsquo;t until I read up on Rails enums and how they were used in conjunction with the rails gem Pundit did it click for me. To be honest, I felt rather stupid for not understanding it quicker and slightly hated myself for it. Being able to represent values with integers was never something I thought much of.&lt;/p&gt;
+
+&lt;p&gt;How I used them in my rails project:&lt;/p&gt;
 &lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;User&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;ActiveRecord&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Base&lt;/span&gt;
   &lt;span class="n"&gt;after_initialize&lt;/span&gt; &lt;span class="ss"&gt;:set_default_role&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:if&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="ss"&gt;:new_record?&lt;/span&gt;
   &lt;span class="n"&gt;after_create&lt;/span&gt; &lt;span class="ss"&gt;:create_profile&lt;/span&gt;
@@ -50,94 +178,6 @@
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;I&amp;rsquo;d like to make a note that I decided to use devise in lieu of rolling my own authentication system under the idea that it would help me focus on the app more so than anything else&amp;hellip;this turned out not to be the case. I think I spent much more time enabling the ability to log in with username instead of devise&amp;rsquo;s default email/password combination. On the flip side, because I decided to go with Devise I learned about &lt;code&gt;allow_nested_attributes_for&lt;/code&gt; (which I will make a post on to talk about a bit more). Back on the subject of enums, as you can see from my Drubbble app snippet, I have 3 roles; rookie, pro, admin. A more parred down version of Dribbble&amp;rsquo;s roles for users. By defining the roles in the User model, I now have access to a few handy methods, namely &lt;code&gt;.admin&lt;/code&gt; and &lt;code&gt;.admin?&lt;/code&gt; (the same applies to pro, and rookie). With these, you can do set define a user&amp;rsquo;s role within the application. Each role is assigned an integer (rookie = 0, pro = 1, and admin = 2) which is much better to manage than using a boolean. Currently, I&amp;rsquo;m in the middle of actually utilizing the different roles past making my test account an administrator to test my model associations via Rails Admin panel. Ultimately my aim is to allow pro users to have access to anything within the application, while rookie users are restricted until they&amp;rsquo;re invited by a pro user. Hopefully in the next week or so I&amp;rsquo;ll have that functionality in (and will write about it).&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Middleman vs. Me</title>
-    <link rel="alternate" href="http://dipet.me/blog/Middleman-vs-Me/"/>
-    <id>http://dipet.me/blog/Middleman-vs-Me/</id>
-    <published>2015-07-16T01:00:00-04:00</published>
-    <updated>2015-08-17T11:25:43-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;So my old blog was a jekyll project and to be honestly when I first set it up, I had no clue what I was doing in any sense of the word. I didn&amp;rsquo;t know anything about handlebars or the syntax. All I really knew at the time was a little bit of erb that I picked up from Rails. Regardless I pushed on and finally got my blog running via Github. I wasn&amp;rsquo;t really happy with it, stock-ish theme and no real customization.&lt;/p&gt;
-
-&lt;p&gt;A few months have passed and I have decided to switch to middleman and do some styling with this blog. I wanted it to be focused on the writing and no so much the site. So I stripped everything away and decided that colors are the most important thing for my blog. So while it&amp;rsquo;s very simplistic, I think it works for what I want to do and keeping it lightweight for hosting on Github.&lt;/p&gt;
-
-&lt;p&gt;Most of the blog didn&amp;rsquo;t take long, I spent a vast majority of my time figuring out the best way to pass data to change each blog&amp;rsquo;s colors and have it reflected the category links via frontmatter. I&amp;rsquo;ll go over it in detail in a later blog entry.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>I'm not a Programmer</title>
-    <link rel="alternate" href="http://dipet.me/blog/ImposterAndBlack/"/>
-    <id>http://dipet.me/blog/ImposterAndBlack/</id>
-    <published>2015-07-13T01:00:00-04:00</published>
-    <updated>2015-08-24T13:40:10-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;Though about how to write this particular entry for a while and how I would describe the fears I have. I couldn&amp;rsquo;t think of a title that truly represented what I&amp;rsquo;m feeling and how I&amp;rsquo;m attempting to overcome. My hope is that people read the article and not simply stop at the title.&lt;/p&gt;
-
-&lt;p&gt;Everyone knows what imposter syndrome is and how prevelant it is in the web development community (and honestly ANY professional setting). For those who are scratching their head, a quick summary on imposter syndrome would be despite the fact a person has evidence of accomplishments and competence, they feel that have convinced themselves that they are frauds and do not deserve the success bestowed upon them. It has much in common with modesty but the key difference is that a modest person is still able to internalize their accomplishments.&lt;/p&gt;
-
-&lt;p&gt;I find myself in a weird position as I&amp;rsquo;m acutely aware that I&amp;rsquo;m a &amp;ldquo;victim&amp;rdquo; of this despite some evidence of competence in Rails/Ruby and Javascript. But I feel it&amp;rsquo;s not &amp;ldquo;enough&amp;rdquo;; I tend to compare myself to people with 4 year degrees in CS and determine that I have no business applying for any position in Web Development. I have no right to take a position from someone who has put in more time to learn the fundamentals of programming. I feel that if I&amp;rsquo;m going to apply for a position then I need to be as proficient in the fundamentals as those guys. I need to know and understand what I see as the bare necessities to call myself a &amp;ldquo;programmer&amp;rdquo;. I am not a programmer, I am guy that can manipulate bits of code to do what I want in a crude approximation many times not fully understanding how I got my problem figured out. I can&amp;rsquo;t even create a simple command line application, while these guys can create full fledged complex applications. Why should I apply for a position when I have a rudimentary understanding of big O notation? Because I can&amp;rsquo;t take out a student loan for school, I can do the next best thing, continuously study until I&amp;rsquo;m at that level, and when I am at that level I need to go beyond it.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;I am not a programmer, I am guy that can manipulate bits of code to do what I want in a crude approximation.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I know you&amp;rsquo;re reading this and thinking what does being black have to do with that? Well that magnifies my issue even more, ask a black person if they feel as if they have to work &amp;ldquo;twice as hard to achieve just as much as anyone else&amp;rdquo; and many of them will echo how much they relate to that statement. It&amp;rsquo;s this mindset in addition to imposter syndrome that keeps me from applying for any position. So what does &amp;ldquo;twice as hard to achieve just as much&amp;rdquo; really mean? It&amp;rsquo;s always something I hear people ask me when they are curious about what it&amp;rsquo;s like to be black in America (a subject I hate talking about as I feel I&amp;rsquo;m walking on eggshells.) Having had to explain this quite a bit over the course of my life (many times to &amp;ldquo;justify&amp;rdquo; not fitting into people&amp;rsquo;s stereotypical view of black people they&amp;rsquo;ve garnered from media) I&amp;rsquo;ve got it down to a concise explanation. Imagine you have two resumés, both people have the exact same skillset and talents. The only difference between them is that one is black and the other is white. Now both of these gentlemen are equally qualified for the position. But what will most hiring managers (who in Silicon Valley are statistically most likely to be white male) pick? They&amp;rsquo;re going to pick the white gentleman. But here&amp;rsquo;s the thing, they don&amp;rsquo;t pick him because they&amp;rsquo;re racist. Far from it, they&amp;rsquo;ll tend to pick him because he&amp;rsquo;s familiar to them. People underestimate how much their subconscience plays a role in these sort of things. Regardless of your ethnicity, in such a position you&amp;rsquo;re going to go with someone you feel more resembles yourself and those you&amp;rsquo;ve grown up around. This is pretty much something we&amp;rsquo;ve all done in some aspect of our life. It might not have been a major thing but we&amp;rsquo;ve done it.&lt;/p&gt;
-
-&lt;p&gt;Looking at the makeup of Silicon Valley and the web development community at large the pressure to be twice as good is tremendous. Combine this with imposter syndrome and you can see why I (or anyone like me) would be scared to apply for positions. Not only am I not as skilled as someone with a 4 year degree in CS or engineering, but because I&amp;rsquo;m the outlier I have to display an even higher level of understanding just to compete. Your github profile has 5 projects of incredible depth that show your understanding of rails and ruby as a programming language? Then my profile needs to have at least 7 projects, with a few projects that are in production and actually being used. This will make my resume look as good to a prospective employee as my nearest competitor.&lt;/p&gt;
-
-&lt;p&gt;With all that stated I&amp;rsquo;m not content doing this studying and working towards the goal of being a developer and never applying for position because of this feeling of inadequacy compared to my peers. I&amp;rsquo;m still going to apply for positions (the question being when at this point) that I feel i&amp;rsquo;m qualified for. Though admittedly what I feel I&amp;rsquo;m qualified for is skewed due to my fears. This is something I&amp;rsquo;m constantly struggling with and trying to overcome, it&amp;rsquo;s not easy but then again very few things in life are now are they?&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Shy Girls</title>
-    <link rel="alternate" href="http://dipet.me/misc/yup/"/>
-    <id>http://dipet.me/misc/yup/</id>
-    <published>2015-07-06T01:00:00-04:00</published>
-    <updated>2015-08-11T18:18:50-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img alt="Shy Girls himself" src="http://res.cloudinary.com/nylon/image/upload/t_featured_images-hero,f_auto,fl_lossy,q_80/featured_images/attachments/000/008/769/shy-girls.jpg" /&gt;&lt;/p&gt;
-
-&lt;p&gt;One of my favorite genres of music has always been NeoSoul and R&amp;amp;B, as part of the whole &amp;ldquo;millennial&amp;rdquo; generation, I&amp;rsquo;ve witnessed the overall decline in output from these two genres (please do not confuse this with me saying these two genres are dead, there are still new artists creating quality music within these two genres, their exposure levels however have dropped), and worse I&amp;rsquo;ve seen an increase in the media labeling pop music as R&amp;amp;B. Example being MTV calling Katy Perry&amp;rsquo;s single &amp;ldquo;Dark Horse&amp;rdquo; an R&amp;amp;B song. It is in no way R&amp;amp;B and the labeling it as such is slightly annoying. With all this stated, there has been this new subgenre that has emerged in recent times that has been amazing to watch unfold. There are many different names for the genre ranging from &amp;ldquo;cloud R&amp;amp;B&amp;rdquo; to &amp;ldquo;alternative R&amp;amp;B&amp;rdquo;, and &amp;ldquo;PBR&amp;amp;B&amp;rdquo;. The most often description used to the genre is as follows.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Much of the production is echo-laden and lofty, often using a lot of synthesizers and filtered drums—sonically giving a nod to Prince&amp;rsquo;s vintage &amp;lsquo;80s sound. Additionally, for the most part, it doesn&amp;rsquo;t feel as if these artists are selling sex as their main entrée. Granted, they still sing about the topic, and in explicit detail, but it&amp;rsquo;s in equal proportion to drugs, spirituality and personal philosophies. You don’t get that same diversity in subject matter from the majority of modern R&amp;amp;B singers. - &lt;a href="http://thegrio.com/2012/10/04/changing-of-the-guard-how-frank-ocean-miguel-and-more-helped-rb-find-its-soul-again/"&gt;Changing of the Guard&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;There are many artists who help define the new genre/movement ranging from FKA Twigs, Jhene Aiko to Miguel, and The Weeknd. A new artist I discovered some time ago is &lt;a href="http://www.shygirls4wz.com/"&gt;Shy Girls&lt;/a&gt;, while he might sound similar to The Weeknd, I do find the differences in how they approach a song to be a big enough differentiator for Shy Girls to succeed and not simply be seen as &amp;ldquo;lesser&amp;rdquo; The Weeknd. While The Weeknd tends to focus on the emotionally loneliness that overcomes him when he&amp;rsquo;s not with a woman. Shy Girls seems to focus more on the mindset of females and how they approach him and for what reasons. Example being in his song &amp;ldquo;Xhampange&amp;rdquo;, he acknowledges that the particular girl in the song is only talking to him for casual sex and the lifestyle that has befallen him due to his increasing exposure/popularity and despite this he is completely fine with the arrangement and does not the judge the girl for it. In fact he is happy because it helps ease his own loneliness.&lt;/p&gt;
-
-&lt;p&gt;I find the entire mixtape to be a nice journey through the current life of Shy Girls, I would say the only low point is his guest feature selection. There is an art to rapping and unfortunately the rappers he allows on his mixtape are not amazing. Fortunately they don&amp;rsquo;t detract nearly enough not to enjoy the mixtape. I personally hope his exposure and success continues as I find myself listening to his music quite frequently.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Hub</title>
-    <link rel="alternate" href="http://dipet.me/blog/Hub/"/>
-    <id>http://dipet.me/blog/Hub/</id>
-    <published>2015-06-15T01:00:00-04:00</published>
-    <updated>2015-08-02T00:52:24-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;I spend quite a bit of time in terminal, almost everything I do for the day goes through the terminal and it&amp;rsquo;s rare that I don&amp;rsquo;t have a window open in the background somewhere. Granted I haven&amp;rsquo;t mustered up the courage to utilize VIM or EMAC.&lt;/p&gt;
-
-&lt;p&gt;One thing I wasn&amp;rsquo;t a fan of was the inability to create and push repos in Github from the terminal. Or at least to my knowledge. I recently learned that I could use cURL commands to create repos on Github.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;curl -u &amp;quot;$username:$token&amp;quot; https://api.github.com/user/repos -d &amp;#39;{&amp;quot;name&amp;quot;:&amp;quot;&amp;#39;$repo_name&amp;#39;&amp;quot;}&amp;#39;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;I though, &amp;ldquo;could I create a script in bash that allows me to push my files without ever firing up chrome?&amp;rdquo;, so I decided to ask around on stack overflow for direction and embark on this.&lt;/p&gt;
-
-&lt;p&gt;I opened a query and the very first response returned something interesting. Someone else had already thought the samething and saved many people the trouble (obviously I wasn&amp;rsquo;t the first to think of this) of having to built it themselves; thus introducing &lt;a href="https://hub.github.com/"&gt;Hub&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;A great little script that has already saved me time (or at least the repetition of having to create a new repo via the browser). Best thing to do is make an alias for hub (and name it git, as hub inherits all of git&amp;rsquo;s commands).&lt;/p&gt;
-
-&lt;p&gt;Hopefully others get some use out of hub. I still think I&amp;rsquo;m going to create my own script for creating an empty repo just to see if I can get the logic right, will probably be a weekend project.&lt;/p&gt;
 </content>
   </entry>
 </feed>
