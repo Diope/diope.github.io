@@ -5,10 +5,26 @@
   <id>http://dipet.me</id>
   <link href="http://dipet.me"/>
   <link href="http://dipet.me/feed.xml" rel="self"/>
-  <updated>2015-10-09T01:00:00-04:00</updated>
+  <updated>2015-10-11T01:00:00-04:00</updated>
   <author>
     <name>Dion Pettaway</name>
   </author>
+  <entry>
+    <title>Profile</title>
+    <link rel="alternate" href="http://dipet.me/design/profile_page/"/>
+    <id>http://dipet.me/design/profile_page/</id>
+    <published>2015-10-11T01:00:00-04:00</published>
+    <updated>2015-11-02T18:13:11-05:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="profile" src="http://dipet.me/images/weekly003.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Another day, another UI daily design (if only I did them daily!), This is a continuation of the previous Audeo design, but I kinda sorta had no clue what I was doing with the whole Audeo so this just a typicalish profile page for yet another mobile social network.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m sticking with the angled image header that I introduced with the sign up page (which after working with Firebase, I need to go and adjust). The profile page needs work, more information can be displayed befor the user needs to scroll. That&amp;rsquo;s the downside of the header image&amp;rsquo;s current style. I&amp;rsquo;ll have to adjust and work with that a bit.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Mobile Sign-Up</title>
     <link rel="alternate" href="http://dipet.me/design/audeo_signup_design/"/>
@@ -147,37 +163,6 @@ Here the ? tells Swift not to send the message if delegate is nil. You can read 
 &lt;p&gt;I know a few people on various discussion boards who joke about a &amp;ldquo;nebulous&amp;rdquo; area of learning that exisits between learning the syntax and understanding the core concepts (arrays, hashes/dictionaries, if-else-while-unless-until, structs/classes/modules, function/method) and being able to successfully piece them all toegether to create something. I haven&amp;rsquo;t been able to figure out the best approach to getting past this area. I&amp;rsquo;ve signed up for codekata websites (codewars, hackerrank) and have committed to learning and figuring out logic through repetition but even then I hit a wall in which I can go no higher regardless of how much time I put into the attempt (example being, I struggled for 9 hours trying to solve one of the coding challenges only to get nowhere and ultimately give up). It&amp;rsquo;s these issues I run into that make me second guess if I&amp;rsquo;m cut out to be a programmer, and while I love trying to solve these challenges my constant inability to do so really lowers my enjoyment. Constantly having to look up the solution isn&amp;rsquo;t my idea of success. I have many notes on the solutions I have looked up and yet and still it does nothing for me when it comes to the next difficult solution.&lt;/p&gt;
 
 &lt;p&gt;Taking a step back and analyising it, I think I am at the end of what I can do as far as self teaching goes and I&amp;rsquo;m starting to feel that I won&amp;rsquo;t be able to make meaningful progress unless I get a mentor/teacher to help me fill in these gaps. While I&amp;rsquo;m slowly coming to terms with this a new reality hits me, vast majority of online mentors command ridiculous prices (which they derserve to, they are after all teaching something). On the flipside despite this seemingly self-loathing viewpoint, I find the challenge of pushing past that border to be the best part of it all. The excitement of bashing your head against a wall to figure something out then to finally figure it out much later (in my case that can be days) is one of the best feelings you can receive and it makes me love porgramming all over again.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Enumerators!</title>
-    <link rel="alternate" href="http://dipet.me/blog/enums/"/>
-    <id>http://dipet.me/blog/enums/</id>
-    <published>2015-08-01T01:00:00-04:00</published>
-    <updated>2015-10-30T23:58:15-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;I recently had an &amp;ldquo;Oooooh&amp;rdquo; moment. Well to clarify, I kind of knew what enums were but I wasn&amp;rsquo;t quite sure on the specifics of it. I knew of enums because of utilizing the Rails enum feature in my personal project &lt;a href="https://github.com/Diope/drubbble"&gt;Drubbble&lt;/a&gt; (yes it&amp;rsquo;s a &lt;a href="https://dribbble.com/"&gt;Dribbble&lt;/a&gt; clone&amp;hellip;then Dribbble went and did a redesign!) I&amp;rsquo;m constantly adding features to it as I learn more about Rails. The last thing I added (and need to properly utilize) is enums, I used Rails enums to provide roles for users within my rails application. The concept was pretty simple, instead of using a boolean to check whether or not a user was a administrator, I instead went with enums. One of the biggest reasons is because enums are MUCH more flexible and can be adjusted to add or take away roles without creating more booleans. I imagine having an application that has 8 user roles, creating a boolean for each of them is utter madness (SPARTA!). &lt;/p&gt;
-
-&lt;p&gt;Conversating with some programmers over lunch they started talking about a project they were working on and how they used enumerators to solve a problem. Not wanting to sound like the absolute newbie that I am, I was like &amp;ldquo;oh yea sure, I used enums on a personal project I&amp;rsquo;m working on myself.&amp;rdquo; To be fair, I WAS working on a project&amp;hellip;I just wasn&amp;rsquo;t using enums nor did I truly understand what they were. I had a faint idea, &amp;ldquo;it had something to do with indices&amp;rdquo;&amp;hellip;that was about it. Little did know how close I actually was. They sat and talked about it and I nodded my head absorbing what they were saying and learning. I felt that I was on the verge of understanding enumerators but just couldn&amp;rsquo;t pass the threshold. It wasn&amp;rsquo;t until I read up on Rails enums and how they were used in conjunction with the rails gem Pundit did it click for me. To be honest, I felt rather stupid for not understanding it quicker and slightly hated myself for it. Being able to represent values with integers was never something I thought much of.&lt;/p&gt;
-
-&lt;p&gt;How I used them in my rails project:&lt;/p&gt;
-&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;User&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="no"&gt;ActiveRecord&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Base&lt;/span&gt;
-  &lt;span class="n"&gt;after_initialize&lt;/span&gt; &lt;span class="ss"&gt;:set_default_role&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:if&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="ss"&gt;:new_record?&lt;/span&gt;
-  &lt;span class="n"&gt;after_create&lt;/span&gt; &lt;span class="ss"&gt;:create_profile&lt;/span&gt;
-
-  &lt;span class="kp"&gt;attr_accessor&lt;/span&gt; &lt;span class="ss"&gt;:login&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:tagline&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:location&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:website&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:available&lt;/span&gt;
-  &lt;span class="n"&gt;devise&lt;/span&gt; &lt;span class="ss"&gt;:database_authenticatable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:registerable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-         &lt;span class="ss"&gt;:recoverable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:rememberable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:trackable&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:validatable&lt;/span&gt;
-  &lt;span class="c1"&gt;#-----------&lt;/span&gt;
-  &lt;span class="n"&gt;validates&lt;/span&gt; &lt;span class="ss"&gt;:username&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;presence: &lt;/span&gt;&lt;span class="kp"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;uniqueness: &lt;/span&gt;&lt;span class="kp"&gt;true&lt;/span&gt;
-
-  &lt;span class="c1"&gt;#-----------&lt;/span&gt;
-  &lt;span class="n"&gt;enum&lt;/span&gt; &lt;span class="ss"&gt;role: &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="ss"&gt;:rookie&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:pro&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;:admin&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I&amp;rsquo;d like to make a note that I decided to use devise in lieu of rolling my own authentication system under the idea that it would help me focus on the app more so than anything else&amp;hellip;this turned out not to be the case. I think I spent much more time enabling the ability to log in with username instead of devise&amp;rsquo;s default email/password combination. On the flip side, because I decided to go with Devise I learned about &lt;code&gt;allow_nested_attributes_for&lt;/code&gt; (which I will make a post on to talk about a bit more). Back on the subject of enums, as you can see from my Drubbble app snippet, I have 3 roles; rookie, pro, admin. A more parred down version of Dribbble&amp;rsquo;s roles for users. By defining the roles in the User model, I now have access to a few handy methods, namely &lt;code&gt;.admin&lt;/code&gt; and &lt;code&gt;.admin?&lt;/code&gt; (the same applies to pro, and rookie). With these, you can do set define a user&amp;rsquo;s role within the application. Each role is assigned an integer (rookie = 0, pro = 1, and admin = 2) which is much better to manage than using a boolean. Currently, I&amp;rsquo;m in the middle of actually utilizing the different roles past making my test account an administrator to test my model associations via Rails Admin panel. Ultimately my aim is to allow pro users to have access to anything within the application, while rookie users are restricted until they&amp;rsquo;re invited by a pro user. Hopefully in the next week or so I&amp;rsquo;ll have that functionality in (and will write about it).&lt;/p&gt;
 </content>
   </entry>
 </feed>
