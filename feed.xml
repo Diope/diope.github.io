@@ -14,12 +14,11 @@
     <link rel="alternate" href="http://dipet.me/design/profile_page/"/>
     <id>http://dipet.me/design/profile_page/</id>
     <published>2015-10-11T01:00:00-04:00</published>
-    <updated>2015-11-02T18:16:41-05:00</updated>
+    <updated>2015-11-02T18:21:27-05:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img alt="profile" src="http://dipet.me/images/weekly003.png" /&gt;
-&lt;a href="http://dipet.me/images/weekly003@2x.png"&gt;Click for larger!&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;[&lt;img alt="profile" src="http://dipet.me/images/weekly003@2x.png" /&gt;(http://dipet.me/images/weekly003.png)&lt;/p&gt;
 
 &lt;p&gt;Another day, another UI daily design (if only I did them daily!), This is a continuation of the previous Audeo design, but I kinda sorta had no clue what I was doing with the whole Audeo so this just a typicalish profile page for yet another mobile social network.&lt;/p&gt;
 
