@@ -5,26 +5,37 @@
   <id>http://dipet.me</id>
   <link href="http://dipet.me"/>
   <link href="http://dipet.me/feed.xml" rel="self"/>
-  <updated>2018-02-11T00:00:00-05:00</updated>
+  <updated>2018-02-02T00:00:00-05:00</updated>
   <author>
     <name>Dion Pettaway</name>
   </author>
   <entry>
-    <title>Decisions</title>
-    <link rel="alternate" href="http://dipet.me/projects/decisionsdecisions/"/>
-    <id>http://dipet.me/projects/decisionsdecisions/</id>
-    <published>2018-02-11T00:00:00-05:00</published>
-    <updated>2018-03-12T14:53:36-04:00</updated>
+    <title>SearchTubes</title>
+    <link rel="alternate" href="http://dipet.me/projects/searchTubes/"/>
+    <id>http://dipet.me/projects/searchTubes/</id>
+    <published>2018-02-02T00:00:00-05:00</published>
+    <updated>2018-03-12T15:36:55-04:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
-    <content type="html">&lt;p&gt;I should update my blog more often, but yea as of late I&amp;rsquo;ve been leaning into React quite a bit. I&amp;rsquo;m not exactly sure when it clicked for me as a framework (view layer) but I don&amp;rsquo;t just going in and breaking projects and trying to figure out what does what along with some great written explanations/tutorials are the quickest way for things to click.&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="its searching" src="https://i.imgur.com/mgbNQxJ.gif" /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="much React, make decisions" src="https://i.imgur.com/Mqah47Q.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;Yet another small React project, I make these to get more comfortable with the framework and Javascript. I made this one with the intent on consuming an API.&lt;/p&gt;
 
-&lt;p&gt;This is my first React project and isn&amp;rsquo;t talking to an API or anything (I&amp;rsquo;m eventualy going to create a project that does such). It&amp;rsquo;s pretty simple and straightforward in what it does. You can enter a bunch of choices then the app will decide which one you should do.&lt;/p&gt;
+&lt;p&gt;Things I learned with this project:
+* Better structure, separation of concerns, a single point of entry. That is to say I only need to fetch the API in one place and send out that data to all the children components. I have another React project that I&amp;rsquo;m going to refactor as I was calling the API on several different components, even at the time of doing it I knew it was wrong (DRY) but did it anyway.&lt;/p&gt;
 
-&lt;p&gt;To run, first clone the repository. At the commandline run &lt;code&gt;yarn install&lt;/code&gt; then &lt;code&gt;yarn dev-server&lt;/code&gt; then &lt;code&gt;yarn serve&lt;/code&gt;. I actually spent some time on the design portion on this project!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Component life cycles. Granted I didn&amp;rsquo;t make use of them here much outside of &lt;code&gt;componentWillMount()&lt;/code&gt;, I&amp;rsquo;ve become familiar with the others to some extent, at the very least I&amp;rsquo;m aware of their uses.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="to-install"&gt;To install&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;clone git repository&lt;/li&gt;
+&lt;li&gt;at the command line run &lt;code&gt;yarn start&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;localhost:8080&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
   <entry>
@@ -47,6 +58,24 @@ Knowing rails wasn’t enough, so I learned Ruby (and honestly you SHOULD learn 
 &lt;p&gt;I sidelined my developer career for two years because of my own mental conditions, but at the same time I was able to learn so much more due to the mental goals I kept moving in my head before I applied for positions. I still have much to learn by way of data structures, design patterns, and algorithms (I still couldn’t implement a basic BST if you asked but I can explain them to you!).&lt;/p&gt;
 
 &lt;p&gt;For new developers reading, you are not going to know everything. No employer is going to expect you to. If you’ve been granted an interview, trust me, I know exactly what you can or cannot do. They’re interviewing you because they see your potential, they see someone they can help take their career to the next step and who in turn will help their company and products grow. Don’t worry about not thinking you belong, I assure you when you’re sitting down and coding your coworkers aren’t thinking you’re trash or anything of the like. Ask them questions, they will be more than willing to help you!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Decisions</title>
+    <link rel="alternate" href="http://dipet.me/projects/decisionsdecisions/"/>
+    <id>http://dipet.me/projects/decisionsdecisions/</id>
+    <published>2018-01-17T00:00:00-05:00</published>
+    <updated>2018-03-12T15:27:25-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;I should update my blog more often, but yea as of late I&amp;rsquo;ve been leaning into React quite a bit. I&amp;rsquo;m not exactly sure when it clicked for me as a framework (view layer) but I don&amp;rsquo;t just going in and breaking projects and trying to figure out what does what along with some great written explanations/tutorials are the quickest way for things to click.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="much React, make decisions" src="https://i.imgur.com/Mqah47Q.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is &lt;a href="https://github.com/Diope/Decisions"&gt;my first React project&lt;/a&gt; (to be more accurate this is my first post video and book consumption React project&amp;hellip;I definitely have a lot of react stuff in my React folder) . It&amp;rsquo;s pretty simple and straightforward in what it does. You can enter a bunch of choices then the app will decide which one you should do.&lt;/p&gt;
+
+&lt;p&gt;To run, first clone the repository. At the commandline run &lt;code&gt;yarn install&lt;/code&gt; then &lt;code&gt;yarn dev-server&lt;/code&gt; then &lt;code&gt;yarn serve&lt;/code&gt;. I actually spent some time on the design portion on this project!&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -100,69 +129,6 @@ Knowing rails wasn’t enough, so I learned Ruby (and honestly you SHOULD learn 
 &lt;p&gt;The first challenge only said the Sign Up page and not the entire onboarding process&amp;hellip;which is my favorite part to be honest. Thinking of the best way to ease users into your product with the least amount of friction possible is much fun. Getting feedback from test users and using that data to better the product is one of my favorite feelings next to figuring out a programming issue. Obviously &amp;ldquo;Audeo&amp;rdquo; isn&amp;rsquo;t a real app (if it is, apologizes to the creators. Purely coincidental I promise!).&lt;/p&gt;
 
 &lt;p&gt;I made a conscious effort to push the user to signing in with Facebook or Twitter over creating an account. It&amp;rsquo;s easier for the user and that&amp;rsquo;s one less barrier they have to deal with when using the app. Many developers don&amp;rsquo;t release that users hate having to give out their email to YASN (Yet Another Social Network); removing this barrier makes them that much more likely to want to try out your product. Facebook is by far the most used way to sign in/signup for new products; it only makes sense to push the user to it in a way they don&amp;rsquo;t feel like you&amp;rsquo;re truly forcing them. By simply emphasizing Facebook and Twitter via giving their button more attention by way of color. You push the user to it without them knowing it. It is a much better approach than removing the ability to sign up for an account with your product&amp;rsquo;s internal sign up service.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Moving Data Between Views</title>
-    <link rel="alternate" href="http://dipet.me/blog/MovingData/"/>
-    <id>http://dipet.me/blog/MovingData/</id>
-    <published>2015-09-29T01:00:00-04:00</published>
-    <updated>2015-10-28T17:01:53-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;The delegate pattern is commonly used to situations such as: Screen A opens screen B and at some point screen B needs to communicate back to screen A. The solution is to make screen A the delgate of screen B, so that B can send it’s messages to A whenever it needs to. This is the preferred way of screen/view communication. The principle of screens being independent of each others but yet still able to communicate is called loose coupling and is considered good software design practice. Delegates go hand-in-hand with protocols which is a prominent feature of the Swift language. For an example of setting up protocols and delegates see below&lt;/p&gt;
-&lt;pre class="highlight swift"&gt;&lt;code&gt;&lt;span class="kd"&gt;protocol&lt;/span&gt; &lt;span class="kt"&gt;AddItemViewControllerDelegate&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="nf"&gt;addItemViewControllerDidCancel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;controller&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;AddItemViewController&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="nf"&gt;addItemViewController&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;controller&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;AddItemViewController&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;didFinishAddingItem&lt;/span&gt; &lt;span class="nv"&gt;item&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;ChecklistItem&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This defines the AddItemViewController Delegate protocol. In Swift a protocol is simply a name for a group of methods. A protocol doesn’t implement any of the methods it declares. It just says: any object that conforms to this protocol must implement methods, X,Y, and Z. &lt;/p&gt;
-
-&lt;p&gt;The two methods listed in the example are:
-&lt;code&gt;addItemViewControllerDidCancel()&lt;/code&gt;
-&lt;code&gt;addItemViewController(didFinishAddingItem)&lt;/code&gt;
-The first oneis for when the user presses Cancel, the second one is for when they press Done. In that case, the didFinishAddingItem paramter passes along the new ChecklistItem object. To make the ChecklistViewController conform to this created protocol, it must provide implementations of these two methods. From then one can refer to the ChecklistViewContorller using just the protocol name.&lt;/p&gt;
-
-&lt;p&gt;Inside the AddItemViewController you can write &lt;code&gt;var delegate: AddItemViewController Delegate&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The variable delegate is nothing more than a reference to some object that implements the methods of this protocol. You can send messages to the object from the delegate variable, without knowing what kind of object it really is.&lt;/p&gt;
-
-&lt;p&gt;Swift has a shorthand for skipping the work when delegate is not set:
-&lt;code&gt;delegate?.addItemViewControllerDidCancel(self)&lt;/code&gt;
-Here the ? tells Swift not to send the message if delegate is nil. You can read this as, “Is there a delegate?” Then send the message. This is known as optional chaining and is used a lot within Swift.&lt;/p&gt;
-
-&lt;p&gt;Five Steps to Delegates&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Define a delegate protocol for object B.&lt;/li&gt;
-&lt;li&gt;Give object B an optional delegate variable. This variable should be weak.&lt;/li&gt;
-&lt;li&gt;Make object B send messages to its delegate whens oemthing interesting happens, such as the user pressing the cancel or done buttons, or when it needs a piece of infromation&lt;/li&gt;
-&lt;li&gt;Make object A conform to the delegate protocol. It should put the name of the protocol in its class line and implement the methods from the protocol.&lt;/li&gt;
-&lt;li&gt;Tell object B that object A is now it’s delegate. The proper place to do this is in the prepareForSegue(sender) method.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class="highlight swift"&gt;&lt;code&gt;&lt;span class="k"&gt;override&lt;/span&gt; &lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="nf"&gt;prepareForSegue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;segue&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;UIStoryboardSegue&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;sender&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;AnyObject&lt;/span&gt;&lt;span class="p"&gt;?)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="c1"&gt;// 1&lt;/span&gt;
-  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;segue&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;identifier&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;"AddItem"&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="c1"&gt;// 2&lt;/span&gt;
-    &lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="nv"&gt;navigationController&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;segue&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;destinationViewController&lt;/span&gt; &lt;span class="k"&gt;as!&lt;/span&gt; &lt;span class="kt"&gt;UINavigationController&lt;/span&gt;
-    &lt;span class="c1"&gt;// 3&lt;/span&gt;
-    &lt;span class="k"&gt;let&lt;/span&gt; &lt;span class="nv"&gt;controller&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;navigationController&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topViewController&lt;/span&gt; &lt;span class="k"&gt;as!&lt;/span&gt; &lt;span class="kt"&gt;AddItemViewController&lt;/span&gt;
-    &lt;span class="c1"&gt;// 4&lt;/span&gt;
-    &lt;span class="n"&gt;controller&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;delegate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;self&lt;/span&gt;
-  &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This is what the prepareForSegue does step-by-step&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Because there may be more than one segue per view controller, it’s best practice to give each one a unique identifier and to check for that identifier first to make sure you’re handling the correct segue.&lt;/li&gt;
-&lt;li&gt;The new view controller can be found in segue.destinationViewController. The storyboard shows that the segue does not go directly to AddItemViewController but to the navigation controller that embeds it.&lt;/li&gt;
-&lt;li&gt;To find the addItemViewController, look at the navigation controller’s topViewController property. This property refers to the screen that is currently active inside the navigation controller.&lt;/li&gt;
-&lt;li&gt;Once you have a reference to the AddItemViewController object, you can set its delegate property to self and the connection is complete. Self in the example refers to the ChecklistViewController.&lt;/li&gt;
-&lt;/ul&gt;
 </content>
   </entry>
 </feed>
