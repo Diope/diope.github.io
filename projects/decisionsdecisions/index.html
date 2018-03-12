@@ -1,0 +1,64 @@
+<!doctype html> <html> <head> <meta charset=utf-8 /> <link href="../../stylesheets/all.css" rel=stylesheet /> <script src="//squaresend.com/squaresend.js"></script> <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <meta http-equiv=X-UA-Compatible content='IE=edge;chrome=1'/> <title>Decisions</title> <link rel=alternate type="application/atom+xml" title="Atom Feed" href="/feed.xml"/> </head> <style>
+    body {
+      background-color: rgb(41, 45, 62);
+    }
+
+
+    .article p {
+      color: rgb(241, 241, 241);
+    }
+    .header {
+      color: rgb(241, 241, 241);
+    }
+    .meta small{
+      color: rgb(241, 241, 241);
+    }
+    .content ul li {
+        color: rgb(241, 241, 241);
+    }
+
+
+    .header a {
+      color: rgb(255, 150, 0);
+      text-decoration: none;}
+
+    .header a:active, .header a:focus, .header a:hover {
+      text-decoration: underline; }
+
+    .article a {
+      color: rgb(255, 150, 0);
+      text-decoration: none;
+      transition: color 0.2s linear; }
+
+    .article a:active, .article a:focus, .article a:hover {
+      text-decoration: underline;}
+
+      body {
+        border-top: 6px solid rgb(255, 150, 0);
+      }
+
+
+    footer li a {
+      color: rgb(255, 150, 0);
+      text-decoration: none;
+      transition: color 0.2s linear;}
+
+      footer li a:active, footer li a:focus, footer li a:hover {
+        text-decoration: underline;
+        color: rgb(255, 150, 0);}
+
+      .navbar a{
+        color: rgba(255, 150, 0, 0.75);
+      }
+
+      .navbar a:active, .navbar a:focus, .navbar a:hover {
+        color: rgba(255, 150, 0, 1); }
+
+        ::selection {
+          color: rgba(255, 150, 0, 0.70);
+        }
+        ::-moz-selection {
+          color: rgba(255, 150, 0, 0.70);
+        }
+
+</style> <body> <nav class=navbar> <ul> <li><a href="/">ABOUT</a></li>･ <li><a href="/blog/">DEVELOPMENT</a></li>･ <li><a href="/projects/">PROJECTS</a></li> </ul> </nav> <div class=content role=main> <div class=header> <h1><a href="https://github.com/Diope/Decisions">Decisions･</a></h1> <div class=meta> <small>Feb 11, 2018</small> <small>Don't over React</small> <small> Tags: <a href="/tags/javascript/">Javascript</a> <a href="/tags/react/">react</a> </small> </div> </div> <div class=article> <p>I should update my blog more often, but yea as of late I&rsquo;ve been leaning into React quite a bit. I&rsquo;m not exactly sure when it clicked for me as a framework (view layer) but I don&rsquo;t just going in and breaking projects and trying to figure out what does what along with some great written explanations/tutorials are the quickest way for things to click.</p> <p><img alt="much React, make decisions" src="https://i.imgur.com/Mqah47Q.gif"/></p> <p>This is my first React project and isn&rsquo;t talking to an API or anything (I&rsquo;m eventualy going to create a project that does such). It&rsquo;s pretty simple and straightforward in what it does. You can enter a bunch of choices then the app will decide which one you should do.</p> <p>To run, first clone the repository. At the commandline run <code>yarn install</code> then <code>yarn dev-server</code> then <code>yarn serve</code>. I actually spent some time on the design portion on this project!</p> </div> <footer> <ul> <li><a href="http://www.twitter.com/dipet_low">Twitter</a></li> <li><a href="mailto:hey_dion@dipet.me?sqs_title=Hello!">Email</a></li> <li><a href="http://www.github.com/Diope">Github</a></li> <li><a href="/feed.xml">RSS Feed (Atom)</a></li> </ul> </footer> </body> </html>

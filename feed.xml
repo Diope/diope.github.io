@@ -5,10 +5,68 @@
   <id>http://dipet.me</id>
   <link href="http://dipet.me"/>
   <link href="http://dipet.me/feed.xml" rel="self"/>
-  <updated>2015-10-11T01:00:00-04:00</updated>
+  <updated>2018-02-11T00:00:00-05:00</updated>
   <author>
     <name>Dion Pettaway</name>
   </author>
+  <entry>
+    <title>Decisions</title>
+    <link rel="alternate" href="http://dipet.me/projects/decisionsdecisions/"/>
+    <id>http://dipet.me/projects/decisionsdecisions/</id>
+    <published>2018-02-11T00:00:00-05:00</published>
+    <updated>2018-03-12T14:53:36-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;I should update my blog more often, but yea as of late I&amp;rsquo;ve been leaning into React quite a bit. I&amp;rsquo;m not exactly sure when it clicked for me as a framework (view layer) but I don&amp;rsquo;t just going in and breaking projects and trying to figure out what does what along with some great written explanations/tutorials are the quickest way for things to click.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="much React, make decisions" src="https://i.imgur.com/Mqah47Q.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is my first React project and isn&amp;rsquo;t talking to an API or anything (I&amp;rsquo;m eventualy going to create a project that does such). It&amp;rsquo;s pretty simple and straightforward in what it does. You can enter a bunch of choices then the app will decide which one you should do.&lt;/p&gt;
+
+&lt;p&gt;To run, first clone the repository. At the commandline run &lt;code&gt;yarn install&lt;/code&gt; then &lt;code&gt;yarn dev-server&lt;/code&gt; then &lt;code&gt;yarn serve&lt;/code&gt;. I actually spent some time on the design portion on this project!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>I am A Programmer</title>
+    <link rel="alternate" href="http://dipet.me/blog/pushingpastimposter/"/>
+    <id>http://dipet.me/blog/pushingpastimposter/</id>
+    <published>2018-01-28T00:00:00-05:00</published>
+    <updated>2018-03-12T14:00:00-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;So I initially started on my path to becoming a web developer in 2015/2016 and in hindsight this was a terrible time in my life to attempt, but worth it in the end. I suffered from untreated chronic depression and borderline personality disorder. I didn’t know I had the latter, but always expected the former. I just assumed I was “sad” because my life hadn’t gone the way I expected, we all get like that from time to time over myriad of different things.&lt;/p&gt;
+
+&lt;p&gt;I started learning web development via Ruby on Rails, it was a fun experience and I learned how to really solve problems on my own. I felt very accomplished when I finished the One Month Rail course, then went on to do Michael Hartl’s course. Much more information and many questions I had about rails started being answered. From Hartl’s course, I started creating my own projects that went past the simple CRUD operations of making a post. If I had a passion for anything at its core, it’s definitely the act of learning things. I’ve never been satisfied with surface level knowledge, and despite the fact I was learning and picking up rails, I felt two things:
+Knowing rails wasn’t enough
+This wasn’t real programming
+These two things became a negative feedback loop for me and compounded with my existing mental conditions I unknowingly descended upon a path of “never being enough”.
+Knowing rails wasn’t enough, so I learned Ruby (and honestly you SHOULD learn the programming language and fundamentals of programming, I don’t think is something that should ever be optional). Ruby wasn’t enough for me, I needed to learn how Ruby works, so I started teaching myself the fundamentals of computer science, language construction, usage, design patterns, algorithms, data structures, SQL, etc.  To me I was a self taught person entering a field where many men and women spent 4 years of their life learning, 4 years of late night studying for exams. At the very least I could try to reach some of the heights they did. I felt obligated. Once again part of this continual learning is because I simply like to learn. I can (and do) watch CS lectures recorded from different colleges, I enjoy people talking about how algorithms and data structures work (the feeling I had when recursion finally made sense was the best!).&lt;/p&gt;
+
+&lt;p&gt;I sidelined my developer career for two years because of my own mental conditions, but at the same time I was able to learn so much more due to the mental goals I kept moving in my head before I applied for positions. I still have much to learn by way of data structures, design patterns, and algorithms (I still couldn’t implement a basic BST if you asked but I can explain them to you!).&lt;/p&gt;
+
+&lt;p&gt;For new developers reading, you are not going to know everything. No employer is going to expect you to. If you’ve been granted an interview, trust me, I know exactly what you can or cannot do. They’re interviewing you because they see your potential, they see someone they can help take their career to the next step and who in turn will help their company and products grow. Don’t worry about not thinking you belong, I assure you when you’re sitting down and coding your coworkers aren’t thinking you’re trash or anything of the like. Ask them questions, they will be more than willing to help you!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Bitcoin Watcher</title>
+    <link rel="alternate" href="http://dipet.me/projects/bitcoinwatcher/"/>
+    <id>http://dipet.me/projects/bitcoinwatcher/</id>
+    <published>2018-01-16T00:00:00-05:00</published>
+    <updated>2018-03-12T14:13:17-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;I created my first electron application called &lt;a href="https://github.com/Diope/bitcoin-electron/releases"&gt;Bitcoin Watcher&lt;/a&gt;! The name is cheesy but on my next project I&amp;rsquo;ll name it something more start-upy (omit some vowels!) While it might be absolutely tiny and kinda pointless unless you really need updates on bitcoin when it reaches a certain price, I&amp;rsquo;m still pretty proud of this.&lt;/p&gt;
+
+&lt;p&gt;Design wise it&amp;rsquo;s not my best (if I were to work on the design portion I would never get it done.) I&amp;rsquo;ve learned much about Electron while creating this. First and foremost Electron&amp;rsquo;s documentation is great and you can find examples for nearly anything you&amp;rsquo;re looking for on their page.&lt;/p&gt;
+
+&lt;p&gt;I wanted to create this not to be a application developer, but because I enjoy problem solving and wanted to see how far I&amp;rsquo;ve come with Javascript, how in depth my knowledge is. I&amp;rsquo;ll admit this project did very little to help me guage that, but I enjoyed the problem solving aspect all the same. &lt;/p&gt;
+
+&lt;p&gt;I think I&amp;rsquo;ll use this project as my muse of sorts in which I periodically will come back to it and make it better, expand the feature set, etc.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Profile</title>
     <link rel="alternate" href="http://dipet.me/design/profile_page/"/>
@@ -105,64 +163,6 @@ Here the ? tells Swift not to send the message if delegate is nil. You can read 
 &lt;li&gt;To find the addItemViewController, look at the navigation controller’s topViewController property. This property refers to the screen that is currently active inside the navigation controller.&lt;/li&gt;
 &lt;li&gt;Once you have a reference to the AddItemViewController object, you can set its delegate property to self and the connection is complete. Self in the example refers to the ChecklistViewController.&lt;/li&gt;
 &lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Swift</title>
-    <link rel="alternate" href="http://dipet.me/blog/swift/"/>
-    <id>http://dipet.me/blog/swift/</id>
-    <published>2015-09-08T01:00:00-04:00</published>
-    <updated>2015-10-28T17:02:52-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;I started getting into iOS development and by extension event driven programming in general. I find that I&amp;rsquo;m learning and solidifying my understanding of programming by absorbing multiple languages, I&amp;rsquo;ve also been dabbling in PyQT and I find that both Python and Swift are really good languages for solidifying one&amp;rsquo;s understanding of object oriented programming. Though to be completely honest I&amp;rsquo;m not sure if it&amp;rsquo;s the languages and their usage or the constant exposure to programming and things are just making more sense in general (por que no los dos?). I do like to believe that if I just stuck with Ruby and Rails by extension that I wouldn&amp;rsquo;t understand as much as I do now. &lt;/p&gt;
-
-&lt;p&gt;I felt there was a ever slight disconnect between rails and object oriented programming paradigms. Not to say Rails doesn&amp;rsquo;t use, because it uses it quite a bit. I more feel that there was a secondary layer between the end result and OOP when dealing with Rails, I think that layer is the web. Trying to explain it isn&amp;rsquo;t really easy but I guess the best way to explain how I feel would be an example of buttons.&lt;/p&gt;
-
-&lt;p&gt;In iOS, OSX, PyQT, WinForms, etc when you&amp;rsquo;re making a button do something or anything you create the function/method and what it does. The method might be simple or complex depending on what you need the button to do. When it coems to Rails and web development, you don&amp;rsquo;t have to worry about that to nearly the degree and when you do there is still a small disconnect. Now I can be completely wrong and buttons can be just as complex in web development and I&amp;rsquo;ve just have never dealt with anything of the sort yet, but I feel that adhereing to CRUD obscures some of the finer things because it has to.&lt;/p&gt;
-
-&lt;p&gt;If anything I feel like I owe pretty much the last year of my progress to Ruby, Rails, the various communities and &lt;a href="http://elliotec.com"&gt;Mike Elliot&lt;/a&gt; that all got me started on this.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Flex('Mancer)</title>
-    <link rel="alternate" href="http://dipet.me/misc/theflex/"/>
-    <id>http://dipet.me/misc/theflex/</id>
-    <published>2015-08-28T01:00:00-04:00</published>
-    <updated>2015-10-26T20:04:58-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img alt="Flex cover" src="http://ecx.images-amazon.com/images/I/41bIqjVL2kL.jpg" /&gt;&lt;/p&gt;
-
-&lt;p&gt;As an avid reader I&amp;rsquo;m forever acquiring new books based on my various interests. While my tastes are pretty much by the numbers as a reader (sci-fi, modern fantasy, dystopian futures, etc). I still find that there are incredible books that fly under the radar constantly. While I read constantly I don&amp;rsquo;t like to pretend I&amp;rsquo;m some sort of authority on what makes a book &amp;ldquo;good&amp;rdquo;, simply put&amp;hellip;I like what I like it&amp;rsquo;s really that simple. I read a quick preview and look at the cover and if those two things can keep my attention I&amp;rsquo;ll purchase the book. Currently on my Kindle Paperwhite (which I love), I currently have 343 books to my name. With another 100 or so physical books.&lt;/p&gt;
-
-&lt;p&gt;The latest book I finished was &amp;ldquo;Flex&amp;rdquo; and it&amp;rsquo;s sequel &amp;ldquo;The Flux&amp;rdquo; by Ferrett Steinmetz. Flex lets you know from the first page that magic is real but it&amp;rsquo;s not something amazing or even tolerated by the world at large, and by world at large I mean the actual universe. Both the magic system and the restrictions are wonderfully explained to the point I was like &amp;ldquo;If magic were real it&amp;rsquo;d probably work something like this.&amp;rdquo; &lt;/p&gt;
-
-&lt;p&gt;The story of Flex focuses on an everyday working man named Paul Tsabo, he&amp;rsquo;s just a small paper pusher at an insurance company and for the most part he is content in his life. Well as content as one can be missing a leg and his wife divorcing on him after she cheated on him, but the flipside is he has a great 6 year old daughter named Aliyah who is his life. But Paul has a secret that he keeps from his family (and is directly the reason for the deterioration in his relationship with his wife). Paul is a Mancer, to be specific a bureaucromancer. He loves his job he truly does, after all it&amp;rsquo;s how he acquired his power. The power to hold corporations and the government accountable to the citizens they serve and protect. Paul very much believes in a just world which makes his job perfect for him. Insurance companies aren&amp;rsquo;t the most righteous of the bunch and Paul uses his abilities to push claims through, to make sure they get their compensation from their claims without the insurance company wiggling it&amp;rsquo;s way out of paying.&lt;/p&gt;
-
-&lt;p&gt;In Flex few gain power, and those who do gain them by being obssessed with their hobby, their obsession tears and alters the reality around them, one can become a &amp;lsquo;mancer of anything. Videogamemancers, FightClubmancers, Origamimancers, Catmancers, there is no limit to what one can become. As the old saying goes; &amp;ldquo;With great power comes great responsibility&amp;rdquo; and this is doubly true in Flex. These superhumans can&amp;rsquo;t use their powers freely. While they can bend reality to their whim, reality doesn&amp;rsquo;t like this and wants to right the wrongs as soon as possible. This is introduced as &amp;ldquo;Flux&amp;rdquo; or the backlash from using one&amp;rsquo;s power. Flux is a backlash that comes as a coincidence of sorts. The more one uses their power the larger the Flux. In essence Flux is reality looking for something the Flex user cares/loves and having bad things happen to it. It might be your child stubbing her toe all the way to her catching fire in your arms. As a result most Flex users tend to distance themselves from those they love.&lt;/p&gt;
-
-&lt;p&gt;Paul hasn&amp;rsquo;t learned this lesson yet as his power usage is small until his house catches on fire. Paul uses his powers in ways he&amp;rsquo;s never known he could and as a result the Flux comes and it comes for that which he loves the most&amp;hellip;Aliyah. Paul then learns that the fire in his apartment was no accident and soon he&amp;rsquo;s the target of a Paleomancer who is determined to get rid of Paul for reasons unknown to him. &lt;/p&gt;
-
-&lt;p&gt;Flex is a great ride and the writing seems effortless, the words flow and keep you wanting to read to see what happens next. I ended up reading both Flex and the sequel &amp;ldquo;The Flux&amp;rdquo; in the course of two days. I highly recommend it for those who like books that involve magic a relatable everyday man who is just trying to do what&amp;rsquo;s best for those around him who isn&amp;rsquo;t a &amp;ldquo;chosen one&amp;rdquo;.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Mind the Gap</title>
-    <link rel="alternate" href="http://dipet.me/blog/mind_the_gap/"/>
-    <id>http://dipet.me/blog/mind_the_gap/</id>
-    <published>2015-08-16T01:00:00-04:00</published>
-    <updated>2015-10-25T17:21:01-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;I&amp;rsquo;ve gone through several ruby books jotting down notes, doing examples, and creating small command line tools to help solidify the knowledge I&amp;rsquo;ve gained through the books, and yet and still I find myself at a loss when it comes to the ability to &amp;ldquo;program&amp;rdquo; essentially. I sit and ponder is it the syntax that eludes me? Is it my lack of understanding? I can&amp;rsquo;t place my find on any one thing that I feel I am lacking but it&amp;rsquo;s frustrating none the less. I&amp;rsquo;ve been given a coding assignment to create Tic-Tac-Toe in Ruby, which is funny because that&amp;rsquo;s where I am on the Odin Project. Yet I find myself staring at a blank .rb file unable to even think how to start this. There is a gap in knowledge that I do not know how to fill. &lt;/p&gt;
-
-&lt;p&gt;I know a few people on various discussion boards who joke about a &amp;ldquo;nebulous&amp;rdquo; area of learning that exisits between learning the syntax and understanding the core concepts (arrays, hashes/dictionaries, if-else-while-unless-until, structs/classes/modules, function/method) and being able to successfully piece them all toegether to create something. I haven&amp;rsquo;t been able to figure out the best approach to getting past this area. I&amp;rsquo;ve signed up for codekata websites (codewars, hackerrank) and have committed to learning and figuring out logic through repetition but even then I hit a wall in which I can go no higher regardless of how much time I put into the attempt (example being, I struggled for 9 hours trying to solve one of the coding challenges only to get nowhere and ultimately give up). It&amp;rsquo;s these issues I run into that make me second guess if I&amp;rsquo;m cut out to be a programmer, and while I love trying to solve these challenges my constant inability to do so really lowers my enjoyment. Constantly having to look up the solution isn&amp;rsquo;t my idea of success. I have many notes on the solutions I have looked up and yet and still it does nothing for me when it comes to the next difficult solution.&lt;/p&gt;
-
-&lt;p&gt;Taking a step back and analyising it, I think I am at the end of what I can do as far as self teaching goes and I&amp;rsquo;m starting to feel that I won&amp;rsquo;t be able to make meaningful progress unless I get a mentor/teacher to help me fill in these gaps. While I&amp;rsquo;m slowly coming to terms with this a new reality hits me, vast majority of online mentors command ridiculous prices (which they derserve to, they are after all teaching something). On the flipside despite this seemingly self-loathing viewpoint, I find the challenge of pushing past that border to be the best part of it all. The excitement of bashing your head against a wall to figure something out then to finally figure it out much later (in my case that can be days) is one of the best feelings you can receive and it makes me love porgramming all over again.&lt;/p&gt;
 </content>
   </entry>
 </feed>
