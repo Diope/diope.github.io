@@ -82,12 +82,13 @@ Knowing rails wasn’t enough, so I learned Ruby (and honestly you SHOULD learn 
     <title>Bitcoin Watcher</title>
     <link rel="alternate" href="http://dipet.me/projects/bitcoinwatcher/"/>
     <id>http://dipet.me/projects/bitcoinwatcher/</id>
-    <published>2018-01-16T00:00:00-05:00</published>
-    <updated>2018-03-12T14:13:17-04:00</updated>
+    <published>2018-01-04T00:00:00-05:00</published>
+    <updated>2018-03-12T16:23:35-04:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
-    <content type="html">&lt;p&gt;I created my first electron application called &lt;a href="https://github.com/Diope/bitcoin-electron/releases"&gt;Bitcoin Watcher&lt;/a&gt;! The name is cheesy but on my next project I&amp;rsquo;ll name it something more start-upy (omit some vowels!) While it might be absolutely tiny and kinda pointless unless you really need updates on bitcoin when it reaches a certain price, I&amp;rsquo;m still pretty proud of this.&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="very simple" src="https://i.imgur.com/1HStj9s.gif" /&gt;
+I created my first electron application called &lt;a href="https://github.com/Diope/bitcoin-electron/releases"&gt;Bitcoin Watcher&lt;/a&gt; The name is cheesy but on my next project I&amp;rsquo;ll name it something more start-upy (omit some vowels!) While it might be absolutely tiny and kinda pointless unless you really need updates on bitcoin when it reaches a certain price, still&amp;hellip;I dig it.&lt;/p&gt;
 
 &lt;p&gt;Design wise it&amp;rsquo;s not my best (if I were to work on the design portion I would never get it done.) I&amp;rsquo;ve learned much about Electron while creating this. First and foremost Electron&amp;rsquo;s documentation is great and you can find examples for nearly anything you&amp;rsquo;re looking for on their page.&lt;/p&gt;
 
