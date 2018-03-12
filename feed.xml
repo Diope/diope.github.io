@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://dipet.me/projects/searchTubes/"/>
     <id>http://dipet.me/projects/searchTubes/</id>
     <published>2018-02-02T00:00:00-05:00</published>
-    <updated>2018-03-12T15:39:35-04:00</updated>
+    <updated>2018-03-12T15:41:11-04:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
@@ -29,7 +29,7 @@
 &lt;li&gt;Component life cycles. Granted I didn&amp;rsquo;t make use of them here much outside of &lt;code&gt;componentWillMount()&lt;/code&gt;, I&amp;rsquo;ve become familiar with the others to some extent, at the very least I&amp;rsquo;m aware of their uses.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id="to-install"&gt;To install&lt;/h2&gt;
+&lt;p&gt;To install:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;clone git repository&lt;/li&gt;
