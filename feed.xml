@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://dipet.me/projects/searchTubes/"/>
     <id>http://dipet.me/projects/searchTubes/</id>
     <published>2018-02-02T00:00:00-05:00</published>
-    <updated>2018-03-12T15:41:11-04:00</updated>
+    <updated>2018-03-12T15:43:16-04:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
@@ -22,11 +22,11 @@
 
 &lt;p&gt;Yet another small &lt;a href="https://github.com/Diope/Searchtubes"&gt;React project&lt;/a&gt;, I make these to get more comfortable with the framework and Javascript. I made this one with the intent on consuming an API.&lt;/p&gt;
 
-&lt;p&gt;Things I learned with this project:
-* Better structure, separation of concerns, a single point of entry. That is to say I only need to fetch the API in one place and send out that data to all the children components. I have another React project that I&amp;rsquo;m going to refactor as I was calling the API on several different components, even at the time of doing it I knew it was wrong (DRY) but did it anyway.&lt;/p&gt;
+&lt;p&gt;Things I learned with this project:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Component life cycles. Granted I didn&amp;rsquo;t make use of them here much outside of &lt;code&gt;componentWillMount()&lt;/code&gt;, I&amp;rsquo;ve become familiar with the others to some extent, at the very least I&amp;rsquo;m aware of their uses.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Better structure, separation of concerns, a single point of entry. That is to say I only need to fetch the API in one place and send out that data to all the children components. I have another React project that I&amp;rsquo;m going to refactor as I was calling the API on several different components, even at the time of doing it I knew it was wrong (DRY) but did it anyway.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Component life cycles. Granted I only used one (&lt;code&gt;componentWillMount()&lt;/code&gt;), I&amp;rsquo;ve become familiar with the others to some extent, at the very least I&amp;rsquo;m aware of their uses.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;To install:&lt;/p&gt;
