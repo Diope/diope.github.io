@@ -5,131 +5,150 @@
   <id>http://dipet.me</id>
   <link href="http://dipet.me"/>
   <link href="http://dipet.me/feed.xml" rel="self"/>
-  <updated>2018-02-02T00:00:00-05:00</updated>
+  <updated>2018-10-12T01:00:00-04:00</updated>
   <author>
     <name>Dion Pettaway</name>
   </author>
   <entry>
-    <title>SearchTubes</title>
-    <link rel="alternate" href="http://dipet.me/projects/searchTubes/"/>
-    <id>http://dipet.me/projects/searchTubes/</id>
-    <published>2018-02-02T00:00:00-05:00</published>
-    <updated>2018-03-12T15:43:16-04:00</updated>
+    <title>mininotes</title>
+    <link rel="alternate" href="http://dipet.me/projects/mininotes-ohyea/"/>
+    <id>http://dipet.me/projects/mininotes-ohyea/</id>
+    <published>2018-10-12T01:00:00-04:00</published>
+    <updated>2018-10-12T14:53:44-04:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img alt="its searching" src="https://i.imgur.com/mgbNQxJ.gif" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="ooooh awww" src="https://user-images.githubusercontent.com/3039981/46878777-1d3bed80-ce12-11e8-9e1b-5a0d8a8a8f22.png" /&gt;&lt;/p&gt;
 
-&lt;p&gt;Yet another small &lt;a href="https://github.com/Diope/Searchtubes"&gt;React project&lt;/a&gt;, I make these to get more comfortable with the framework and Javascript. I made this one with the intent on consuming an API.&lt;/p&gt;
+&lt;p&gt;mininotes is a very small appilication I created because I wanted a simple note taking app that lived in the menubar. Prior to creating this, I was using evernote&amp;rsquo;s app which was a lot of app just to use one small portion (and I had to make an account among other things, le sigh). I&amp;rsquo;ll be adding more to the application, mostly setting a global keybinding to invoke the app when it&amp;rsquo;s not the focus, and menu icon highlight when active.&lt;/p&gt;
 
-&lt;p&gt;Things I learned with this project:&lt;/p&gt;
+&lt;p&gt;I wrote about creating it &lt;a href="http://www.dipet.me/blog/electron"&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Enjoy the app!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Electron Buildin</title>
+    <link rel="alternate" href="http://dipet.me/blog/electron/"/>
+    <id>http://dipet.me/blog/electron/</id>
+    <published>2018-10-11T01:00:00-04:00</published>
+    <updated>2018-10-12T14:45:23-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;So I created another app for macOS mininote (available: &lt;a href="https://github.com/Diope/miniNotes/releases"&gt;here&lt;/a&gt;), the reason I created this is simple&amp;hellip;I have a convoluted process for making small notes or pasting them from my clipboard and it involves alfred -&amp;gt; textedit.app -&amp;gt; cmd+p or jotting down my note. Or sometimes I&amp;rsquo;ll open up the note app. But honestly I really got tired of doing that, and I didn&amp;rsquo;t want to keep either of them in my dock if only purely for aesthetics (I am chuckling as I write this). So I decided why not make a small scratchpad app that will live in my menu bar. I did some surface level searching for one, and came across evernote&amp;rsquo;s application but I didn&amp;rsquo;t want all the other crap it came with. I wasn&amp;rsquo;t trying to organize, sort, and archive my notes. I literally just wanted something I could quickly cmd+v something into or jot down random note and then go about my day until I needed it again. I figured, why not build it, how hard could it be?&lt;/p&gt;
+
+&lt;p&gt;It wasn&amp;rsquo;t really hard, but it was involved. First question what language I was going to write this in. I actually early on thought about doing it with Swift (and honestly might do a rewrite), but then I thought what if I want to distribute it on Windows because I run into the same issue there despite the fact that nowadays I only use my Windows machine to play games on Steam/Uplay/Origin. I&amp;rsquo;ve created two tiny apps with C# and .NET but I didn&amp;rsquo;t want to have to create one version of my app on macOS in Swift then another for windows in C#, that&amp;rsquo;s way too much work for my small app. So that left the only logical choice, Javascript and using Electron. There was also Java but&amp;hellip;no. Don&amp;rsquo;t get me wrong, Java as a language is cool I guess, but yea no.&lt;/p&gt;
+
+&lt;p&gt;I have a few issues with Electron, mostly memory management. After learning C/C++, the various *allocs, pointers and referencing (not saying I&amp;rsquo;m a pro but I understand now). I&amp;rsquo;ve grown a great appreciation for performant, efficient code.&lt;/p&gt;
+
+&lt;p&gt;I am familiar with Electron as I&amp;rsquo;ve made an app with it previously called &lt;a href="https://github.com/Diope/Readr/releases"&gt;Reader&lt;/a&gt;, despite how it looks, it was pretty simple when you break it down. The hardest parts were related to interaction because I only used CSS/HTML for that instead of a UI framework like React or Vue.&lt;/p&gt;
+
+&lt;p&gt;With this project I decided I would use React, I&amp;rsquo;m familiar with it and feel confident enough that I can get something simple like mininotes to play nice. I will go into detail in another post on all of the things I did, this post serves mostly to write what I learned creating this app.&lt;/p&gt;
+
+&lt;p&gt;First thing I learned: Ejecting&amp;hellip;still no reason to it at all! React build is still going to be your friend as it allows you to update as React receives updates. Another thing I learned&amp;hellip;sometimes documentation isn&amp;rsquo;t the most clear from the examples given. I didn&amp;rsquo;t git commit them but I assure I spent a good week or two slamming my head against my machine trying to figure out why I couldn&amp;rsquo;t get menu icons to show up using Electron-Builder but everything worked with Electron-Packager.&lt;/p&gt;
+
+&lt;p&gt;Finding a React Markdown component was fairly simple, I started with React-Ace but I was searching for a way to do inline text manipulation without needing a second screen and it seemed like I had to jump through hoops to get React-Ace to do the basics of that, though I did like the various languages it would parse, if the need for more arised. So I kept looking until I stumbled upon React-SimpleMDE. It allowed same window editing but had editor icons associated with it. That was no problem, I figured I&amp;rsquo;d just hack them out (which I proceeded to do until seeing the option to remove it lol). Did the neessary React setup (creating an handleChange&amp;hellip;handler and setting the text to the user passed value). Even though I&amp;rsquo;m decent with React, I quite often find myself forgetting some of the basics and needing to consult other projects I&amp;rsquo;ve done to remind myself (es un poco molesto). Once I got that working, I was essentially done as I didn&amp;rsquo;t need to pass the data back to electron as React was responsible for the UI (this will also make persistence straightfoward later, if I choose to implement it).&lt;/p&gt;
+
+&lt;p&gt;From here I spent time styling the app (admittedly it wasn&amp;rsquo;t a whole bunch to style but still I I needed it to look nice), most of my time was spent on logo and menu icon design more than anything, I&amp;rsquo;m not trying to set the world on fire and win awards so I kept it simple, only doing three sketches before I opened Sketch and went to work. Now that I had that out of the way, it was time to package the app. Sidenote: I settled on 32x32 for the @2x menu icon size, and 16x16 for the @1x, in case anyone is reading this and wants to know the dimensions. I tried larger (44x44) but it looked entirely too big and had no padding so it sat at the edge of the top and bottom of the menubar, and it just looked hilariously out of place next to my other menubar apps&amp;rsquo; icons.&lt;/p&gt;
+
+&lt;p&gt;Now it&amp;rsquo;s time to package this sucker, I initially decided on using Electron-Packager for this figuring that Electron-Builder was for more complex applications (I am not sure WHY I thought this), something I didn&amp;rsquo;t realise until this app was that Electron-Packager with it&amp;rsquo;s default settings just shoves the entire project folder as it is into your .dmg file, which is like holy shit why?! As a result of this, my app was over 700mb in size&amp;hellip;yea that was unacceptable, I was determined to get Electron-Builder to work, Electron apps are already huge because they require chrominium instance to run and that&amp;rsquo;s 40MB by itself. &lt;/p&gt;
+
+&lt;p&gt;Where I messed up with Electron-Builder: The &lt;code&gt;build&lt;/code&gt; section of &lt;code&gt;package.json&lt;/code&gt;; looking at various examples online, I thought the only thing I needed was my &lt;code&gt;build&lt;/code&gt; directory that is produced by yarn/react build command. But this isn&amp;rsquo;t actually correct, I pretty much forgot that build will only produce code related to React (I know I know how did I forget this lol) so for a good 4 days, I sat in frustration wondering why things weren&amp;rsquo;t working when I packaged the app but worked fine when I ran &lt;code&gt;electron .&lt;/code&gt;. I didn&amp;rsquo;t have to do any of this with Readr because again it was CSS/HTML in the sense of not using a UI framework that utilized webpack or Rollup.js, or anything. Just a couple of files contained within the same folder (note to self, go back and separate things into different folders honestly). So once the lightbulb went out that reminded me I needed to include my electron folder (for two of those days, I honestly thought it was the way I was naming my folder containing my electron code 😂). So I had to tell Electron-Builder the folders it needs, which looks like&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;  "build": {
+    "files": [
+      "build/**/* (this is the react build folder and all it's sub-folders)",
+      "electron/**/*" (all my electron code and sub-folders)",
+      "assets/**/* (contains the obvious)"
+    ]
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ran Electron-builder and&amp;hellip;nope, so close! An error slightly unrelated to my project, I got a node error regarding fsevents, which was not resolved by npm installing it, well fuck so what do I do? Well apparently I could get around it by simply running the same command via yarn&amp;hellip;I don&amp;rsquo;t understand exacly why that I but honestly I didn&amp;rsquo;t research into it too much, this was supposed to be a weekend project that ended up becoming a two week project smh. 
+(Note: the project was longer than the github log suggests, I duplicated the folder later and setup a new git).&lt;/p&gt;
+
+&lt;p&gt;So the build is now working? No, apparently Electron-builder could not find &lt;code&gt;main.js&lt;/code&gt; despite the fact I specified it in my &lt;code&gt;package.json&lt;/code&gt;, some internet searching told me to add &lt;code&gt;homepage:&amp;#39;./&amp;#39;&lt;/code&gt; to my package.json file, alright. So I tried that&amp;hellip;and no dice. Hmm, well that addtion does make sense, as it would tell Electron what the entry point is for the app but yet it produces nothing. So some more digging on the interwebs taught me about Electron-Builder&amp;rsquo;s metadata option, which basically let&amp;rsquo;s you inject a file during the build project. After conflicting information on the correct syntax to use, which was &lt;code&gt;-c.extraMetadata.main=electron/main.js&lt;/code&gt; (in my case the main.js was located in the electron folder). Again I emphasis that &lt;code&gt;electron/main.js&lt;/code&gt; is specified as the starting point, which is fine for Electron itself (running &lt;code&gt;electron .&lt;/code&gt; produces no issues), but apparently means nothing to Electron-Builder? Anyways, that option fixes it. But I the npm fsevents issue popped back up. So I created a script called &lt;code&gt;electron-pack&lt;/code&gt; to build the app using the aforementioned flag and much like last time it worked.&lt;/p&gt;
+
+&lt;p&gt;Alright, so everything builds and actually runs! Yatta, but one final issue stood in my way, Mojave came out and I introduced a dark mode. So now I had to figure out how to account for people using the dark mode menu bar, scheiße! I sat for about an hour searching through Electron documentation for API hooks for Mojave&amp;rsquo;s dark mode. I figured it&amp;rsquo;d be a pretty simple if statement, dark mode ? dark menubar icon : light menubar icon. I ended up finding out it was even more simple than that! Because I&amp;rsquo;ve always used dark mode (and prior a dark menu bar) I created the mininote icon in white&amp;hellip;which is wrong. All I had to do was create the icon in #000 black, and make sure the file name ended with &lt;code&gt;Template.png&lt;/code&gt; ex: &lt;code&gt;trayIconTemplate.png&lt;/code&gt;, and macOS takes care of making it white when used with dark mode, or leaving the icon as it&amp;rsquo;s default black when used in light mode.&lt;/p&gt;
+
+&lt;p&gt;So that&amp;rsquo;s the basic run down of the creation of this app, or rather some of the random hangups I had while creating it.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Drybbble? Drybbble</title>
+    <link rel="alternate" href="http://dipet.me/projects/drybbble/"/>
+    <id>http://dipet.me/projects/drybbble/</id>
+    <published>2018-09-14T01:00:00-04:00</published>
+    <updated>2018-10-12T15:13:31-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;Drybbble is an current project that will essentially be a Dribbble clone made with MongoDB/Express/Node.js that generates API endpoints paired with React for the UI (and I will be making a second that uses Vue.js). I have previously recreated Dribbble, calling it &lt;a href="https://github.com/diope/drubbble"&gt;Drubbble&lt;/a&gt; using Rails 4.2 back in 2016-2017 (I will be updating that to Rails 5 in the second half of Dec when I have free time). Initially I was going to use PostgreSQL because I&amp;rsquo;m very comfortable with SQL commands, associations, and normalization/denormalization so I decided to instead use MongoDB, which I&amp;rsquo;ve only used in tutorial and toy app capacity, and I like the challenge&amp;hellip;and oh what a challenge it has been!&lt;/p&gt;
+
+&lt;p&gt;I will do a write up on what I&amp;rsquo;ve learned so far at a later date.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Structuring Data Algorithmically</title>
+    <link rel="alternate" href="http://dipet.me/blog/structures-of-data/"/>
+    <id>http://dipet.me/blog/structures-of-data/</id>
+    <published>2018-02-11T00:00:00-05:00</published>
+    <updated>2018-10-12T16:07:10-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;This will be a short entry, but I wanted to talk about what I’ve been learning as of late. Data structures and algorithms. People who know me know that I love learning and knowing how things work on a fundamental level (I plan on learning Assembly sometime this year or next year). I’m not content on simply learning the latest in development trends, I want to learn about software, I want to learn how to be a great programmer in any language. And algorithms have always been something I found interesting and I wanted to know more. I’ve been knee deep into algorithms and data structures since February going for as much as 10hrs a day, and while I still have so much to learn, I finally got recursion to click. Keep in mind this isn’t my first introduction to algorithms, I tried learning them back in 2015 alongside design patterns, but I definitely wasn’t at a level to understand anything. Recursion isn’t nearly as hard to grapple the point of it as many of these textbooks make it out to be, and I really blame the most used example that being&amp;hellip;fibonacci numbers. I feel like this is terrible first example as in order to understand how recursion works, the user/student/person has to understand what fibonacci numbers are, and I’ve noticed that many people are terrible at explaining it verbally and written. I would like to put forth that people be taught recursion with factorials. Factorials are easy to explain and thus people will be able to understand how recursion works out factorials. With that stated, when recursion finally did click, I honestly felt dumb for taking so long to understand to be honest. But apparently many people even those who went to a traditional 4 year struggled with understanding recursion (there’s a great joke about searching for what recursion is somewhere).&lt;/p&gt;
+
+&lt;p&gt;Else on the docket has been binary search trees and depth first and transversal first searches. The basis of BST feels like linked lists but with more freedom. I’m still learning about implementation and usage but I’m often told by fellow developers that they find themselves using BST many times at work, I’m excited to be placed in a position where I can actively utilize these data structures as a way of helping to solidify my knowledge of them.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Malloc, Calloc, Realloc Free Oh My!</title>
+    <link rel="alternate" href="http://dipet.me/blog/memory-allocation/"/>
+    <id>http://dipet.me/blog/memory-allocation/</id>
+    <published>2018-02-11T00:00:00-05:00</published>
+    <updated>2018-10-12T15:51:20-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;For the last 4ish months, I&amp;rsquo;ve dived head first into a topic I&amp;rsquo;ve been very excited to get to that is C/C++ and managing memory. To preface this, I am by no means an expert but I do enjoy the subject and how vast it is. I spent a large portion of time wrapping my head around pointers and referenccing/derefeencing, before moving on to malloc and calloc. As I&amp;rsquo;ve started learning about memory management in C/C++ I&amp;rsquo;ve naturally had to pick up on heap versus stack, and this in itself helped a few data structures click as well as how applications use memory and memory leaks (it seems simple to call &lt;code&gt;free()&lt;/code&gt; when necessary but I can easily see why mistakes are made.)&lt;/p&gt;
+
+&lt;p&gt;To refresh; Heap is used for dynamic memory allocation (both heap and stack use/are stored in your machine&amp;rsquo;s RAM). You should consider using the heap when you&amp;rsquo;re going to be allocating a lot of memory, and allocating it a run time. As far as I understand and have learned, it&amp;rsquo;s best to use heap when you plan to keep that variable around for a long time, or alternatively for variables that need to dynamically allocate their memory (arrays y structs!)&lt;/p&gt;
+
+&lt;p&gt;Stacks on the other hand should be allocated at compile time and you shouldn&amp;rsquo;t allocate a lot of memory to them, stacks are only available to threads, but you can access the stack very quickly. Variables allocated on the stack should for all intents and purposes have a very short shelf life, most say anything created on the stack shouldn&amp;rsquo;t stick around after it&amp;rsquo;s been invoked.&lt;/p&gt;
+
+&lt;p&gt;I still have much to learn with malloc, calloc, realloc, free and my end goal is creating my own basic garbage collector to really solidify my learnings.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Gotta React</title>
+    <link rel="alternate" href="http://dipet.me/blog/gottareact/"/>
+    <id>http://dipet.me/blog/gottareact/</id>
+    <published>2018-02-08T00:00:00-05:00</published>
+    <updated>2018-10-12T14:21:47-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;So after trial and error, and asking around (and looking at huge codebases) I’m getting a pretty good grasp on building a react app from scratch in terms of how to go about it. Though to be completely honest, as I’ve been just creating applications that I’ve thought up, path of creation becomes obvious in some ways and kind of oblivious in other ways. I definitely have to make a quick diagram to understand where my data flow is going to be, and which components will be stateful. I highly recommend diagraming it and start with hardcoded data. Start off with static components, at this point react components will do little more than render HTML. Clicking on buttons won’t yield any behavior since no interactivity has been added just yet.&lt;/p&gt;
+
+&lt;p&gt;Next, figure out what the state(s) will be for the application (you might be wrong when you start hardcoding&amp;hellip;which is why you hardcode some fake data first to figure out if your guess is right) and also figure out which components will contain the state. &lt;/p&gt;
+
+&lt;p&gt;You now have dataflow figured out (at least from parent to child) and figuring out the inverse of child to parent is pretty simple at the point&lt;/p&gt;
+
+&lt;p&gt;This will leave the top level component that fetches data (Axios go!) from the server and distributes it to the child components (You’ll likely stumble upon this realization as you’re learning all on your own. I did, I made an app where I fetched data from a server in like 3 different components before realizing I could fetch it from the most top component and distribute it to the necessary components.)&lt;/p&gt;
+
+&lt;p&gt;So basically a good way to look at going about creating a react application from scratch is:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Better structure, separation of concerns, a single point of entry. That is to say I only need to fetch the API in one place and send out that data to all the children components. I have another React project that I&amp;rsquo;m going to refactor as I was calling the API on several different components, even at the time of doing it I knew it was wrong (DRY) but did it anyway.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Component life cycles. Granted I only used one (&lt;code&gt;componentWillMount()&lt;/code&gt;), I&amp;rsquo;ve become familiar with the others to some extent, at the very least I&amp;rsquo;m aware of their uses.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;You gotta break the app into components&lt;/li&gt;
+&lt;li&gt;Diagram how the components will flow&lt;/li&gt;
+&lt;li&gt;Build a static version of the app&lt;/li&gt;
+&lt;li&gt;Figure out which of the components are going to be stateful (It should be fairly straightforward really)&lt;/li&gt;
+&lt;li&gt;Determine in which component each piece of state should live&lt;/li&gt;
+&lt;li&gt;Hard-code initial states (this gets kinda tricky depending on how deep you’re going&amp;hellip;enter redux at some point)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;To install:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;clone git repository&lt;/li&gt;
-&lt;li&gt;at the command line run &lt;code&gt;yarn start&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;localhost:8080&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>I am A Programmer</title>
-    <link rel="alternate" href="http://dipet.me/blog/pushingpastimposter/"/>
-    <id>http://dipet.me/blog/pushingpastimposter/</id>
-    <published>2018-01-28T00:00:00-05:00</published>
-    <updated>2018-03-12T14:00:00-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;So I initially started on my path to becoming a web developer in 2015/2016 and in hindsight this was a terrible time in my life to attempt, but worth it in the end. I suffered from untreated chronic depression and borderline personality disorder. I didn’t know I had the latter, but always expected the former. I just assumed I was “sad” because my life hadn’t gone the way I expected, we all get like that from time to time over myriad of different things.&lt;/p&gt;
-
-&lt;p&gt;I started learning web development via Ruby on Rails, it was a fun experience and I learned how to really solve problems on my own. I felt very accomplished when I finished the One Month Rail course, then went on to do Michael Hartl’s course. Much more information and many questions I had about rails started being answered. From Hartl’s course, I started creating my own projects that went past the simple CRUD operations of making a post. If I had a passion for anything at its core, it’s definitely the act of learning things. I’ve never been satisfied with surface level knowledge, and despite the fact I was learning and picking up rails, I felt two things:
-Knowing rails wasn’t enough
-This wasn’t real programming
-These two things became a negative feedback loop for me and compounded with my existing mental conditions I unknowingly descended upon a path of “never being enough”.
-Knowing rails wasn’t enough, so I learned Ruby (and honestly you SHOULD learn the programming language and fundamentals of programming, I don’t think is something that should ever be optional). Ruby wasn’t enough for me, I needed to learn how Ruby works, so I started teaching myself the fundamentals of computer science, language construction, usage, design patterns, algorithms, data structures, SQL, etc.  To me I was a self taught person entering a field where many men and women spent 4 years of their life learning, 4 years of late night studying for exams. At the very least I could try to reach some of the heights they did. I felt obligated. Once again part of this continual learning is because I simply like to learn. I can (and do) watch CS lectures recorded from different colleges, I enjoy people talking about how algorithms and data structures work (the feeling I had when recursion finally made sense was the best!).&lt;/p&gt;
-
-&lt;p&gt;I sidelined my developer career for two years because of my own mental conditions, but at the same time I was able to learn so much more due to the mental goals I kept moving in my head before I applied for positions. I still have much to learn by way of data structures, design patterns, and algorithms (I still couldn’t implement a basic BST if you asked but I can explain them to you!).&lt;/p&gt;
-
-&lt;p&gt;For new developers reading, you are not going to know everything. No employer is going to expect you to. If you’ve been granted an interview, trust me, I know exactly what you can or cannot do. They’re interviewing you because they see your potential, they see someone they can help take their career to the next step and who in turn will help their company and products grow. Don’t worry about not thinking you belong, I assure you when you’re sitting down and coding your coworkers aren’t thinking you’re trash or anything of the like. Ask them questions, they will be more than willing to help you!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Decisions</title>
-    <link rel="alternate" href="http://dipet.me/projects/decisionsdecisions/"/>
-    <id>http://dipet.me/projects/decisionsdecisions/</id>
-    <published>2018-01-17T00:00:00-05:00</published>
-    <updated>2018-03-12T15:27:25-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;I should update my blog more often, but yea as of late I&amp;rsquo;ve been leaning into React quite a bit. I&amp;rsquo;m not exactly sure when it clicked for me as a framework (view layer) but I don&amp;rsquo;t just going in and breaking projects and trying to figure out what does what along with some great written explanations/tutorials are the quickest way for things to click.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="much React, make decisions" src="https://i.imgur.com/Mqah47Q.gif" /&gt;&lt;/p&gt;
-
-&lt;p&gt;This is &lt;a href="https://github.com/Diope/Decisions"&gt;my first React project&lt;/a&gt; (to be more accurate this is my first post video and book consumption React project&amp;hellip;I definitely have a lot of react stuff in my React folder) . It&amp;rsquo;s pretty simple and straightforward in what it does. You can enter a bunch of choices then the app will decide which one you should do.&lt;/p&gt;
-
-&lt;p&gt;To run, first clone the repository. At the commandline run &lt;code&gt;yarn install&lt;/code&gt; then &lt;code&gt;yarn dev-server&lt;/code&gt; then &lt;code&gt;yarn serve&lt;/code&gt;. I actually spent some time on the design portion on this project!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Bitcoin Watcher</title>
-    <link rel="alternate" href="http://dipet.me/projects/bitcoinwatcher/"/>
-    <id>http://dipet.me/projects/bitcoinwatcher/</id>
-    <published>2018-01-04T00:00:00-05:00</published>
-    <updated>2018-03-12T16:23:35-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img alt="very simple" src="https://i.imgur.com/1HStj9s.gif" /&gt;
-I created my first electron application called &lt;a href="https://github.com/Diope/bitcoin-electron/releases"&gt;Bitcoin Watcher&lt;/a&gt; The name is cheesy but on my next project I&amp;rsquo;ll name it something more start-upy (omit some vowels!) While it might be absolutely tiny and kinda pointless unless you really need updates on bitcoin when it reaches a certain price, still&amp;hellip;I dig it.&lt;/p&gt;
-
-&lt;p&gt;Design wise it&amp;rsquo;s not my best (if I were to work on the design portion I would never get it done.) I&amp;rsquo;ve learned much about Electron while creating this. First and foremost Electron&amp;rsquo;s documentation is great and you can find examples for nearly anything you&amp;rsquo;re looking for on their page.&lt;/p&gt;
-
-&lt;p&gt;I wanted to create this not to be a application developer, but because I enjoy problem solving and wanted to see how far I&amp;rsquo;ve come with Javascript, how in depth my knowledge is. I&amp;rsquo;ll admit this project did very little to help me guage that, but I enjoyed the problem solving aspect all the same. &lt;/p&gt;
-
-&lt;p&gt;I think I&amp;rsquo;ll use this project as my muse of sorts in which I periodically will come back to it and make it better, expand the feature set, etc.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Profile</title>
-    <link rel="alternate" href="http://dipet.me/design/profile_page/"/>
-    <id>http://dipet.me/design/profile_page/</id>
-    <published>2015-10-11T01:00:00-04:00</published>
-    <updated>2015-11-02T18:23:48-05:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img alt="profile" src="http://dipet.me/images/weekly003@2x.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Another day, another UI daily design (if only I did them daily!), This is a continuation of the previous Audeo design, but I kinda sorta had no clue what I was doing with the whole Audeo so this just a typicalish profile page for yet another mobile social network.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m sticking with the angled image header that I introduced with the sign up page (which after working with Firebase, I need to go and adjust). The profile page needs work, more information can be displayed befor the user needs to scroll. That&amp;rsquo;s the downside of the header image&amp;rsquo;s current style. I&amp;rsquo;ll have to adjust and work with that a bit.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Mobile Sign-Up</title>
-    <link rel="alternate" href="http://dipet.me/design/audeo_signup_design/"/>
-    <id>http://dipet.me/design/audeo_signup_design/</id>
-    <published>2015-10-09T01:00:00-04:00</published>
-    <updated>2015-10-31T00:19:13-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;Decided to take part in the daily UI design challege, though I had to make it a weekly thing as I don&amp;rsquo;t feel like I&amp;rsquo;d do my best work if I had to do one a day. Okay maybe I&amp;rsquo;m lying and I just will forget to do one daily.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="Design" src="http://www.dipet.me/images/weekly001.jpg" /&gt;
-&lt;a href="http://www.dipet.me/images/weekly001.jpg"&gt;Click for Full&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The first challenge only said the Sign Up page and not the entire onboarding process&amp;hellip;which is my favorite part to be honest. Thinking of the best way to ease users into your product with the least amount of friction possible is much fun. Getting feedback from test users and using that data to better the product is one of my favorite feelings next to figuring out a programming issue. Obviously &amp;ldquo;Audeo&amp;rdquo; isn&amp;rsquo;t a real app (if it is, apologizes to the creators. Purely coincidental I promise!).&lt;/p&gt;
-
-&lt;p&gt;I made a conscious effort to push the user to signing in with Facebook or Twitter over creating an account. It&amp;rsquo;s easier for the user and that&amp;rsquo;s one less barrier they have to deal with when using the app. Many developers don&amp;rsquo;t release that users hate having to give out their email to YASN (Yet Another Social Network); removing this barrier makes them that much more likely to want to try out your product. Facebook is by far the most used way to sign in/signup for new products; it only makes sense to push the user to it in a way they don&amp;rsquo;t feel like you&amp;rsquo;re truly forcing them. By simply emphasizing Facebook and Twitter via giving their button more attention by way of color. You push the user to it without them knowing it. It is a much better approach than removing the ability to sign up for an account with your product&amp;rsquo;s internal sign up service.&lt;/p&gt;
+&lt;p&gt;Have fun!&lt;/p&gt;
 </content>
   </entry>
 </feed>

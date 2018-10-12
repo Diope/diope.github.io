@@ -1,6 +1,10 @@
-<!doctype html> <html> <head> <meta charset=utf-8 /> <link href="../../stylesheets/all.css" rel=stylesheet /> <script src="//squaresend.com/squaresend.js"></script> <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <meta http-equiv=X-UA-Compatible content='IE=edge;chrome=1'/> <title>Moving Data Between Views</title> <link rel=alternate type="application/atom+xml" title="Atom Feed" href="/feed.xml"/> </head> <style>
+<!doctype html> <html> <head> <meta name=viewport content="width=device-width, initial-scale=1"> <meta charset=utf-8 /> <link href="../../stylesheets/all.css" rel=stylesheet /> <script src="//squaresend.com/squaresend.js"></script> <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <meta http-equiv=X-UA-Compatible content='IE=edge;chrome=1'/> <title>Swift Segues</title> <link rel=alternate type="application/atom+xml" title="Atom Feed" href="/feed.xml"/> </head> <style>
     body {
       background-color: rgb(40, 40, 40);
+    }
+    .header {
+      
+      background-image: linear-gradient(rgba(40, 40, 40,0.93), rgba(40, 40, 40,0.93));
     }
 
 
@@ -10,11 +14,11 @@
     .header {
       color: rgb(255, 153, 0);
     }
-    .meta small{
+    .header .meta small{
       color: rgb(255, 153, 0);
     }
     .content ul li {
-        color: rgb(255, 153, 0);
+      color: rgb(255, 153, 0);
     }
 
 
@@ -61,7 +65,7 @@
           color: rgba(238, 136, 129, 0.70);
         }
 
-</style> <body> <nav class=navbar> <ul> <li><a href="/">ABOUT</a></li>･ <li><a href="/blog/">DEVELOPMENT</a></li>･ <li><a href="/projects/">PROJECTS</a></li> </ul> </nav> <div class=content role=main> <div class=header> <h1>Moving Data Between Views</h1> <div class=meta> <small>Sep 29, 2015</small> <small>Pass it on!</small> <small> Tags: <a href="/tags/ios/">iOS</a> <a href="/tags/swift/">Swift</a> <a href="/tags/programming/">Programming</a> </small> </div> </div> <div class=article> <p>The delegate pattern is commonly used to situations such as: Screen A opens screen B and at some point screen B needs to communicate back to screen A. The solution is to make screen A the delgate of screen B, so that B can send it’s messages to A whenever it needs to. This is the preferred way of screen/view communication. The principle of screens being independent of each others but yet still able to communicate is called loose coupling and is considered good software design practice. Delegates go hand-in-hand with protocols which is a prominent feature of the Swift language. For an example of setting up protocols and delegates see below</p> <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">AddItemViewControllerDelegate</span><span class="p">:</span> <span class="kd">class</span> <span class="p">{</span>
+</style> <body> <nav class=navbar> <ul> <li><a href="/">ABOUT</a></li>･ <li><a href="/blog/">DEVELOPMENT</a></li>･ <li><a href="/projects/">PROJECTS</a></li> </ul> </nav> <div class=header> <div class=header-info> <h1>Swift Segues</h1> <div class=meta> <small>Pass it on!</small> <small>Aug 29, 2015</small> <small> Tags: <a href="/tags/ios/">iOS</a> <a href="/tags/swift/">Swift</a> <a href="/tags/programming/">Programming</a> </small> </div> </div> </div> </div> <div class=content role=main> <div class=article> <p>The delegate pattern is commonly used to situations such as: Screen A opens screen B and at some point screen B needs to communicate back to screen A. The solution is to make screen A the delgate of screen B, so that B can send it’s messages to A whenever it needs to. This is the preferred way of screen/view communication. The principle of screens being independent of each others but yet still able to communicate is called loose coupling and is considered good software design practice. Delegates go hand-in-hand with protocols which is a prominent feature of the Swift language. For an example of setting up protocols and delegates see below</p> <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">AddItemViewControllerDelegate</span><span class="p">:</span> <span class="kd">class</span> <span class="p">{</span>
   <span class="kd">func</span> <span class="nf">addItemViewControllerDidCancel</span><span class="p">(</span><span class="nv">controller</span><span class="p">:</span> <span class="kt">AddItemViewController</span><span class="p">)</span>
   <span class="kd">func</span> <span class="nf">addItemViewController</span><span class="p">(</span><span class="nv">controller</span><span class="p">:</span> <span class="kt">AddItemViewController</span><span class="p">,</span> <span class="n">didFinishAddingItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">ChecklistItem</span><span class="p">)</span>
 <span class="p">}</span>
@@ -76,4 +80,4 @@
     <span class="n">controller</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre> <p>This is what the prepareForSegue does step-by-step</p> <ul> <li>Because there may be more than one segue per view controller, it’s best practice to give each one a unique identifier and to check for that identifier first to make sure you’re handling the correct segue.</li> <li>The new view controller can be found in segue.destinationViewController. The storyboard shows that the segue does not go directly to AddItemViewController but to the navigation controller that embeds it.</li> <li>To find the addItemViewController, look at the navigation controller’s topViewController property. This property refers to the screen that is currently active inside the navigation controller.</li> <li>Once you have a reference to the AddItemViewController object, you can set its delegate property to self and the connection is complete. Self in the example refers to the ChecklistViewController.</li> </ul> </div> <footer> <ul> <li><a href="http://www.twitter.com/errareangelus">Twitter</a></li> <li><a href="mailto:hey_dion@dipet.me?sqs_title=Hello!">Email</a></li> <li><a href="http://www.github.com/Diope">Github</a></li> <li><a href="/feed.xml">RSS Feed (Atom)</a></li> </ul> </footer> </body> </html>
+</code></pre> <p>This is what the prepareForSegue does step-by-step</p> <ul> <li>Because there may be more than one segue per view controller, it’s best practice to give each one a unique identifier and to check for that identifier first to make sure you’re handling the correct segue.</li> <li>The new view controller can be found in segue.destinationViewController. The storyboard shows that the segue does not go directly to AddItemViewController but to the navigation controller that embeds it.</li> <li>To find the addItemViewController, look at the navigation controller’s topViewController property. This property refers to the screen that is currently active inside the navigation controller.</li> <li>Once you have a reference to the AddItemViewController object, you can set its delegate property to self and the connection is complete. Self in the example refers to the ChecklistViewController.</li> </ul> </div> </div> </body> <footer class=footer> <ul> <li><a href="http://www.twitter.com/errareangelus">Twitter</a></li> <li><a href="mailto:hey_dion@dipet.me?sqs_title=Hello!">Email</a></li> <li><a href="http://www.github.com/Diope">Github</a></li> <li><a href="/feed.xml">RSS Feed (Atom)</a></li> </ul> </footer> </html>
