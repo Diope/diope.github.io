@@ -1,0 +1,68 @@
+<!doctype html> <html> <head> <meta name=viewport content="width=device-width, initial-scale=1"> <meta charset=utf-8 /> <link href="../../stylesheets/all.css" rel=stylesheet /> <script src="//squaresend.com/squaresend.js"></script> <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <meta http-equiv=X-UA-Compatible content='IE=edge;chrome=1'/> <title>SQL noSQL</title> <link rel=alternate type="application/atom+xml" title="Atom Feed" href="/feed.xml"/> </head> <style>
+    body {
+      background-color: rgb(250, 250, 250);
+    }
+    .header {
+      
+      background-image: linear-gradient(rgba(250, 250, 250,0.93), rgba(250, 250, 250,0.93));
+    }
+
+
+    .article p {
+      color: rgb(250, 152, 108);
+    }
+    .header {
+      color: rgb(250, 152, 108);
+    }
+    .header .meta small{
+      color: rgb(250, 152, 108);
+    }
+    .content ul li {
+      color: rgb(250, 152, 108);
+    }
+
+
+    .header a {
+      color: rgb(238, 136, 129);
+      text-decoration: none;}
+
+    .header a:active, .header a:focus, .header a:hover {
+      text-decoration: underline; }
+
+    .article a {
+      color: rgb(238, 136, 129);
+      text-decoration: none;
+      transition: color 0.2s linear; }
+
+    .article a:active, .article a:focus, .article a:hover {
+      text-decoration: underline;}
+
+      body {
+        border-top: 6px solid rgb(238, 136, 129);
+      }
+
+
+    footer li a {
+      color: rgb(238, 136, 129);
+      text-decoration: none;
+      transition: color 0.2s linear;}
+
+      footer li a:active, footer li a:focus, footer li a:hover {
+        text-decoration: underline;
+        color: rgb(238, 136, 129);}
+
+      .navbar a{
+        color: rgba(238, 136, 129, 0.75);
+      }
+
+      .navbar a:active, .navbar a:focus, .navbar a:hover {
+        color: rgba(238, 136, 129, 1); }
+
+        ::selection {
+          color: rgba(238, 136, 129, 0.70);
+        }
+        ::-moz-selection {
+          color: rgba(238, 136, 129, 0.70);
+        }
+
+</style> <body> <nav class=navbar> <ul> <li><a href="/">ABOUT</a></li>･ <li><a href="/blog/">DEVELOPMENT</a></li>･ <li><a href="/projects/">PROJECTS</a></li> </ul> </nav> <div class=header> <div class=header-info> <h1>SQL noSQL</h1> <div class=meta> <small>SQL Boy Q</small> <small>Oct 26, 2018</small> <small> Tags: <a href="/tags/database/">Database</a> <a href="/tags/backend/">Backend</a> </small> </div> </div> </div> </div> <div class=content role=main> <div class=article> <p>I’ve been working nearly exclusively with NoSQL databases because they’re a lot different than traditional SQL databases, and how you approach them feels very foreign to me to an uncomfortable degree. One of the things that I’m still wrapping my head around is associations and the fact that you don’t always necessarily make a new “table” for them. To give a more concrete example, I’m working on a Dribbble clone, In a traditional SQL database I would approach creating the user table as the following:</p> <p>The user table itself would consist of email, password for one table and the second table would be the “profile” table which would consist of the more personal information such as: location, twitter handle, background photo, profile photo, website, list of skills. A profile table <code>belongs to</code> a user, and a user <code>has one</code> profile (that is dependent on the user, thus if the user deletes her/his account the profile goes with it). With NoSQL databases, it’s not necessary to create another table to handle this association and can be embedded within the user document without much worry. Embedding the profile is the best approach for the profile because the profile is definite in the number of objects in it (create a separate document if you expect the size of said document to grow example being: storing user all a user’s comments).</p> <p>It’s definitely taken some time to really wrap my head around this, and even on this I’ve found myself questioning “do I need to even embed” I find myself asking this due to the added complexity that comes with embedding and trying to both populate and query against embedded data. If you take a my commits for (Chirpper)[https://github.com/diope/chirpper) you’ll see I go back and forth between embedding the profile and keeping it on the same depth as the rest of the user document.</p> <p>It’s an interesting challenge working with NoSQL, in some ways it feels familiar to SQL databases (mostly in how you query data, it’s quite similar to most SQL ORMs), unfortunately I miss the power that comes with knowing SQL and being able to use that to be more nuanced (and performance minded) if necessary. I do not look forward to learning normalization techniques for NoSQL DB given how long it’s taken me to really get used to SQL databases techniques. That and I still find myself thinking of everything as SQL associations and joins.</p> <p>Honestly I prefer SQL databases (postgreSQL is bae!) but I do appreciate a few things about NoSQLs mostly the fact I can edit data much quicker, no migrations needed, you can even directly edit documents on the fly which in some cases makes troubleshooting easier.</p> </div> </div> </body> <footer class=footer> <ul> <li><a href="http://www.twitter.com/errareangelus">Twitter</a></li> <li><a href="mailto:hey_dion@dipet.me?sqs_title=Hello!">Email</a></li> <li><a href="http://www.github.com/Diope">Github</a></li> <li><a href="/feed.xml">RSS Feed (Atom)</a></li> </ul> </footer> </html>

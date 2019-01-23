@@ -5,10 +5,30 @@
   <id>http://dipet.me</id>
   <link href="http://dipet.me"/>
   <link href="http://dipet.me/feed.xml" rel="self"/>
-  <updated>2018-10-12T01:00:00-04:00</updated>
+  <updated>2018-10-26T01:00:00-04:00</updated>
   <author>
     <name>Dion Pettaway</name>
   </author>
+  <entry>
+    <title>SQL noSQL</title>
+    <link rel="alternate" href="http://dipet.me/blog/sqls/"/>
+    <id>http://dipet.me/blog/sqls/</id>
+    <published>2018-10-26T01:00:00-04:00</published>
+    <updated>2018-10-26T10:58:26-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;I’ve been working nearly exclusively with NoSQL databases because they’re a lot different than traditional SQL databases, and how you approach them feels very foreign to me to an uncomfortable degree. One of the things that I’m still wrapping my head around is associations and the fact that you don’t always necessarily make a new “table” for them. To give a more concrete example, I’m working on a Dribbble clone,  In a traditional SQL database I would approach creating the user table as the following:&lt;/p&gt;
+
+&lt;p&gt;The user table itself would consist of email, password for one table and the second table would be the “profile” table which would consist of the more personal information such as: location, twitter handle, background photo, profile photo, website, list of skills. A profile table &lt;code&gt;belongs to&lt;/code&gt; a user, and a user &lt;code&gt;has one&lt;/code&gt; profile (that is dependent on the user, thus if the user deletes her/his account the profile goes with it). With NoSQL databases, it’s not necessary to create another table to handle this association and can be embedded within the user document without much worry. Embedding the profile is the best approach for the profile because the profile is definite in the number of objects in it (create a separate document if you expect the size of said document to grow example being: storing user all a user’s comments).&lt;/p&gt;
+
+&lt;p&gt;It’s definitely taken some time to really wrap my head around this, and even on this I’ve found myself questioning “do I need to even embed” I find myself asking this due to the added complexity that comes with embedding and trying to both populate and query against embedded data. If you take a my commits for (Chirpper)[https://github.com/diope/chirpper) you’ll see I go back and forth between embedding the profile and keeping it on the same depth as the rest of the user document.&lt;/p&gt;
+
+&lt;p&gt;It’s an interesting challenge working with NoSQL, in some ways it feels familiar to SQL databases (mostly in how you query data, it’s quite similar to most SQL ORMs), unfortunately I miss the power that comes with knowing SQL and being able to use that to be more nuanced (and performance minded) if necessary. I do not look forward to learning normalization techniques for NoSQL DB given how long it’s taken me to really get used to SQL databases techniques. That and I still find myself thinking of everything as SQL associations and joins.&lt;/p&gt;
+
+&lt;p&gt;Honestly I prefer SQL databases (postgreSQL is bae!) but I do appreciate a few things about NoSQLs mostly the fact I can edit data much quicker, no migrations needed, you can even directly edit documents on the fly which in some cases makes troubleshooting easier.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>mininotes</title>
     <link rel="alternate" href="http://dipet.me/projects/mininotes-ohyea/"/>
@@ -32,7 +52,7 @@
     <link rel="alternate" href="http://dipet.me/blog/electron/"/>
     <id>http://dipet.me/blog/electron/</id>
     <published>2018-10-11T01:00:00-04:00</published>
-    <updated>2018-10-12T14:45:23-04:00</updated>
+    <updated>2018-10-17T12:12:56-04:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
@@ -55,13 +75,13 @@
 &lt;p&gt;Now it&amp;rsquo;s time to package this sucker, I initially decided on using Electron-Packager for this figuring that Electron-Builder was for more complex applications (I am not sure WHY I thought this), something I didn&amp;rsquo;t realise until this app was that Electron-Packager with it&amp;rsquo;s default settings just shoves the entire project folder as it is into your .dmg file, which is like holy shit why?! As a result of this, my app was over 700mb in size&amp;hellip;yea that was unacceptable, I was determined to get Electron-Builder to work, Electron apps are already huge because they require chrominium instance to run and that&amp;rsquo;s 40MB by itself. &lt;/p&gt;
 
 &lt;p&gt;Where I messed up with Electron-Builder: The &lt;code&gt;build&lt;/code&gt; section of &lt;code&gt;package.json&lt;/code&gt;; looking at various examples online, I thought the only thing I needed was my &lt;code&gt;build&lt;/code&gt; directory that is produced by yarn/react build command. But this isn&amp;rsquo;t actually correct, I pretty much forgot that build will only produce code related to React (I know I know how did I forget this lol) so for a good 4 days, I sat in frustration wondering why things weren&amp;rsquo;t working when I packaged the app but worked fine when I ran &lt;code&gt;electron .&lt;/code&gt;. I didn&amp;rsquo;t have to do any of this with Readr because again it was CSS/HTML in the sense of not using a UI framework that utilized webpack or Rollup.js, or anything. Just a couple of files contained within the same folder (note to self, go back and separate things into different folders honestly). So once the lightbulb went out that reminded me I needed to include my electron folder (for two of those days, I honestly thought it was the way I was naming my folder containing my electron code 😂). So I had to tell Electron-Builder the folders it needs, which looks like&lt;/p&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;  "build": {
-    "files": [
-      "build/**/* (this is the react build folder and all it's sub-folders)",
-      "electron/**/*" (all my electron code and sub-folders)",
-      "assets/**/* (contains the obvious)"
-    ]
-  }
+&lt;pre class="highlight javascript"&gt;&lt;code&gt;  &lt;span class="s2"&gt;"build"&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s2"&gt;"files"&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+      &lt;span class="s2"&gt;"build/**/* (this is the react build folder and all it's sub-folders)"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+      &lt;span class="s2"&gt;"electron/**/*"&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;all&lt;/span&gt; &lt;span class="nx"&gt;my&lt;/span&gt; &lt;span class="nx"&gt;electron&lt;/span&gt; &lt;span class="nx"&gt;code&lt;/span&gt; &lt;span class="nx"&gt;and&lt;/span&gt; &lt;span class="nx"&gt;sub&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;folders&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;",
+      "&lt;/span&gt;&lt;span class="nx"&gt;assets&lt;/span&gt;&lt;span class="cm"&gt;/**/&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;contains&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;obvious&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;"&lt;/span&gt;
+    &lt;span class="p"&gt;]&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Ran Electron-builder and&amp;hellip;nope, so close! An error slightly unrelated to my project, I got a node error regarding fsevents, which was not resolved by npm installing it, well fuck so what do I do? Well apparently I could get around it by simply running the same command via yarn&amp;hellip;I don&amp;rsquo;t understand exacly why that I but honestly I didn&amp;rsquo;t research into it too much, this was supposed to be a weekend project that ended up becoming a two week project smh. 
@@ -72,6 +92,28 @@
 &lt;p&gt;Alright, so everything builds and actually runs! Yatta, but one final issue stood in my way, Mojave came out and I introduced a dark mode. So now I had to figure out how to account for people using the dark mode menu bar, scheiße! I sat for about an hour searching through Electron documentation for API hooks for Mojave&amp;rsquo;s dark mode. I figured it&amp;rsquo;d be a pretty simple if statement, dark mode ? dark menubar icon : light menubar icon. I ended up finding out it was even more simple than that! Because I&amp;rsquo;ve always used dark mode (and prior a dark menu bar) I created the mininote icon in white&amp;hellip;which is wrong. All I had to do was create the icon in #000 black, and make sure the file name ended with &lt;code&gt;Template.png&lt;/code&gt; ex: &lt;code&gt;trayIconTemplate.png&lt;/code&gt;, and macOS takes care of making it white when used with dark mode, or leaving the icon as it&amp;rsquo;s default black when used in light mode.&lt;/p&gt;
 
 &lt;p&gt;So that&amp;rsquo;s the basic run down of the creation of this app, or rather some of the random hangups I had while creating it.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Drubbble</title>
+    <link rel="alternate" href="http://dipet.me/projects/drubbble/"/>
+    <id>http://dipet.me/projects/drubbble/</id>
+    <published>2018-09-14T01:00:00-04:00</published>
+    <updated>2019-01-22T20:31:17-05:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;So this is actually an older project, this was my test playground for learning Rails, I would create small toy projects and then implement them into this project, I worked on it on and off for a couple of years. Even though it&amp;rsquo;s old, out of all the things I&amp;rsquo;ve made I am still the most proud of this. So over the weekend I decided to troubleshoot and update it enough to at least getting it running on Heroku. Working on troubleshooting was actually pretty fun, I hadn&amp;rsquo;t done any Ruby or rails work in years and getting back into the flow of things was very easy.&lt;/p&gt;
+
+&lt;p&gt;I had much to update to get it running on heroku, I will document sokme of the process in another post, this post is to talk about what features I implemented. As any one can see this was based on an older design of Dribbble before their big update in 2017. Unforunately as of this post I no longer have any screenshots of Dribbble&amp;rsquo;s old layout to compare and contrast with my drubbble project but I strived for near 1:1 in nearly all aspects. That alone was quite a bit of fun from a styling/SASS perspective. &lt;/p&gt;
+
+&lt;p&gt;I implemented the most important part of Dribbble in my recreation which was the ability to create an account and upload photos. There was much I learned on this feature which really served as a great bed rock of general computer science principles. My main take away was relational databases (from here I went on to learn and practice both SQL but also database normalization). I was fascinated by how associations, primary keys all worked together and learned exactly what ORMs were doing, where their strengths were and were they struggled compared to using SQL directly. Also learned QUITE about authenticiation/authorization what the differences are, how it works on a fundamental level (I will admit to getting sidetracked from the project for a month or two to learn this indepth) and why rolling your own authentication/authorization implementation is a TERRIBLE idea (I rolled by own in toy apps and saw how easy they were to break). One of the parts I&amp;rsquo;m most proud of building is the &lt;code&gt;:after&lt;/code&gt; feature once the user made their account the profile portion was auto populated with generic/empty data for the user to fill in at a later time. Creating this feature allowed me to get a feel for HOW to search through documentation to problem solve.&lt;/p&gt;
+
+&lt;p&gt;Another feature I was proud of implementing was the tags system which ended up functioning exactly the same as Dribbble&amp;rsquo;s, I was proud of this mostly because in order for me to figure it out I had to actually sit down and draw out the database relationship in order to implement it, at first I thought that was a sign of me not understanding database design enough to implement it correct without the &amp;lsquo;help&amp;rsquo; of a diagram but soon realized that, database diagrams are absolutely common and it would be amateurish if I DIDN&amp;rsquo;T have a diagram. Created the ability to view all posts from any tag, within their own page. The tagging system was a pain because at no point did I think to unify the tags, so in the first go around, I had tags with different formatting, it was a simple fix but still funny looking back because at the time I definitely ran my hands through my hair if I remember correctly.&lt;/p&gt;
+
+&lt;p&gt;Utilizing what I learned from the tagging system, I was able to go forward and add a followers/following system in the vein of Twitter&amp;rsquo;s to mimick the same feature from Dribbble. Looking back I could have implemented it a bit better from an ORM/database perspective.&lt;/p&gt;
+
+&lt;p&gt;I could go on about the numerous lessons I learned creating this and as I stated much of it helped improve my fundamental computer science knowledge which I am forever grateful, because of this project I found it hilarious easy to learn new technologies, this project also served as the starting point for me realising I was curious about computer science as a whole topic, I went on to teaching myself C++ and more specifically memory management (I had to know how pointers worked, so I started learning C, malloc, alloc, etc). &lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -86,20 +128,6 @@
     <content type="html">&lt;p&gt;Drybbble is an current project that will essentially be a Dribbble clone made with MongoDB/Express/Node.js that generates API endpoints paired with React for the UI (and I will be making a second that uses Vue.js). I have previously recreated Dribbble, calling it &lt;a href="https://github.com/diope/drubbble"&gt;Drubbble&lt;/a&gt; using Rails 4.2 back in 2016-2017 (I will be updating that to Rails 5 in the second half of Dec when I have free time). Initially I was going to use PostgreSQL because I&amp;rsquo;m very comfortable with SQL commands, associations, and normalization/denormalization so I decided to instead use MongoDB, which I&amp;rsquo;ve only used in tutorial and toy app capacity, and I like the challenge&amp;hellip;and oh what a challenge it has been!&lt;/p&gt;
 
 &lt;p&gt;I will do a write up on what I&amp;rsquo;ve learned so far at a later date.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Structuring Data Algorithmically</title>
-    <link rel="alternate" href="http://dipet.me/blog/structures-of-data/"/>
-    <id>http://dipet.me/blog/structures-of-data/</id>
-    <published>2018-02-11T00:00:00-05:00</published>
-    <updated>2018-10-12T16:07:10-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;This will be a short entry, but I wanted to talk about what I’ve been learning as of late. Data structures and algorithms. People who know me know that I love learning and knowing how things work on a fundamental level (I plan on learning Assembly sometime this year or next year). I’m not content on simply learning the latest in development trends, I want to learn about software, I want to learn how to be a great programmer in any language. And algorithms have always been something I found interesting and I wanted to know more. I’ve been knee deep into algorithms and data structures since February going for as much as 10hrs a day, and while I still have so much to learn, I finally got recursion to click. Keep in mind this isn’t my first introduction to algorithms, I tried learning them back in 2015 alongside design patterns, but I definitely wasn’t at a level to understand anything. Recursion isn’t nearly as hard to grapple the point of it as many of these textbooks make it out to be, and I really blame the most used example that being&amp;hellip;fibonacci numbers. I feel like this is terrible first example as in order to understand how recursion works, the user/student/person has to understand what fibonacci numbers are, and I’ve noticed that many people are terrible at explaining it verbally and written. I would like to put forth that people be taught recursion with factorials. Factorials are easy to explain and thus people will be able to understand how recursion works out factorials. With that stated, when recursion finally did click, I honestly felt dumb for taking so long to understand to be honest. But apparently many people even those who went to a traditional 4 year struggled with understanding recursion (there’s a great joke about searching for what recursion is somewhere).&lt;/p&gt;
-
-&lt;p&gt;Else on the docket has been binary search trees and depth first and transversal first searches. The basis of BST feels like linked lists but with more freedom. I’m still learning about implementation and usage but I’m often told by fellow developers that they find themselves using BST many times at work, I’m excited to be placed in a position where I can actively utilize these data structures as a way of helping to solidify my knowledge of them.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -118,37 +146,6 @@
 &lt;p&gt;Stacks on the other hand should be allocated at compile time and you shouldn&amp;rsquo;t allocate a lot of memory to them, stacks are only available to threads, but you can access the stack very quickly. Variables allocated on the stack should for all intents and purposes have a very short shelf life, most say anything created on the stack shouldn&amp;rsquo;t stick around after it&amp;rsquo;s been invoked.&lt;/p&gt;
 
 &lt;p&gt;I still have much to learn with malloc, calloc, realloc, free and my end goal is creating my own basic garbage collector to really solidify my learnings.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Gotta React</title>
-    <link rel="alternate" href="http://dipet.me/blog/gottareact/"/>
-    <id>http://dipet.me/blog/gottareact/</id>
-    <published>2018-02-08T00:00:00-05:00</published>
-    <updated>2018-10-12T14:21:47-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;So after trial and error, and asking around (and looking at huge codebases) I’m getting a pretty good grasp on building a react app from scratch in terms of how to go about it. Though to be completely honest, as I’ve been just creating applications that I’ve thought up, path of creation becomes obvious in some ways and kind of oblivious in other ways. I definitely have to make a quick diagram to understand where my data flow is going to be, and which components will be stateful. I highly recommend diagraming it and start with hardcoded data. Start off with static components, at this point react components will do little more than render HTML. Clicking on buttons won’t yield any behavior since no interactivity has been added just yet.&lt;/p&gt;
-
-&lt;p&gt;Next, figure out what the state(s) will be for the application (you might be wrong when you start hardcoding&amp;hellip;which is why you hardcode some fake data first to figure out if your guess is right) and also figure out which components will contain the state. &lt;/p&gt;
-
-&lt;p&gt;You now have dataflow figured out (at least from parent to child) and figuring out the inverse of child to parent is pretty simple at the point&lt;/p&gt;
-
-&lt;p&gt;This will leave the top level component that fetches data (Axios go!) from the server and distributes it to the child components (You’ll likely stumble upon this realization as you’re learning all on your own. I did, I made an app where I fetched data from a server in like 3 different components before realizing I could fetch it from the most top component and distribute it to the necessary components.)&lt;/p&gt;
-
-&lt;p&gt;So basically a good way to look at going about creating a react application from scratch is:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;You gotta break the app into components&lt;/li&gt;
-&lt;li&gt;Diagram how the components will flow&lt;/li&gt;
-&lt;li&gt;Build a static version of the app&lt;/li&gt;
-&lt;li&gt;Figure out which of the components are going to be stateful (It should be fairly straightforward really)&lt;/li&gt;
-&lt;li&gt;Determine in which component each piece of state should live&lt;/li&gt;
-&lt;li&gt;Hard-code initial states (this gets kinda tricky depending on how deep you’re going&amp;hellip;enter redux at some point)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Have fun!&lt;/p&gt;
 </content>
   </entry>
 </feed>
