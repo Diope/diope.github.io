@@ -34,13 +34,15 @@
     <link rel="alternate" href="http://dipet.me/projects/mininotes-ohyea/"/>
     <id>http://dipet.me/projects/mininotes-ohyea/</id>
     <published>2018-10-12T01:00:00-04:00</published>
-    <updated>2018-10-12T14:53:44-04:00</updated>
+    <updated>2019-01-24T17:09:42-05:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img alt="ooooh awww" src="https://user-images.githubusercontent.com/3039981/46878777-1d3bed80-ce12-11e8-9e1b-5a0d8a8a8f22.png" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;Grab the app &lt;a href="https://github.com/Diope/miniNotes/releases/download/v0.1.0/mininote-0.1.0.dmg"&gt;here&lt;/a&gt; (hosted on Github)&lt;/p&gt;
 
 &lt;p&gt;mininotes is a very small appilication I created because I wanted a simple note taking app that lived in the menubar. Prior to creating this, I was using evernote&amp;rsquo;s app which was a lot of app just to use one small portion (and I had to make an account among other things, le sigh). I&amp;rsquo;ll be adding more to the application, mostly setting a global keybinding to invoke the app when it&amp;rsquo;s not the focus, and menu icon highlight when active.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="ooooh awww" src="https://user-images.githubusercontent.com/3039981/46878777-1d3bed80-ce12-11e8-9e1b-5a0d8a8a8f22.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;I wrote about creating it &lt;a href="http://www.dipet.me/blog/electron"&gt;here&lt;/a&gt;&lt;/p&gt;
 
@@ -95,25 +97,23 @@
 </content>
   </entry>
   <entry>
-    <title>Drubbble</title>
-    <link rel="alternate" href="http://dipet.me/projects/drubbble/"/>
-    <id>http://dipet.me/projects/drubbble/</id>
-    <published>2018-09-14T01:00:00-04:00</published>
-    <updated>2019-01-22T20:34:18-05:00</updated>
+    <title>Readr</title>
+    <link rel="alternate" href="http://dipet.me/projects/readr/"/>
+    <id>http://dipet.me/projects/readr/</id>
+    <published>2018-09-20T01:00:00-04:00</published>
+    <updated>2019-01-24T17:19:32-05:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
-    <content type="html">&lt;p&gt;So this is actually an older project, this was my test playground for learning Rails, I would create small toy projects and then implement them into this project, I worked on it on and off for a couple of years. Even though it&amp;rsquo;s old, out of all the things I&amp;rsquo;ve made I am still the most proud of this. So over the weekend I decided to troubleshoot and update it enough to at least getting it running on Heroku. Working on troubleshooting was actually pretty fun, I hadn&amp;rsquo;t done any Ruby or rails work in years and getting back into the flow of things was very easy.&lt;/p&gt;
+    <content type="html">&lt;p&gt;Grab the app &lt;a href="https://github.com/Diope/Readr/releases/download/v0.5.0/Readr-0.5.0.dmg"&gt;here&lt;/a&gt; (hosted on Github Releases)&lt;/p&gt;
 
-&lt;p&gt;I had much to update to get it running on heroku, I will document sokme of the process in another post, this post is to talk about what features I implemented. As any one can see this was based on an older design of Dribbble before their big update in 2017. Unforunately as of this post I no longer have any screenshots of Dribbble&amp;rsquo;s old layout to compare and contrast with my drubbble project but I strived for near 1:1 in nearly all aspects. That alone was quite a bit of fun from a styling/SASS perspective. &lt;/p&gt;
+&lt;p&gt;Readr is a VERY simple bookmark listing application. The idea was if there was an site you wanted to check out later you could add it to your list, kinda replacing &amp;ldquo;open in new tab&amp;rdquo; but then never actually opening it because you end up collecting a bunch of tabs&amp;hellip;which I&amp;rsquo;m guilty of.&lt;/p&gt;
 
-&lt;p&gt;I implemented the most important part of Dribbble in my recreation which was the ability to create an account and upload photos. There was much I learned on this feature which really served as a great bed rock of general computer science principles. My main take away was relational databases (from here I went on to learn and practice both SQL but also database normalization). I was fascinated by how associations, primary keys all worked together and learned exactly what ORMs were doing, where their strengths were and were they struggled compared to using SQL directly. Also learned QUITE about authenticiation/authorization what the differences are, how it works on a fundamental level (I will admit to getting sidetracked from the project for a month or two to learn this indepth) and why rolling your own authentication/authorization implementation is a TERRIBLE idea (I rolled by own in toy apps and saw how easy they were to break). One of the parts I&amp;rsquo;m most proud of building is the &lt;code&gt;:after&lt;/code&gt; feature once the user made their account the profile portion was auto populated with generic/empty data for the user to fill in at a later time. Creating this feature allowed me to get a feel for HOW to search through documentation to problem solve.&lt;/p&gt;
+&lt;p&gt;This is yet another electron App, a bit more complex than the bitcoin watcher app. This application required me to do much more digging in documentation to figure out some problems. This app also made me realize just how much frontend view layers like Vue and React help, creating the UI and having everything work I realised is much more difficult using without a view layer. So for all those old large electron apps that had state and different components props (see what I did there!) to you because you are amazing people!&lt;/p&gt;
 
-&lt;p&gt;Another feature I was proud of implementing was the tags system which ended up functioning exactly the same as Dribbble&amp;rsquo;s, I was proud of this mostly because in order for me to figure it out I had to actually sit down and draw out the database relationship in order to implement it, at first I thought that was a sign of me not understanding database design enough to implement it correct without the &amp;lsquo;help&amp;rsquo; of a diagram but soon realized that, database diagrams are absolutely common and it would be amateurish if I DIDN&amp;rsquo;T have a diagram. Created the ability to view all posts from any tag, within their own page. The tagging system was a pain because at no point did I think to unify the tags, so in the first go around, I had tags with different formatting, it was a simple fix but still funny looking back because at the time I definitely ran my hands through my hair if I remember correctly.&lt;/p&gt;
+&lt;p&gt;There isn&amp;rsquo;t much else to this application, it&amp;rsquo;s very much WYSIWYG in functionality. I don&amp;rsquo;t have any real desire to be an electron developer, I&amp;rsquo;m just enjoying software development and the feeling that comes with making my small random app ideas into functinoal pieces of technology.&lt;/p&gt;
 
-&lt;p&gt;Utilizing what I learned from the tagging system, I was able to go forward and add a followers/following system in the vein of Twitter&amp;rsquo;s to mimick the same feature from Dribbble. Looking back I could have implemented it a bit better from an ORM/database perspective.&lt;/p&gt;
-
-&lt;p&gt;I could go on about the numerous lessons I learned creating this and as I stated much of it helped improve my fundamental computer science knowledge which I am forever grateful, because of this project I found it hilarious easy to learn new technologies, this project also served as the starting point for me realising I was curious about computer science as a whole topic, I went on to teaching myself C++ and more specifically memory management (I had to know how pointers worked, so I started learning C, malloc, alloc, etc). &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Bookmarks rawr" src="https://i.imgur.com/t2QzV87.png" /&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -131,21 +131,31 @@
 </content>
   </entry>
   <entry>
-    <title>Malloc, Calloc, Realloc Free Oh My!</title>
-    <link rel="alternate" href="http://dipet.me/blog/memory-allocation/"/>
-    <id>http://dipet.me/blog/memory-allocation/</id>
-    <published>2018-02-11T00:00:00-05:00</published>
-    <updated>2018-10-12T15:51:20-04:00</updated>
+    <title>SearchTubes</title>
+    <link rel="alternate" href="http://dipet.me/projects/searchTubes/"/>
+    <id>http://dipet.me/projects/searchTubes/</id>
+    <published>2018-03-21T01:00:00-04:00</published>
+    <updated>2019-01-22T21:41:38-05:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
-    <content type="html">&lt;p&gt;For the last 4ish months, I&amp;rsquo;ve dived head first into a topic I&amp;rsquo;ve been very excited to get to that is C/C++ and managing memory. To preface this, I am by no means an expert but I do enjoy the subject and how vast it is. I spent a large portion of time wrapping my head around pointers and referenccing/derefeencing, before moving on to malloc and calloc. As I&amp;rsquo;ve started learning about memory management in C/C++ I&amp;rsquo;ve naturally had to pick up on heap versus stack, and this in itself helped a few data structures click as well as how applications use memory and memory leaks (it seems simple to call &lt;code&gt;free()&lt;/code&gt; when necessary but I can easily see why mistakes are made.)&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="its searching" src="https://i.imgur.com/mgbNQxJ.gif" /&gt;&lt;/p&gt;
 
-&lt;p&gt;To refresh; Heap is used for dynamic memory allocation (both heap and stack use/are stored in your machine&amp;rsquo;s RAM). You should consider using the heap when you&amp;rsquo;re going to be allocating a lot of memory, and allocating it a run time. As far as I understand and have learned, it&amp;rsquo;s best to use heap when you plan to keep that variable around for a long time, or alternatively for variables that need to dynamically allocate their memory (arrays y structs!)&lt;/p&gt;
+&lt;p&gt;Yet another small &lt;a href="https://github.com/Diope/Searchtubes"&gt;React project&lt;/a&gt;, I make these to get more comfortable with the framework and Javascript. I made this one with the intent on consuming an API.&lt;/p&gt;
 
-&lt;p&gt;Stacks on the other hand should be allocated at compile time and you shouldn&amp;rsquo;t allocate a lot of memory to them, stacks are only available to threads, but you can access the stack very quickly. Variables allocated on the stack should for all intents and purposes have a very short shelf life, most say anything created on the stack shouldn&amp;rsquo;t stick around after it&amp;rsquo;s been invoked.&lt;/p&gt;
+&lt;p&gt;Things I learned with this project:&lt;/p&gt;
 
-&lt;p&gt;I still have much to learn with malloc, calloc, realloc, free and my end goal is creating my own basic garbage collector to really solidify my learnings.&lt;/p&gt;
+&lt;p&gt;Better structure, separation of concerns, a single point of entry. That is to say I only need to fetch the API in one place and send out that data to all the children components. I have another React project that I&amp;rsquo;m going to refactor as I was calling the API on several different components, even at the time of doing it I knew it was wrong (DRY) but did it anyway.&lt;/p&gt;
+
+&lt;p&gt;Component life cycles. Granted I only used one (&lt;code&gt;componentWillMount()&lt;/code&gt;), I&amp;rsquo;ve become familiar with the others to some extent, at the very least I&amp;rsquo;m aware of their uses.&lt;/p&gt;
+
+&lt;p&gt;To install:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;clone git repository&lt;/li&gt;
+&lt;li&gt;at the command line run &lt;code&gt;yarn start&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;localhost:8080&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
 </feed>
