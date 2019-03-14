@@ -34,13 +34,13 @@
     <link rel="alternate" href="http://dipet.me/projects/mininotes-ohyea/"/>
     <id>http://dipet.me/projects/mininotes-ohyea/</id>
     <published>2018-10-12T01:00:00-04:00</published>
-    <updated>2019-01-24T17:09:42-05:00</updated>
+    <updated>2019-03-13T20:11:09-04:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
     <content type="html">&lt;p&gt;Grab the app &lt;a href="https://github.com/Diope/miniNotes/releases/download/v0.1.0/mininote-0.1.0.dmg"&gt;here&lt;/a&gt; (hosted on Github)&lt;/p&gt;
 
-&lt;p&gt;mininotes is a very small appilication I created because I wanted a simple note taking app that lived in the menubar. Prior to creating this, I was using evernote&amp;rsquo;s app which was a lot of app just to use one small portion (and I had to make an account among other things, le sigh). I&amp;rsquo;ll be adding more to the application, mostly setting a global keybinding to invoke the app when it&amp;rsquo;s not the focus, and menu icon highlight when active.&lt;/p&gt;
+&lt;p&gt;mininotes is a very small appilication I created because I wanted a simple note taking app that lived in the menubar. This is my first time using React with Electron and it&amp;rsquo;s been a challenge getitng it to work, but with the power of documentation and stackoverflow, as you can see I over came. Prior to creating this, I was using evernote&amp;rsquo;s app which was a lot of app just to use one small portion (and I had to make an account among other things, le sigh). I&amp;rsquo;ll be adding more to the application, mostly setting a global keybinding to invoke the app when it&amp;rsquo;s not the focus, and menu icon highlight when active.&lt;/p&gt;
 
 &lt;p&gt;&lt;img alt="ooooh awww" src="https://user-images.githubusercontent.com/3039981/46878777-1d3bed80-ce12-11e8-9e1b-5a0d8a8a8f22.png" /&gt;&lt;/p&gt;
 
@@ -121,11 +121,13 @@
     <link rel="alternate" href="http://dipet.me/projects/drybbble/"/>
     <id>http://dipet.me/projects/drybbble/</id>
     <published>2018-09-14T01:00:00-04:00</published>
-    <updated>2018-10-12T15:13:31-04:00</updated>
+    <updated>2019-03-13T20:07:53-04:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
     <content type="html">&lt;p&gt;Drybbble is an current project that will essentially be a Dribbble clone made with MongoDB/Express/Node.js that generates API endpoints paired with React for the UI (and I will be making a second that uses Vue.js). I have previously recreated Dribbble, calling it &lt;a href="https://github.com/diope/drubbble"&gt;Drubbble&lt;/a&gt; using Rails 4.2 back in 2016-2017 (I will be updating that to Rails 5 in the second half of Dec when I have free time). Initially I was going to use PostgreSQL because I&amp;rsquo;m very comfortable with SQL commands, associations, and normalization/denormalization so I decided to instead use MongoDB, which I&amp;rsquo;ve only used in tutorial and toy app capacity, and I like the challenge&amp;hellip;and oh what a challenge it has been!&lt;/p&gt;
+
+&lt;p&gt;The backend portion is mostly completed, but you can &lt;a href="https://whispering-ravine-72890.herokuapp.com/"&gt;access the API here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I will do a write up on what I&amp;rsquo;ve learned so far at a later date.&lt;/p&gt;
 </content>
