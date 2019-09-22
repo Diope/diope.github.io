@@ -34,11 +34,11 @@
     <link rel="alternate" href="http://dipet.me/projects/mininotes-ohyea/"/>
     <id>http://dipet.me/projects/mininotes-ohyea/</id>
     <published>2018-10-12T01:00:00-04:00</published>
-    <updated>2019-03-13T20:11:09-04:00</updated>
+    <updated>2019-06-28T11:07:43-04:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
-    <content type="html">&lt;p&gt;Grab the app &lt;a href="https://github.com/Diope/miniNotes/releases/download/v0.1.0/mininote-0.1.0.dmg"&gt;here&lt;/a&gt; (hosted on Github)&lt;/p&gt;
+    <content type="html">&lt;p&gt;Grab the app &lt;a href="https://github.com/Diope/miniNotes/releases/"&gt;here&lt;/a&gt; (hosted on Github)&lt;/p&gt;
 
 &lt;p&gt;mininotes is a very small appilication I created because I wanted a simple note taking app that lived in the menubar. This is my first time using React with Electron and it&amp;rsquo;s been a challenge getitng it to work, but with the power of documentation and stackoverflow, as you can see I over came. Prior to creating this, I was using evernote&amp;rsquo;s app which was a lot of app just to use one small portion (and I had to make an account among other things, le sigh). I&amp;rsquo;ll be adding more to the application, mostly setting a global keybinding to invoke the app when it&amp;rsquo;s not the focus, and menu icon highlight when active.&lt;/p&gt;
 
@@ -101,7 +101,7 @@
     <link rel="alternate" href="http://dipet.me/projects/readr/"/>
     <id>http://dipet.me/projects/readr/</id>
     <published>2018-09-20T01:00:00-04:00</published>
-    <updated>2019-01-24T17:19:32-05:00</updated>
+    <updated>2019-06-28T11:06:45-04:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
