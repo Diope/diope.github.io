@@ -5,10 +5,36 @@
   <id>http://dipet.me</id>
   <link href="http://dipet.me"/>
   <link href="http://dipet.me/feed.xml" rel="self"/>
-  <updated>2018-10-26T01:00:00-04:00</updated>
+  <updated>2019-06-08T01:00:00-04:00</updated>
   <author>
     <name>Dion Pettaway</name>
   </author>
+  <entry>
+    <title>Chattn</title>
+    <link rel="alternate" href="http://dipet.me/projects/chattn/"/>
+    <id>http://dipet.me/projects/chattn/</id>
+    <published>2019-06-08T01:00:00-04:00</published>
+    <updated>2019-10-02T14:17:44-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;Chattn is &lt;a href="https://chattn.netlify.com"&gt;live&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;They say the best way to learn something is to throw yourself into the deep end. I didn&amp;rsquo;t really have any grand idea for a project app, so I did what any other developer would do&amp;hellip;just recreate an existing product. Twitter is always a good goal, I created a very basic twitter clone with React/Redux but never hosted it but decided I would do so with this one. I chose to create this with Vue because I was always interested in it but never got around to giving it a spin as I usually stuck with React. I wanted to get out of my comfort zone and try something new. Vue clicked fairly quickly which is in large part to understanding React and having general knowledge of Javascript. &lt;/p&gt;
+
+&lt;p&gt;I wanted this unlike my React/Redux version of Twitter to go past surface level features of simply posting and displaying said posts, that&amp;rsquo;s pretty simple and tired and everyone is doing it. So I decided to add do more adding feature by feature. So I added features that I liked from Twitter and really thought about implementation, with this project I really wanted to focus on the backedn which in this case was Google&amp;rsquo;s firestore, well I originally went with Firebase, but wanted to try Firestore mostly because it was in my face on the Google dashboard &amp;ldquo;Try our next gen real time database Firestore!&amp;rdquo; Firestore follows many of the same paradigms as other NoSQLs so getting up and running was pretty easy, doubly so because of Google&amp;rsquo;s great documentation, and it&amp;rsquo;s similarities with it&amp;rsquo;s brother Firebase.&lt;/p&gt;
+
+&lt;p&gt;Speaking on Vue, this is a fantastic little framework and I&amp;rsquo;m pretty sure I enjoy working on it more than React. It feels like it sits right between React and Angular as far as layers and components (see what I did there?) that are included in it. I really appreciate you can slowly implement Vue into a project whereas React is an all in affair. I haven&amp;rsquo;t really messed with Angular much so I won&amp;rsquo;t comment on it in any meaningful capacity. I will say that Vuex is much more easy to reason about than Redux but I will also fully admit that it might because I &amp;ldquo;know&amp;rdquo; Redux so any other flavor of the flux architecture just clicks.&lt;/p&gt;
+
+&lt;p&gt;As I previously stated, learned Vue/Vuex as I worked on this project so looking through branches it becomes very apparent that I learn something new and implement it, on this project I didn&amp;rsquo;t create test, which I full admit is my shortcoming as a developer and need to be much more dilligent on writing them before I start coding, there are no downsides to running tests, so always write them!&lt;/p&gt;
+
+&lt;p&gt;Some of the features I&amp;rsquo;m most proud of are base64 image implementation so that I could have image previews before the user posts, I rewrote the image upload feature a few times. The initial version the user would select their image and it would upload to Google storage without the ability to cancel or change the image. This was my naive implementation and it took me several days to do it a different/better way. I was mentally stuck on how do I push an image to the storage bucket and append it to a post that hasn&amp;rsquo;t even been created yet? Because of how I initially assumed twitter image posting worked I couldn&amp;rsquo;t think of a better way to do everything.&lt;/p&gt;
+
+&lt;p&gt;Another feature I was proud of was more backend related but I spent a week agonizing on how to trigger images being deleted from the storage bucket when a user deleted their post, and was getting frustrated with being on the cusp of figuring it out but having to wait to test my firestore functions as they needed to be uploaded to the function module on Firebase.&lt;/p&gt;
+
+&lt;p&gt;One thing I definitely shouldn&amp;rsquo;t have done was that I did all the CSS from scratch instead of using a library like Bulma or my favorite, Tailwind. In hindsight this was both a good thing and a terrible mistake, it was a good thing because I really had to think of implementation and I learned how Vue handles CSS interactivity. The cons were&amp;hellip;I was basically doing everything from scratch, so everything you see and are interacting with was all me no help from libraries or baked in functions from a CSS framework.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>SQL noSQL</title>
     <link rel="alternate" href="http://dipet.me/blog/sqls/"/>
@@ -130,34 +156,6 @@
 &lt;p&gt;The backend portion is mostly completed, but you can &lt;a href="https://whispering-ravine-72890.herokuapp.com/"&gt;access the API here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I will do a write up on what I&amp;rsquo;ve learned so far at a later date.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>SearchTubes</title>
-    <link rel="alternate" href="http://dipet.me/projects/searchTubes/"/>
-    <id>http://dipet.me/projects/searchTubes/</id>
-    <published>2018-03-21T01:00:00-04:00</published>
-    <updated>2019-01-22T21:41:38-05:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img alt="its searching" src="https://i.imgur.com/mgbNQxJ.gif" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Yet another small &lt;a href="https://github.com/Diope/Searchtubes"&gt;React project&lt;/a&gt;, I make these to get more comfortable with the framework and Javascript. I made this one with the intent on consuming an API.&lt;/p&gt;
-
-&lt;p&gt;Things I learned with this project:&lt;/p&gt;
-
-&lt;p&gt;Better structure, separation of concerns, a single point of entry. That is to say I only need to fetch the API in one place and send out that data to all the children components. I have another React project that I&amp;rsquo;m going to refactor as I was calling the API on several different components, even at the time of doing it I knew it was wrong (DRY) but did it anyway.&lt;/p&gt;
-
-&lt;p&gt;Component life cycles. Granted I only used one (&lt;code&gt;componentWillMount()&lt;/code&gt;), I&amp;rsquo;ve become familiar with the others to some extent, at the very least I&amp;rsquo;m aware of their uses.&lt;/p&gt;
-
-&lt;p&gt;To install:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;clone git repository&lt;/li&gt;
-&lt;li&gt;at the command line run &lt;code&gt;yarn start&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;localhost:8080&lt;/li&gt;
-&lt;/ul&gt;
 </content>
   </entry>
 </feed>
