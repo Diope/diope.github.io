@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://dipet.me/projects/chattn/"/>
     <id>http://dipet.me/projects/chattn/</id>
     <published>2019-06-08T01:00:00-04:00</published>
-    <updated>2019-10-02T14:17:44-04:00</updated>
+    <updated>2019-10-02T18:24:09-04:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
@@ -28,11 +28,21 @@
 
 &lt;p&gt;As I previously stated, learned Vue/Vuex as I worked on this project so looking through branches it becomes very apparent that I learn something new and implement it, on this project I didn&amp;rsquo;t create test, which I full admit is my shortcoming as a developer and need to be much more dilligent on writing them before I start coding, there are no downsides to running tests, so always write them!&lt;/p&gt;
 
+&lt;p&gt;&lt;img alt="neat" src="https://i.imgur.com/oV08wIf.gif" /&gt;&lt;/p&gt;
+
 &lt;p&gt;Some of the features I&amp;rsquo;m most proud of are base64 image implementation so that I could have image previews before the user posts, I rewrote the image upload feature a few times. The initial version the user would select their image and it would upload to Google storage without the ability to cancel or change the image. This was my naive implementation and it took me several days to do it a different/better way. I was mentally stuck on how do I push an image to the storage bucket and append it to a post that hasn&amp;rsquo;t even been created yet? Because of how I initially assumed twitter image posting worked I couldn&amp;rsquo;t think of a better way to do everything.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="Oop" src="https://i.imgur.com/c7nk5r9.gif" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Another feature I was proud of was more backend related but I spent a week agonizing on how to trigger images being deleted from the storage bucket when a user deleted their post, and was getting frustrated with being on the cusp of figuring it out but having to wait to test my firestore functions as they needed to be uploaded to the function module on Firebase.&lt;/p&gt;
 
 &lt;p&gt;One thing I definitely shouldn&amp;rsquo;t have done was that I did all the CSS from scratch instead of using a library like Bulma or my favorite, Tailwind. In hindsight this was both a good thing and a terrible mistake, it was a good thing because I really had to think of implementation and I learned how Vue handles CSS interactivity. The cons were&amp;hellip;I was basically doing everything from scratch, so everything you see and are interacting with was all me no help from libraries or baked in functions from a CSS framework.&lt;/p&gt;
+
+&lt;p&gt;One of my biggest challenges I overcame was finally truly breaking my SQL mindset when working with NoSQL and embracing repeat data. What finally made it click for me was looking at data usage on database dashboard when I was making multiple requests for user data, and honestly even before that it just made no sense how often I was multi requesting data for simple things.&lt;/p&gt;
+
+&lt;p&gt;There are still more features I want to add and I have an idea on how to go about them. I need to implement better display of notifications, right now it&amp;rsquo;s just plain text in green but this is just a toy project and I don&amp;rsquo;t want feature creep to set in and suddenly I&amp;rsquo;ve been working on it for months upon months (which technically I already have, I started this in like April or May&amp;hellip;). I&amp;rsquo;ve added some neat features so far and really need to refactor many others, but before I add anymore I need to add tests to this.&lt;/p&gt;
+
+&lt;p&gt;Features I haved added so far are: Likes, posting, comments, image upload, profile creation and updating, profile photo and profile banner, bookmarks, authentication. At the very least I want to add in the ability to make an account private because it seems like a nice challenge.&lt;/p&gt;
 </content>
   </entry>
   <entry>
