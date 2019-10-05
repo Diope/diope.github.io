@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://dipet.me/projects/chattn/"/>
     <id>http://dipet.me/projects/chattn/</id>
     <published>2019-06-08T01:00:00-04:00</published>
-    <updated>2019-10-02T18:24:09-04:00</updated>
+    <updated>2019-10-05T01:59:41-04:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
@@ -38,7 +38,7 @@
 
 &lt;p&gt;One thing I definitely shouldn&amp;rsquo;t have done was that I did all the CSS from scratch instead of using a library like Bulma or my favorite, Tailwind. In hindsight this was both a good thing and a terrible mistake, it was a good thing because I really had to think of implementation and I learned how Vue handles CSS interactivity. The cons were&amp;hellip;I was basically doing everything from scratch, so everything you see and are interacting with was all me no help from libraries or baked in functions from a CSS framework.&lt;/p&gt;
 
-&lt;p&gt;One of my biggest challenges I overcame was finally truly breaking my SQL mindset when working with NoSQL and embracing repeat data. What finally made it click for me was looking at data usage on database dashboard when I was making multiple requests for user data, and honestly even before that it just made no sense how often I was multi requesting data for simple things.&lt;/p&gt;
+&lt;p&gt;One of my biggest challenges I overcame was finally truly breaking my SQL mindset when working with NoSQL and embracing repeat data. What finally made it click for me was looking at data usage on database dashboard when I was making multiple requests for user data, and honestly even before that it just made no sense how often I was multi requesting data for simple things. A great example would be the bookmark feature I just recently added. They are stored as a subcollection based on the users&amp;rsquo; collection documents. The necessary information from each bookmark post is stored (in this case username, user id, profile picture, post image if there is one), this data is already present but if I didn&amp;rsquo;t duplicate it I would have to query it from that user&amp;rsquo;s post collection. You can see how inefficient this becomes if the user were to have say 60 bookmarks, the database would have to query the post collection 60 times for each of the corresponding bookmarked posts&amp;rsquo; user.&lt;/p&gt;
 
 &lt;p&gt;There are still more features I want to add and I have an idea on how to go about them. I need to implement better display of notifications, right now it&amp;rsquo;s just plain text in green but this is just a toy project and I don&amp;rsquo;t want feature creep to set in and suddenly I&amp;rsquo;ve been working on it for months upon months (which technically I already have, I started this in like April or May&amp;hellip;). I&amp;rsquo;ve added some neat features so far and really need to refactor many others, but before I add anymore I need to add tests to this.&lt;/p&gt;
 
