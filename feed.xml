@@ -5,10 +5,28 @@
   <id>http://dipet.me</id>
   <link href="http://dipet.me"/>
   <link href="http://dipet.me/feed.xml" rel="self"/>
-  <updated>2019-06-08T01:00:00-04:00</updated>
+  <updated>2019-10-10T01:00:00-04:00</updated>
   <author>
     <name>Dion Pettaway</name>
   </author>
+  <entry>
+    <title>What I've Been Up To</title>
+    <link rel="alternate" href="http://dipet.me/blog/updates/"/>
+    <id>http://dipet.me/blog/updates/</id>
+    <published>2019-10-10T01:00:00-04:00</published>
+    <updated>2019-11-01T12:28:18-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;Been a while since I made a blog post, so I figured I&amp;rsquo;d write about what I&amp;rsquo;ve been learning as a of late. I&amp;rsquo;ve made strides in C++, I&amp;rsquo;m a bit more comfortable with pointers, as always stated the best way to learn is to throw yourself in the deep end and learn to swim. I&amp;rsquo;ve reversed engineered simple C++ projects to made use of pointers, breaking it until I figured out how things worked, and from there I&amp;rsquo;ve made a really small project that uses C++, the project itself is unconventional as I also wanted use vectors because I&amp;rsquo;m relearning math (I vomited). &lt;/p&gt;
+
+&lt;p&gt;Other goals I have are learning Rust because I find it to be pretty interesting as a language and how it&amp;rsquo;s positioning itself, alongside this I&amp;rsquo;ve also dabbled with React Native and Flutter. At one point in my budding career I made an iPhone app with Swift 2, and I surprisingly still remember a lot about iPhone development&amp;ndash;one day I really want to take on the absolutely monstrous task of updating the app from Swift2 to current&amp;ndash;and so I wanted to compare the various avenues available to iPhone app creation. Flutter is interesting in how everything is in a stack (pretty sure they don&amp;rsquo;t call it stack though) I like it but it&amp;rsquo;s hard to reason about your code as you it gets longer and longer, I really love Dart as a programming language though and would love to see it get more life but that&amp;rsquo;s up to the will of the community. React Native is familiar to me because well&amp;hellip;I know React so moving over to React Native wasn&amp;rsquo;t too much of a struggle. Despite the fact I mostly work with Javascript/HTML/CSS, and that I am constantly working with React, I still don&amp;rsquo;t feel I&amp;rsquo;m great at it (it being React), slightly frustrating.&lt;/p&gt;
+
+&lt;p&gt;Other things I&amp;rsquo;ve been dabbling in are graphics programming, specifically OpenGL and DirectX, at the moment I&amp;rsquo;ve been mostly learning the fundamentals, drawing a pixel on screen, projection matrix/orthogonal matrix. I&amp;rsquo;m making sure not to spread myself thin so I don&amp;rsquo;t get burned out, but I&amp;rsquo;m definitely enjoying learning about these things.&lt;/p&gt;
+
+&lt;p&gt;The graphics programming is very low priority and it&amp;rsquo;s what I do to &amp;ldquo;reward&amp;rdquo; myself for data structures and algorithm studies. I still don&amp;rsquo;t know them all by memory but I have a very solid understand on why they exist, why some are better in some situations over others. I had always known big O notation though I&amp;rsquo;m not sure from where so that definitely helped in learning these things, but it truly changes your perspective on developing good programming practices. On this subject one area I still need to focus on problem solving and specifically problem solving challenges that many websites have like hackerrank, etc. I find myself not dedicating time to this and that&amp;rsquo;s something I plan to change.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Chattn</title>
     <link rel="alternate" href="http://dipet.me/projects/chattn/"/>
@@ -153,22 +171,6 @@
 &lt;p&gt;There isn&amp;rsquo;t much else to this application, it&amp;rsquo;s very much WYSIWYG in functionality. I don&amp;rsquo;t have any real desire to be an electron developer, I&amp;rsquo;m just enjoying software development and the feeling that comes with making my small random app ideas into functinoal pieces of technology.&lt;/p&gt;
 
 &lt;p&gt;&lt;img alt="Bookmarks rawr" src="https://i.imgur.com/t2QzV87.png" /&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Drybbble? Drybbble</title>
-    <link rel="alternate" href="http://dipet.me/projects/drybbble/"/>
-    <id>http://dipet.me/projects/drybbble/</id>
-    <published>2018-09-14T01:00:00-04:00</published>
-    <updated>2019-03-13T20:07:53-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;Drybbble is an current project that will essentially be a Dribbble clone made with MongoDB/Express/Node.js that generates API endpoints paired with React for the UI (and I will be making a second that uses Vue.js). I have previously recreated Dribbble, calling it &lt;a href="https://github.com/diope/drubbble"&gt;Drubbble&lt;/a&gt; using Rails 4.2 back in 2016-2017 (I will be updating that to Rails 5 in the second half of Dec when I have free time). Initially I was going to use PostgreSQL because I&amp;rsquo;m very comfortable with SQL commands, associations, and normalization/denormalization so I decided to instead use MongoDB, which I&amp;rsquo;ve only used in tutorial and toy app capacity, and I like the challenge&amp;hellip;and oh what a challenge it has been!&lt;/p&gt;
-
-&lt;p&gt;The backend portion is mostly completed, but you can &lt;a href="https://whispering-ravine-72890.herokuapp.com/"&gt;access the API here&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I will do a write up on what I&amp;rsquo;ve learned so far at a later date.&lt;/p&gt;
 </content>
   </entry>
 </feed>
