@@ -85,13 +85,13 @@
     <link rel="alternate" href="http://dipet.me/projects/ledgr/"/>
     <id>http://dipet.me/projects/ledgr/</id>
     <published>2019-04-14T01:00:00-04:00</published>
-    <updated>2019-11-06T02:13:28-05:00</updated>
+    <updated>2019-11-06T02:13:46-05:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
     <content type="html">&lt;p&gt;&lt;img alt="these are my actual purchases" src="https://i.imgur.com/SQw00zL.png" /&gt;&lt;/p&gt;
 
-&lt;p&gt;Login in &lt;a href="https://ledgr-vvtbxuzfpz.now.sh"&gt;here (give it a few seconds, now.sh is a bit slow)&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;Login in &lt;a href="https://ledgr-vvtbxuzfpz.now.sh"&gt;here&lt;/a&gt; (give it a few seconds, now.sh is a bit slow)&lt;/p&gt;
 
 &lt;p&gt;A hilariously useless React/Redux app using Firestore as the backend. Just a pretty straightforward ledger book, that you can use to add random expenditures that one might have, it has persistence and utilizes google and or twitter for the authen/autho. Redux is an interesting creature, as I feel like as I&amp;rsquo;m learning things&amp;hellip;I&amp;rsquo;m forgetting other things which is frustrating at points.&lt;/p&gt;
 
