@@ -5,10 +5,24 @@
   <id>http://dipet.me</id>
   <link href="http://dipet.me"/>
   <link href="http://dipet.me/feed.xml" rel="self"/>
-  <updated>2019-10-10T01:00:00-04:00</updated>
+  <updated>2019-11-05T00:00:00-05:00</updated>
   <author>
     <name>Dion Pettaway</name>
   </author>
+  <entry>
+    <title>Basic FPS C++</title>
+    <link rel="alternate" href="http://dipet.me/projects/basic_fps/"/>
+    <id>http://dipet.me/projects/basic_fps/</id>
+    <published>2019-11-05T00:00:00-05:00</published>
+    <updated>2019-11-06T01:27:35-05:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="Yay" src="https://i.imgur.com/QHES37v.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;So I wanted to make a FPS, well to be more specific I&amp;rsquo;ve been teaching myself the basics of 3D rendering and programming. So I wanted to do really start putting something to screen so I took a side step to create this very very simple completely 2D ascii based first person controlling uh&amp;hellip;thing. I already knew a bit of C++ prior to this but getting to use features like vectors (which are like dynamic arrays where data is entered at the end if I understand what I&amp;rsquo;m doing), it&amp;rsquo;s a pretty interesting learning experience, much of it was asking for help.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>What I've Been Up To</title>
     <link rel="alternate" href="http://dipet.me/blog/updates/"/>
@@ -151,26 +165,6 @@
 &lt;p&gt;Alright, so everything builds and actually runs! Yatta, but one final issue stood in my way, Mojave came out and I introduced a dark mode. So now I had to figure out how to account for people using the dark mode menu bar, scheiße! I sat for about an hour searching through Electron documentation for API hooks for Mojave&amp;rsquo;s dark mode. I figured it&amp;rsquo;d be a pretty simple if statement, dark mode ? dark menubar icon : light menubar icon. I ended up finding out it was even more simple than that! Because I&amp;rsquo;ve always used dark mode (and prior a dark menu bar) I created the mininote icon in white&amp;hellip;which is wrong. All I had to do was create the icon in #000 black, and make sure the file name ended with &lt;code&gt;Template.png&lt;/code&gt; ex: &lt;code&gt;trayIconTemplate.png&lt;/code&gt;, and macOS takes care of making it white when used with dark mode, or leaving the icon as it&amp;rsquo;s default black when used in light mode.&lt;/p&gt;
 
 &lt;p&gt;So that&amp;rsquo;s the basic run down of the creation of this app, or rather some of the random hangups I had while creating it.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Readr</title>
-    <link rel="alternate" href="http://dipet.me/projects/readr/"/>
-    <id>http://dipet.me/projects/readr/</id>
-    <published>2018-09-20T01:00:00-04:00</published>
-    <updated>2019-06-28T11:06:45-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;Grab the app &lt;a href="https://github.com/Diope/Readr/releases/download/v0.5.0/Readr-0.5.0.dmg"&gt;here&lt;/a&gt; (hosted on Github Releases)&lt;/p&gt;
-
-&lt;p&gt;Readr is a VERY simple bookmark listing application. The idea was if there was an site you wanted to check out later you could add it to your list, kinda replacing &amp;ldquo;open in new tab&amp;rdquo; but then never actually opening it because you end up collecting a bunch of tabs&amp;hellip;which I&amp;rsquo;m guilty of.&lt;/p&gt;
-
-&lt;p&gt;This is yet another electron App, a bit more complex than the bitcoin watcher app. This application required me to do much more digging in documentation to figure out some problems. This app also made me realize just how much frontend view layers like Vue and React help, creating the UI and having everything work I realised is much more difficult using without a view layer. So for all those old large electron apps that had state and different components props (see what I did there!) to you because you are amazing people!&lt;/p&gt;
-
-&lt;p&gt;There isn&amp;rsquo;t much else to this application, it&amp;rsquo;s very much WYSIWYG in functionality. I don&amp;rsquo;t have any real desire to be an electron developer, I&amp;rsquo;m just enjoying software development and the feeling that comes with making my small random app ideas into functinoal pieces of technology.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="Bookmarks rawr" src="https://i.imgur.com/t2QzV87.png" /&gt;&lt;/p&gt;
 </content>
   </entry>
 </feed>
