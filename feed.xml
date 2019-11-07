@@ -14,13 +14,15 @@
     <link rel="alternate" href="http://dipet.me/projects/basic_fps/"/>
     <id>http://dipet.me/projects/basic_fps/</id>
     <published>2019-11-05T00:00:00-05:00</published>
-    <updated>2019-11-06T01:27:35-05:00</updated>
+    <updated>2019-11-07T16:02:03-05:00</updated>
     <author>
       <name>Dion Pettaway</name>
     </author>
     <content type="html">&lt;p&gt;&lt;img alt="Yay" src="https://i.imgur.com/QHES37v.gif" /&gt;&lt;/p&gt;
 
 &lt;p&gt;So I wanted to make a FPS, well to be more specific I&amp;rsquo;ve been teaching myself the basics of 3D rendering and programming. So I wanted to do really start putting something to screen so I took a side step to create this very very simple completely 2D ascii based first person controlling uh&amp;hellip;thing. I already knew a bit of C++ prior to this but getting to use features like vectors (which are like dynamic arrays where data is entered at the end if I understand what I&amp;rsquo;m doing), it&amp;rsquo;s a pretty interesting learning experience, much of it was asking for help.&lt;/p&gt;
+
+&lt;p&gt;Only available for Windows, download &lt;a href="https://github.com/Diope/basicFPS/releases"&gt;here&lt;/a&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
