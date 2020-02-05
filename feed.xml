@@ -5,10 +5,64 @@
   <id>http://dipet.me</id>
   <link href="http://dipet.me"/>
   <link href="http://dipet.me/feed.xml" rel="self"/>
-  <updated>2019-11-05T00:00:00-05:00</updated>
+  <updated>2019-12-28T00:00:00-05:00</updated>
   <author>
     <name>Dion Pettaway</name>
   </author>
+  <entry>
+    <title>Budgety (WIP)</title>
+    <link rel="alternate" href="http://dipet.me/projects/bugety/"/>
+    <id>http://dipet.me/projects/bugety/</id>
+    <published>2019-12-28T00:00:00-05:00</published>
+    <updated>2020-02-05T13:32:56-05:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;As I posted last time, I created an iPhone app using UIKit and Swift. This wasn&amp;rsquo;t the first iPhone app I created, I wrote one back in 2016/2017 but I never did anything with it. And updating it was too far gone for me, I was attempting it and at some point I felt it would be easier to simply redo the app than to update an old one. Alongside creating Monchies, I was studying and reading up on SwiftUI over at HackingWithSwift.com, the more I worked on Monchies the more I wanted to work with SwiftUI. &lt;/p&gt;
+
+&lt;p&gt;While doing all of this I was doing research for UI/UX redesign of Simple Bank&amp;rsquo;s mobile app and slowly working on that as seen here
+&lt;img alt="Simple Bank redesign" src="https://i.imgur.com/u2Dmvx0.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I figured that I could actually code this with SwiftUI to put what I&amp;rsquo;ve been learning about it to use, and because I wanted to. As I started coding, I realized that some of the ideas I had wouldn&amp;rsquo;t work so well given the lack of data the app would have available to it. I could have coded fake data but I wanted a usable full fledged app, so I pivoted and decided to create a simple (ha!) budgeting app and as such Budgety was born.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="Budgety" src="https://i.imgur.com/KBkFsz7.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s very much still a work in progress and there is much for me to do. As I previously stated, Budgety is a simple budgeting app that will help users keep on top of their spending. As this is still a work in progress there are still things I need to fix and/or implement. I removed the original version of categories when adding a new expenditure as originally the user would enter the category manually. I&amp;rsquo;m currently working on them picking from a predefined list to avoid having the user to enter it manually (in the Simple Banking app, it&amp;rsquo;s automatic based on where a purchase was made using your Simple debit and/or credit card). &lt;/p&gt;
+
+&lt;p&gt;The icons are all placeholders currently just to make sure I have that component rendering correctly based on the category of the line item. In my redesign they would be based on the purchase but because of the data Simple receives on purchases. Another feature I&amp;rsquo;m currently working on is adding the ability to take a photo of the item the user purchased, that will then show up when they tap a line item from the list. I&amp;rsquo;ve created a few toy apps so getting &lt;code&gt;UIImagePicker&lt;/code&gt; working with SwiftUI isn&amp;rsquo;t too difficult (I also guess this is a good time to plug that I&amp;rsquo;m working on yet another for fun app alongside this?).&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m definitely enjoying using SwiftUI and Combine, and I feel I should make a quick entry on those two things specifically. Look for it in a few weeks time! I will say this, I find it much easier to get something up and running.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>iPhone App Creation</title>
+    <link rel="alternate" href="http://dipet.me/projects/monchiesios/"/>
+    <id>http://dipet.me/projects/monchiesios/</id>
+    <published>2019-12-22T00:00:00-05:00</published>
+    <updated>2020-02-03T12:39:08-05:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="Monchies" src="https://i.imgur.com/Cw7ruPn.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been working on a smallish iPhone app for a couple months alongside other projects, and I&amp;rsquo;m finally finished it. It&amp;rsquo;s nothing special in terms of size and feature set but regardless I&amp;rsquo;m proud of this one. I call it &amp;ldquo;Monchies&amp;rdquo; not really the most inventive name, but it&amp;rsquo;s a small personal food blogging app.&lt;/p&gt;
+
+&lt;p&gt;The idea is simple, you just take photos of the places you eat and you can keep track of where you&amp;rsquo;ve eaten at.
+I figured I&amp;rsquo;d keep the app small to avoid setting the bar for myself too high overwhelming me, that and also to avoid feature creep which has definitely plagued me in older projects.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve learned a great deal about app development using UIKit while creating this app. As an example, I wanted to create a floating button for adding new locations and I thought I essentially got it working on the first try. It wasn&amp;rsquo;t until I ran a test that seeded a few entries did I notice the button was effectively at the bottom of the listView. I went through documentation to figure out how to get this working (the documentation is great but how they label and reference methods broke my brain for a second). Documentation wasn&amp;rsquo;t really providing me the answers I was looking for, so I searched for how Twitter handled it being well aware they were using React-Native not Swift &amp;amp; UIKit, but I figured if I could get a guess of the React/CSS/JS implementation I would be able to transfer that logic to Swift.&lt;/p&gt;
+
+&lt;p&gt;It was pretty straightforward, absoluting of the button&amp;rsquo;s position with some padding. Seemed easy enough, Swift&amp;rsquo;s equivalent is constraints, and how it handled constraints was different than what I was used to but I was able to reason about it after messing around with it (admittedly it was mostly me plugging in random coordinates to see where the button would render at. In hindsight I could have simply looked up where 0,0 renders to and go from there).&lt;/p&gt;
+
+&lt;p&gt;It still took many hours, headscratches, and coffee to get the button working correctly as errors pertaining to the button and the new screen kept popping up, unfortunately I can&amp;rsquo;t remember the errors specifically.&lt;/p&gt;
+
+&lt;p&gt;There are somethings I need to clean up codewise, especially handling the temp image, camera icon swapping to user&amp;rsquo;s image in the new restaurant screen and other small issues. The image is fairly simple, instead of simply saying the image is optional (&lt;code&gt;image?&lt;/code&gt;) and using the nil-coalescing operator to conditionally render either the user image or the default image, I created two image objects one as the default image, and the other being the ImagePicker image the user supplies and used an if statement to check if the user grabbed an image from her/his gallery or took a picture to determine which to render. It&amp;rsquo;s not bad, it&amp;rsquo;s simply not Swift convention.&lt;/p&gt;
+
+&lt;p&gt;Adding the onboarding screen was fun trying to learn how to implement it, and saving user data with CoreData was also a learning experience. Getitng it up and running was a struggle as apparently there&amp;rsquo;s a bug where even if you implement everything correctly, sometimes Xcode and your codebase won&amp;rsquo;t see that you&amp;rsquo;re using CoreData and will complain that your core data entities don&amp;rsquo;t exist, which I didn&amp;rsquo;t know about so it resulted in me spending hours deleting and recreating my Restaurant entity and it&amp;rsquo;s attributes.&lt;/p&gt;
+
+&lt;p&gt;I won&amp;rsquo;t be releasing this app (mostly because I don&amp;rsquo;t have an Apple Developer account), but I am proud of it, I still prefer React Native for somethings, working with Xcode and Swift feels &amp;ldquo;slower&amp;rdquo; to me, but I can definitely see the appeal and why millions of developers love it. It&amp;rsquo;s rock solid, reliable, and well documented. My next app will be built using SwiftUI/Combine.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Basic C++ FPS</title>
     <link rel="alternate" href="http://dipet.me/projects/basic_fps/"/>
@@ -98,46 +152,6 @@
 &lt;p&gt;A hilariously useless React/Redux app using Firestore as the backend. Just a pretty straightforward ledger book, that you can use to add random expenditures that one might have, it has persistence and utilizes google and or twitter for the authen/autho. Redux is an interesting creature, as I feel like as I&amp;rsquo;m learning things&amp;hellip;I&amp;rsquo;m forgetting other things which is frustrating at points.&lt;/p&gt;
 
 &lt;p&gt;I feel like I&amp;rsquo;ll never truly master Redux and by extension React, but I enjoy making decent sized apps with it regardless. I like it&amp;rsquo;s pure Javascript approach to things, granted it does have drawbacks, I enjoy it regardless. It allows developers to truly apply problem solving skills to overcome problems (and package those components if they need to be reused).&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>SQL noSQL</title>
-    <link rel="alternate" href="http://dipet.me/blog/sqls/"/>
-    <id>http://dipet.me/blog/sqls/</id>
-    <published>2018-10-26T01:00:00-04:00</published>
-    <updated>2018-10-26T10:58:26-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;I’ve been working nearly exclusively with NoSQL databases because they’re a lot different than traditional SQL databases, and how you approach them feels very foreign to me to an uncomfortable degree. One of the things that I’m still wrapping my head around is associations and the fact that you don’t always necessarily make a new “table” for them. To give a more concrete example, I’m working on a Dribbble clone,  In a traditional SQL database I would approach creating the user table as the following:&lt;/p&gt;
-
-&lt;p&gt;The user table itself would consist of email, password for one table and the second table would be the “profile” table which would consist of the more personal information such as: location, twitter handle, background photo, profile photo, website, list of skills. A profile table &lt;code&gt;belongs to&lt;/code&gt; a user, and a user &lt;code&gt;has one&lt;/code&gt; profile (that is dependent on the user, thus if the user deletes her/his account the profile goes with it). With NoSQL databases, it’s not necessary to create another table to handle this association and can be embedded within the user document without much worry. Embedding the profile is the best approach for the profile because the profile is definite in the number of objects in it (create a separate document if you expect the size of said document to grow example being: storing user all a user’s comments).&lt;/p&gt;
-
-&lt;p&gt;It’s definitely taken some time to really wrap my head around this, and even on this I’ve found myself questioning “do I need to even embed” I find myself asking this due to the added complexity that comes with embedding and trying to both populate and query against embedded data. If you take a my commits for (Chirpper)[https://github.com/diope/chirpper) you’ll see I go back and forth between embedding the profile and keeping it on the same depth as the rest of the user document.&lt;/p&gt;
-
-&lt;p&gt;It’s an interesting challenge working with NoSQL, in some ways it feels familiar to SQL databases (mostly in how you query data, it’s quite similar to most SQL ORMs), unfortunately I miss the power that comes with knowing SQL and being able to use that to be more nuanced (and performance minded) if necessary. I do not look forward to learning normalization techniques for NoSQL DB given how long it’s taken me to really get used to SQL databases techniques. That and I still find myself thinking of everything as SQL associations and joins.&lt;/p&gt;
-
-&lt;p&gt;Honestly I prefer SQL databases (postgreSQL is bae!) but I do appreciate a few things about NoSQLs mostly the fact I can edit data much quicker, no migrations needed, you can even directly edit documents on the fly which in some cases makes troubleshooting easier.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>mininotes</title>
-    <link rel="alternate" href="http://dipet.me/projects/mininotes-ohyea/"/>
-    <id>http://dipet.me/projects/mininotes-ohyea/</id>
-    <published>2018-10-12T01:00:00-04:00</published>
-    <updated>2019-06-28T11:07:43-04:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;Grab the app &lt;a href="https://github.com/Diope/miniNotes/releases/"&gt;here&lt;/a&gt; (hosted on Github)&lt;/p&gt;
-
-&lt;p&gt;mininotes is a very small appilication I created because I wanted a simple note taking app that lived in the menubar. This is my first time using React with Electron and it&amp;rsquo;s been a challenge getitng it to work, but with the power of documentation and stackoverflow, as you can see I over came. Prior to creating this, I was using evernote&amp;rsquo;s app which was a lot of app just to use one small portion (and I had to make an account among other things, le sigh). I&amp;rsquo;ll be adding more to the application, mostly setting a global keybinding to invoke the app when it&amp;rsquo;s not the focus, and menu icon highlight when active.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="ooooh awww" src="https://user-images.githubusercontent.com/3039981/46878777-1d3bed80-ce12-11e8-9e1b-5a0d8a8a8f22.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;I wrote about creating it &lt;a href="http://www.dipet.me/blog/electron"&gt;here&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Enjoy the app!&lt;/p&gt;
 </content>
   </entry>
 </feed>
