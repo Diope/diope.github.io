@@ -5,10 +5,26 @@
   <id>http://dipet.me</id>
   <link href="http://dipet.me"/>
   <link href="http://dipet.me/feed.xml" rel="self"/>
-  <updated>2020-02-04T00:00:00-05:00</updated>
+  <updated>2022-03-09T00:00:00-05:00</updated>
   <author>
     <name>Dion Pettaway</name>
   </author>
+  <entry>
+    <title>Aufgabenliste</title>
+    <link rel="alternate" href="http://dipet.me/projects/aufgabenliste/"/>
+    <id>http://dipet.me/projects/aufgabenliste/</id>
+    <published>2022-03-09T00:00:00-05:00</published>
+    <updated>2022-05-11T14:39:59-04:00</updated>
+    <author>
+      <name>Dion Pettaway</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="aufgabenliste" src="https://imgur.com/MboHi3O" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Another year more projects being created to sharpen one&amp;rsquo;s skills, as the old saying go, iron sharpens iron (might be a Game of Thrones quote, not sure!). So I originally created a much more simple todo just to show some students over at 100Devs how to use Typescript and making a simple todo app, but then like all things in life&amp;hellip;the dreaded feature creep set in and I just kept thinking of things to add to it. Next thing you know I decided to add drag and drop and realized the wormhole I created by doing so.&lt;/p&gt;
+
+&lt;p&gt;The end result is what you see, &lt;a href="https://aufgabenlisten.netlify.app/"&gt;the app is live&lt;/a&gt; and you can mess with it over there. As complexity increased I decided to setup a CI/CD pipeline with Github Actions, it&amp;rsquo;s quickly taken the place of CircleCI and as much as I love CircleCI&amp;hellip;yea I think I&amp;rsquo;m pretty much all onboard with Github Actions. There&amp;rsquo;s also some containerization going on but I decided against pushing an image to Docker Hub or Github Container Registry.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Budgety (WIP)</title>
     <link rel="alternate" href="http://dipet.me/projects/bugety/"/>
@@ -134,24 +150,6 @@ I figured I&amp;rsquo;d keep the app small to avoid setting the bar for myself t
 &lt;p&gt;Features I haved added so far are: Likes, posting, comments, image upload, profile creation and updating, profile photo and profile banner, bookmarks, authentication. At the very least I want to add in the ability to make an account private because it seems like a nice challenge.&lt;/p&gt;
 
 &lt;p&gt;Lastly I have yet to add follower/following not because I didn&amp;rsquo;t know how to or anything of the sort, I created a decent implementation using PostgreSQL back when I made Drubbble. I definitely understand the underlying of how to implement it with a NoSQL, so implementation isn&amp;rsquo;t the reason. Honestly the reason is simply because&amp;hellip;it would introduce a bunch of feature creep haha, because I can&amp;rsquo;t stop at simply following/followers, I&amp;rsquo;d want to add the ability to block, having block automatically unfollow an account, and a few things which I imagine would mean I&amp;rsquo;m yet spending another couple months on the project on the minimum side. With that stated&amp;hellip;I&amp;rsquo;m probably still gonna add it.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Ledgr</title>
-    <link rel="alternate" href="http://dipet.me/projects/ledgr/"/>
-    <id>http://dipet.me/projects/ledgr/</id>
-    <published>2019-04-14T01:00:00-04:00</published>
-    <updated>2019-11-08T00:42:22-05:00</updated>
-    <author>
-      <name>Dion Pettaway</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img alt="these are my actual purchases" src="https://i.imgur.com/SQw00zL.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Login in &lt;a href="https://ledgr-vvtbxuzfpz.now.sh"&gt;here&lt;/a&gt; (give it a few seconds, now.sh is a bit slow)&lt;/p&gt;
-
-&lt;p&gt;A hilariously useless React/Redux app using Firestore as the backend. Just a pretty straightforward ledger book, that you can use to add random expenditures that one might have, it has persistence and utilizes google and or twitter for the authen/autho. Redux is an interesting creature, as I feel like as I&amp;rsquo;m learning things&amp;hellip;I&amp;rsquo;m forgetting other things which is frustrating at points.&lt;/p&gt;
-
-&lt;p&gt;I feel like I&amp;rsquo;ll never truly master Redux and by extension React, but I enjoy making decent sized apps with it regardless. I like it&amp;rsquo;s pure Javascript approach to things, granted it does have drawbacks, I enjoy it regardless. It allows developers to truly apply problem solving skills to overcome problems (and package those components if they need to be reused).&lt;/p&gt;
 </content>
   </entry>
 </feed>
